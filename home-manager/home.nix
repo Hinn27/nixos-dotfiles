@@ -13,7 +13,8 @@
     # inputs.nix-colors.homeManagerModule
 
     # You can also split up your configuration and import pieces of it here:
-    # ./nvim.nix
+    ./kitty.nix
+    ./zsh.nix
   ];
 
   nixpkgs = {
@@ -44,13 +45,11 @@
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
-    # Shell + Terminal
-    kitty
+    # Shell + Terminal (Managed via native modules in zsh.nix and kitty.nix)
+    # kitty, starship, zoxide, eza are enabled in those modules
+    neovim
     yazi
-    starship
     fzf
-    zoxide
-    eza
     fastfetch
     pnpm
 
