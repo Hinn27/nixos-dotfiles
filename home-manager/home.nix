@@ -18,6 +18,7 @@
     ./starship.nix
     ./git.nix
     ./scripts.nix
+    ./tools.nix
   ];
 
   nixpkgs = {
@@ -46,13 +47,22 @@
     homeDirectory = "/home/hinne";
   };
 
+  # Environment Variables
+  home.sessionVariables = {
+    PNPM_HOME = "$HOME/.local/share/pnpm";
+    EDITOR = "nvim";
+  };
+
+  home.sessionPath = [
+    "$HOME/.local/share/pnpm/bin"
+    "$HOME/.local/share/pnpm"
+    "$HOME/.local/bin"
+  ];
+
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
-    # Shell + Terminal (Managed via native modules in zsh.nix and kitty.nix)
-    # kitty, starship, zoxide, eza are enabled in those modules
+    # Shell + Terminal (Managed via native modules in zsh.nix, kitty.nix, tools.nix)
     neovim
-    yazi
-    fzf
     fastfetch
     pnpm
 

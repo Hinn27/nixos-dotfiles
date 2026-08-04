@@ -65,15 +65,7 @@
           fi
       }
 
-      # pnpm setup
-      export PNPM_HOME="$HOME/.local/share/pnpm"
-      case ":$PATH:" in
-        *":$PNPM_HOME:"*) ;;
-        *) export PATH="$PNPM_HOME/bin:$PNPM_HOME:$PATH" ;;
-      esac
 
-      # Add custom paths
-      export PATH="$HOME/.local/bin:$PATH"
 
       # Run fastfetch on startup
       if [[ -t 1 ]] && command -v fastfetch >/dev/null; then
