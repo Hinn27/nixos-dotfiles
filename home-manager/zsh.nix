@@ -82,13 +82,7 @@
     '';
   };
 
-  # Starship prompt
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-    # You can move your starship.toml content into settings later!
-    # settings = { ... };
-  };
+
 
   # Zoxide (better cd)
   programs.zoxide = {

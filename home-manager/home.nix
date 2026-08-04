@@ -15,6 +15,9 @@
     # You can also split up your configuration and import pieces of it here:
     ./kitty.nix
     ./zsh.nix
+    ./starship.nix
+    ./git.nix
+    ./scripts.nix
   ];
 
   nixpkgs = {
@@ -79,9 +82,8 @@
     zed-editor
   ];
 
-  # Enable home-manager and git
+  # Enable home-manager
   programs.home-manager.enable = true;
-  programs.git.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.11";
