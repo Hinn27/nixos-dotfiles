@@ -6,12 +6,12 @@
   programs.git = {
     enable = true;
     
-    # Your info
-    userName = "Hinn";
-    userEmail = "duc107243@donga.edu.vn";
-
-    # Extra settings
-    extraConfig = {
+    # All settings
+    settings = {
+      user = {
+        name = "Hinn";
+        email = "duc107243@donga.edu.vn";
+      };
       init.defaultBranch = "main";
       pull.rebase = true;
     };

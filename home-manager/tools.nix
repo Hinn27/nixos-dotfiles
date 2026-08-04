@@ -32,6 +32,7 @@
   # SSH Client Configuration
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     # Ví dụ khai báo (nếu có key riêng):
     # matchBlocks = {
     #   "github.com" = {

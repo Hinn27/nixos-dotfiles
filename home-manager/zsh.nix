@@ -44,7 +44,7 @@
     };
 
     # Extra configuration added to the end of ~/.zshrc
-    initExtra = ''
+    initContent = ''
       # Iris Autocomplete
       if command -v iris >/dev/null; then
         eval "$(iris init zsh)"
