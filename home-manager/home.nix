@@ -60,13 +60,23 @@
     # Desktop shell, WM
     niri
 
-    # Apps
+    # General Apps
     vesktop
     telegram-desktop
+    obs-studio
+    localsend
+    obsidian
+    libreoffice
+    onlyoffice-desktopeditors
+    mpv
+    upscayl
 
-    # Text editor + IDE
+    # Text Editor + IDE
     neovim
     jetbrains-toolbox
+    jetbrains.datagrip
+    jetbrains.idea
+    jetbrains.webstorm
     zed-editor
   ];
 
@@ -75,7 +85,7 @@
   programs.git.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "26.05";
+  home.stateVersion = "25.11";
 
   # Enable font discovery for home-manager fonts
   fonts.fontconfig.enable = true;
