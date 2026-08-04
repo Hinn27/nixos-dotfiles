@@ -44,11 +44,30 @@
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
+    # Shell + Terminal
     kitty
-    neovim
     yazi
     starship
+    fzf
+    zoxide
+    eza
+    fastfetch
+    pnpm
+
+    # Font
+    nerd-fonts.jetbrains-mono
+
+    # Desktop shell, WM
     niri
+
+    # Apps
+    vesktop
+    telegram-desktop
+
+    # Text editor + IDE
+    neovim
+    jetbrains-toolbox
+    zed-editor
   ];
 
   # Enable home-manager and git
@@ -56,5 +75,8 @@
   programs.git.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
+
+  # Enable font discovery for home-manager fonts
+  fonts.fontconfig.enable = true;
 }
