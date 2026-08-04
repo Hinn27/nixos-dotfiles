@@ -98,7 +98,7 @@
   # Sops-Nix configuration for secrets
   sops = {
     age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt"; # Phải trỏ đúng file chứa key
-    defaultSopsFile = ./secrets/secrets.yaml;
+    defaultSopsFile = ../secrets/secrets.yaml;
     secrets."ssh_key" = {
       path = "${config.home.homeDirectory}/.ssh/id_ed25519";
     };
