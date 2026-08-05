@@ -74,6 +74,7 @@
 
     # Desktop shell, WM
     niri
+    xwayland-satellite
 
     # General Apps
     vesktop
