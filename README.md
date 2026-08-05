@@ -5,6 +5,38 @@ Hệ thống được chia làm hai phần chính:
 - **NixOS (`nixosConfigurations.nixos`)**: Quản lý kernel, driver, bootloader và các dịch vụ cấp hệ thống.
 - **Home Manager (`homeConfigurations."hinne@nixos"`)**: Quản lý dotfiles, terminal (Zsh, Kitty, Starship), CLI tools và phần mềm người dùng.
 
+## 📂 Cấu trúc thư mục
+
+```text
+~/nix-config/
+    ├── ❄️ flake.nix               # khai báo toàn bộ hệ thống (Khai báo input/output)
+    ├── 🔒 flake.lock              # phiên bản của các thư viện
+    ├── ⚙️ .sops.yaml              # mã hoá bí mật với sops-nix
+    │
+    ├── 💻 nixos/                  # QUẢN LÝ HỆ THỐNG CẤP ROOT
+    │   ├── configuration.nix      # Cài đặt bootloader, kernel, driver, user, font và các service hệ thống (âm thanh, mạng...)
+    │   └── hardware-configuration.nix # File tự gen bởi NixOS chứa thông tin về ổ cứng, CPU, phân vùng
+    │
+    ├── 👤 home-manager/           # QUẢN LÝ PHẦN MỀM & SETTING CỦA USER
+    │   ├── home.nix               # danh sách phần mềm cài cho user và thiết lập các biến môi trường
+    │   ├── tools.nix              # khai báo các công cụ bổ trợ
+    │   ├── scripts.nix            # custom script bash cá nhân
+    │   │
+    │   ├── ⌨️ fcitx5.nix          # Cấu hình Lotus
+    │   ├── 🐙 git.nix             # Cấu hình tài khoản và alias của Git
+    │   ├── 🐚 zsh.nix             # Cấu hình Shell (Zsh)
+    │   ├── 🚀 starship.nix        # Cấu hình giao diện Prompt
+    │   ├── 🖥️ kitty.nix           # Cấu hình Terminal Kitty
+    │   │
+    │   ├── 🪟 niri/               # cấu hình của Window Manager Niri (bind, layout, rules)
+    │   ├── 🌙 noctalia/           # cấu hình thanh Bar/Shell Noctalia
+    │   ├── 📝 nvim/               # cấu hình trình Neovim
+    │   └── 🎬 mpv/                # cấu hình MPV
+    │
+    └── 🗝️ secrets/               # CHỨA CÁC THÔNG TIN BẢO MẬT ĐƯỢC MÃ HOÁ
+        └── secrets.yaml           # Mã hoá các thứ như mật khẩu, SSH key...
+```
+
 ---
 
 ## 1. Hướng dẫn cài đặt cho máy NixOS mới
