@@ -95,6 +95,8 @@
     ffmpegthumbnailer
     ffmpeg
     mediainfo
+    unar
+    p7zip
     (python3.withPackages (p: [ p.rich p.docx2txt ]))
 
     # Text Editor + IDE
