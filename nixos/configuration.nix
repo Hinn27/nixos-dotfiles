@@ -98,7 +98,7 @@
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = true;
+    open = false;
     nvidiaSettings = true;
     prime = {
       offload.enable = true;
