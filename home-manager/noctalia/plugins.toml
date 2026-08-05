@@ -1,0 +1,24 @@
+[sources]
+enabled = true
+name = "Noctalia Plugins"
+url = "https://github.com/noctalia-dev/noctalia-plugins"
+
+[[states]]
+name = "arch-updater"
+enabled = true
+sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins"
+
+[[states]]
+name = "clipper"
+enabled = true
+sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins"
+
+[[states]]
+name = "cloudflare-warp"
+enabled = true
+sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins"
+
+[[states]]
+name = "polkit-agent"
+enabled = true
+sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins"

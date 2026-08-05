@@ -21,8 +21,8 @@
       ignoreSpace = true;
       share = true;
     };
-
-    # Shell aliases (from your ~/.zsh_aliases)
+    
+    # Shell aliases
     shellAliases = {
       ".." = "cd ..";
       "..." = "cd ../..";
@@ -31,7 +31,6 @@
       cleanup = "~/.local/bin/cleanup-system.sh";
       grep = "grep --color=auto";
       jctl = "journalctl -p 3 -xb";
-      # eza is configured below via programs.eza, but we keep your specific aliases
       la = "eza -a --color=always --group-directories-first --icons";
       ll = "eza -l --color=always --group-directories-first --icons";
       ls = "eza -al --color=always --group-directories-first --icons";
@@ -43,7 +42,15 @@
       live = "pnpm dlx live-server";
     };
 
-    # Extra configuration added to the end of ~/.zshrc
+    # Extra configuration added to ~/.zprofile for login shells
+    profileExtra = ''
+      # Autostart Niri on TTY1 login
+      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
+        niri-session > ~/.niri.log 2>&1 || sleep 5
+      fi
+    '';
+
+    # Extra configuration added to ~/.zshrc
     initContent = ''
       # Iris Autocomplete
       if command -v iris >/dev/null; then
@@ -64,8 +71,6 @@
               echo "Lỗi: Không tìm thấy môi trường ảo (venv hoặc .venv)"
           fi
       }
-
-
 
       # Run fastfetch on startup
       if [[ -t 1 ]] && command -v fastfetch >/dev/null; then

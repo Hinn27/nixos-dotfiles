@@ -19,6 +19,9 @@
     ./git.nix
     ./scripts.nix
     ./tools.nix
+    ./niri.nix
+    ./noctalia.nix
+    ./fcitx5.nix
   ];
 
   nixpkgs = {
@@ -82,6 +85,7 @@
     onlyoffice-desktopeditors
     mpv
     upscayl
+    firefox
 
     # Text Editor + IDE
     neovim
@@ -90,6 +94,9 @@
     jetbrains.idea
     jetbrains.webstorm
     zed-editor
+
+    # CLI tools from flakes
+    inputs.antigravity.packages.${pkgs.system}.google-antigravity-cli
   ];
 
   # Enable home-manager
@@ -103,6 +110,7 @@
       path = "${config.home.homeDirectory}/.ssh/id_ed25519";
     };
   };
+
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.11";

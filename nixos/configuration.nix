@@ -51,10 +51,27 @@
     channel.enable = false;
   };
 
-  # FIXME: Add the rest of your current configuration
+  # Autologin on TTY1 to start Niri automatically
+  services.getty.autologinUser = "hinne";
+  networking.hostName = "nixos";
+  programs.niri.enable = true;
+  hardware.graphics.enable = true;
 
-  # TODO: Set your hostname
-  networking.hostName = "arch";
+  # Nvidia Optimus setup
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = false;
+    nvidiaSettings = true;
+    prime = {
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+  };
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {

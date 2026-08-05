@@ -1,0 +1,9 @@
+{
+  "color_range": "full",
+  "replay_duration": 300,
+  "replay_enabled": true,
+  "replay_storage": "disk",
+  "resolution": "original",
+  "video_codec": "hevc",
+  "video_source": "portal"
+}

@@ -1,0 +1,32 @@
+include "./cfg/animation.kdl"
+include "./cfg/autostart.kdl"
+include "./cfg/keybinds.kdl"
+include "./cfg/input.kdl"
+include "./cfg/display.kdl"
+include "./cfg/layout.kdl"
+include "./cfg/rules.kdl"
+include "./cfg/misc.kdl"
+include "noctalia.kdl"
+
+spawn-sh-at-startup "fcitx5 -d"
+
+output "HDMI-A-1" {
+    mode "1920x1080@200.000"
+
+    scale 1.0
+
+    transform "normal"
+    position x=0 y=0
+}
+output "eDP-1" {
+    mode "1920x1080@143.998"
+
+    scale 1.1
+
+    transform "normal"
+    position x=-1920 y=0
+}
+
+// blur block disabled
+
+
