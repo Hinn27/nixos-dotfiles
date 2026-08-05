@@ -48,6 +48,14 @@
       flake-registry = "";
       # Optimise storage
       auto-optimise-store = true;
+      substituters = [
+        "https://cache.nixos.org"
+        "https://noctalia.cachix.org"
+      ];
+      trusted-public-keys = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        "noctalia.cachix.org-1:Dr8Vop7J7fhFwzW/LGKsnpUTl/6dHDmQBLRVIoB6a5Q="
+      ];
     };
     # Opinionated: disable channels
     channel.enable = false;
@@ -156,6 +164,18 @@
       PasswordAuthentication = false;
     };
   };
+
+  # System packages
+  environment.systemPackages = with pkgs; [
+    git
+    zsh
+    niri
+    noctalia
+  ];
+
+  # Security
+  security.polkit.enable = true;
+  security.rtkit.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
