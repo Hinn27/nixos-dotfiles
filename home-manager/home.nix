@@ -86,22 +86,41 @@
     onlyoffice-desktopeditors
     mpv
     upscayl
-    firefox
+    inputs.thorium.packages.${pkgs.system}.thorium-avx2
+    
+    # Yazi Dependencies
+    poppler-utils
+    xlsx2csv
+    libreoffice
+    ffmpegthumbnailer
+    ffmpeg
+    mediainfo
+    (python3.withPackages (p: [ p.rich p.docx2txt ]))
 
     # Text Editor + IDE
     neovim
+    gcc
+    gnumake
+    ripgrep
+    fd
+    unzip
     jetbrains-toolbox
     jetbrains.datagrip
     jetbrains.idea
     jetbrains.webstorm
     zed-editor
 
-    # CLI tools from flakes
+    # Antigravity từ Nix flake
     inputs.antigravity.packages.${pkgs.system}.google-antigravity-cli
   ];
 
   # Enable home-manager
   programs.home-manager.enable = true;
+
+  xdg.configFile = {
+    "nvim".source = ./nvim;
+    "mpv".source = ./mpv;
+  };
 
   # Sops-Nix configuration for secrets
   sops = {
@@ -109,6 +128,18 @@
     defaultSopsFile = ../secrets/secrets.yaml;
     secrets."ssh_key" = {
       path = "${config.home.homeDirectory}/.ssh/id_ed25519";
+    };
+  };
+
+  # Default applications
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "thorium-browser.desktop";
+      "x-scheme-handler/http" = "thorium-browser.desktop";
+      "x-scheme-handler/https" = "thorium-browser.desktop";
+      "x-scheme-handler/about" = "thorium-browser.desktop";
+      "x-scheme-handler/unknown" = "thorium-browser.desktop";
     };
   };
 
