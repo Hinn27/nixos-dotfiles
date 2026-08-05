@@ -46,9 +46,17 @@
       experimental-features = "nix-command flakes";
       # Opinionated: disable global registry
       flake-registry = "";
+      # Optimise storage
+      auto-optimise-store = true;
     };
     # Opinionated: disable channels
     channel.enable = false;
+    # Automatic Garbage Collection
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
   };
 
   # Autologin on TTY1 to start Niri automatically
