@@ -33,7 +33,7 @@ Hệ thống được chia làm hai phần chính:
     │   ├── 📝 nvim/               # cấu hình trình Neovim
     │   └── 🎬 mpv/                # cấu hình MPV
     │
-    └── 🗝️ secrets/               # CHỨA CÁC THÔNG TIN BẢO MẬT ĐƯỢC MÃ HOÁ
+    └── 🗝️ secrets/                # CHỨA CÁC THÔNG TIN BẢO MẬT ĐƯỢC MÃ HOÁ
         └── secrets.yaml           # Mã hoá các thứ như mật khẩu, SSH key...
 ```
 
