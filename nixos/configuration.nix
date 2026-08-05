@@ -173,7 +173,6 @@
     niri
     pkgs-unstable.noctalia
     thunar
-    lf
     yazi
   ];
 
