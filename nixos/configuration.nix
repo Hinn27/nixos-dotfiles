@@ -174,7 +174,7 @@
     pkgs-unstable.noctalia
     thunar
     lf
-    vifm
+    yazi
   ];
 
   # Security
