@@ -5,6 +5,7 @@
   lib,
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   # You can import other NixOS modules here
@@ -170,7 +171,7 @@
     git
     zsh
     niri
-    noctalia
+    pkgs-unstable.noctalia
   ];
 
   # Security
