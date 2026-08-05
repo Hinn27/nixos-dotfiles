@@ -59,11 +59,38 @@
     };
   };
 
-  # Autologin on TTY1 to start Niri automatically
-  services.getty.autologinUser = "hinne";
+  # Network hostname
   networking.hostName = "nixos";
   programs.niri.enable = true;
   hardware.graphics.enable = true;
+
+  # Bootloader
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    efi.efiSysMountPoint = "/boot";
+  };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Network
+  networking.networkmanager.enable = true;
+
+  # Time zone & Locale
+  time.timeZone = "Asia/Ho_Chi_Minh";
+  i18n.defaultLocale = "en_US.UTF-8";
+  console = {
+    font = "Lat2-Terminus16";
+    useXkbConfig = true;
+  };
+
+  # Audio
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    jack.enable = true;
+  };
 
   # Nvidia Optimus setup
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -87,7 +114,7 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
+  programs.zsh.enable = true;
   users.users = {
     # FIXME: Replace with your username
     hinne = {
@@ -96,6 +123,7 @@
       # Be sure to change it (using passwd) after rebooting!
       initialPassword = "correcthorsebatterystaple";
       isNormalUser = true;
+      shell = pkgs.zsh;
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
