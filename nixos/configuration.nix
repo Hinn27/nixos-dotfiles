@@ -176,6 +176,14 @@
     yazi
   ];
 
+  # Enable nh - Nix cli wrapper
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 3";
+    flake = "/home/hinne/nix-config";
+  };
+
   # Security
   security.polkit.enable = true;
   security.rtkit.enable = true;
