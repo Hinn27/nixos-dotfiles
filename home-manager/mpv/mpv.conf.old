@@ -1,0 +1,38 @@
+# mpv configuration
+
+# Video settings
+vo=gpu-next
+gpu-api=vulkan
+hwdec=auto-safe
+profile=high-quality
+
+# Upscaling & Processing (Làm nét và mịn hình ảnh)
+scale=ewa_lanczossharp
+cscale=ewa_lanczossharp
+dscale=mitchell
+deband=yes # Khử nhiễu/vỡ hạt, đặc biệt hữu ích cho stream YouTube
+
+# YouTube & Network
+ytdl-format=bestvideo[height<=?1440]+bestaudio/best
+ytdl-raw-options=ignore-config=
+demuxer-max-bytes=500M
+demuxer-max-back-bytes=100M
+
+# Subtitles
+sub-auto=fuzzy
+sub-font-size=40
+sub-border-color="#000000"
+sub-border-size=2.0
+sub-shadow-offset=1
+sub-bold=yes
+slang=vi,vie,en,eng # Ưu tiên hiện sub tiếng Việt trước, sau đó tới tiếng Anh
+sub-file-paths=sub:subs:subtitles:Subtitles
+
+# UI
+osd-font-size=30
+keep-open=yes
+
+# Screenshot
+screenshot-format=png
+screenshot-high-bit-depth=yes
+screenshot-directory="~/Pictures/mpv"

@@ -2,8 +2,8 @@
 
 Hệ thống được chia làm hai phần chính:
 
-- **NixOS (`nixosConfigurations.arch`)**: Quản lý kernel, driver, bootloader và các dịch vụ cấp hệ thống.
-- **Home Manager (`homeConfigurations."hinne@arch"`)**: Quản lý dotfiles, terminal (Zsh, Kitty, Starship), CLI tools và phần mềm người dùng.
+- **NixOS (`nixosConfigurations.nixos`)**: Quản lý kernel, driver, bootloader và các dịch vụ cấp hệ thống.
+- **Home Manager (`homeConfigurations."hinne@nixos"`)**: Quản lý dotfiles, terminal (Zsh, Kitty, Starship), CLI tools và phần mềm người dùng.
 
 ---
 
@@ -39,7 +39,7 @@ _Lưu ý: Nếu bạn cài trên một phần cứng khác hoàn toàn, hãy t�
 # sudo nixos-generate-config --show-hardware-config > nixos/hardware-configuration.nix
 
 # Áp dụng cấu hình NixOS:
-sudo nixos-rebuild switch --flake .#arch
+sudo nixos-rebuild switch --flake .#nixos
 ```
 
 ### Bước 1.4: Kích hoạt phần người dùng (Home Manager)
@@ -47,7 +47,7 @@ sudo nixos-rebuild switch --flake .#arch
 Bước này sẽ thiết lập toàn bộ môi trường lập trình, giao diện terminal và tự động giải mã cấu hình SSH.
 
 ```bash
-nix run home-manager/master -- switch --flake .#hinne@arch
+nix run home-manager/master -- switch --flake .#hinne@nixos
 ```
 
 Sau khi lệnh chạy xong, hãy khởi động lại máy hoặc đăng nhập lại để các cấu hình có hiệu lực toàn diện.
