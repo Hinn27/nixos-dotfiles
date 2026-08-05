@@ -172,6 +172,9 @@
     zsh
     niri
     pkgs-unstable.noctalia
+    thunar
+    lf
+    vifm
   ];
 
   # Security
