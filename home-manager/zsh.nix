@@ -45,7 +45,7 @@
     # Extra configuration added to ~/.zprofile for login shells
     profileExtra = ''
       # Autostart Niri on TTY login
-      if [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ]; then
+      if [[ -o interactive ]] && [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ]; then
         exec niri-session > ~/.niri.log 2>&1
       fi
     '';
