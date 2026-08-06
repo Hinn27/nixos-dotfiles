@@ -12,8 +12,10 @@
       size = 14.0;
     };
 
-    # Theme (Catppuccin Mocha)
-    themeFile = "Catppuccin-Mocha";
+    # Theme (Managed by Noctalia Matugen)
+    extraConfig = ''
+      include /home/hinne/.config/kitty/noctalia-colors.conf
+    '';
 
     # Keybindings (from your kitty.conf)
     keybindings = {

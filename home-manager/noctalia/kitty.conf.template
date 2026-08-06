@@ -1,0 +1,35 @@
+foreground {{mOnSurface}}
+background {{mSurface}}
+cursor {{mPrimary}}
+
+# black
+color0 {{mSurface}}
+color8 {{mSurfaceVariant}}
+
+# red
+color1 {{mError}}
+color9 {{mError}}
+
+# green
+color2 {{mPrimary}}
+color10 {{mPrimary}}
+
+# yellow
+color3 {{mSecondary}}
+color11 {{mSecondary}}
+
+# blue
+color4 {{mPrimary}}
+color12 {{mPrimary}}
+
+# magenta
+color5 {{mTertiary}}
+color13 {{mTertiary}}
+
+# cyan
+color6 {{mSecondary}}
+color14 {{mSecondary}}
+
+# white
+color7 {{mOnSurface}}
+color15 {{mOnSurface}}
