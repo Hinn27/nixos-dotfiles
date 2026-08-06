@@ -120,6 +120,9 @@
   # Enable home-manager
   programs.home-manager.enable = true;
 
+  # Automount USB drives
+  services.udiskie.enable = true;
+
   xdg.configFile = {
     "nvim".source = ./nvim;
     "mpv".source = ./mpv;

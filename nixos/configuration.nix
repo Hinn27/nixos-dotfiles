@@ -184,6 +184,10 @@
     flake = "/home/hinne/nix-config";
   };
 
+  # Enable USB automounting and trash support
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+
   # Security
   security.polkit.enable = true;
   security.rtkit.enable = true;
