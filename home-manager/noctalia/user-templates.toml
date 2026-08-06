@@ -11,7 +11,6 @@
 # post_hook = "myapp --reload-theme"
 
 # Remove this section and add your own templates
-[templates.kitty]
-input_path = "/home/hinne/.config/noctalia/kitty.conf.template"
-output_path = "/home/hinne/.config/kitty/noctalia-colors.conf"
-post_hook = "kitty @ set-colors -a -c /home/hinne/.config/kitty/noctalia-colors.conf"
+#[templates.placeholder]
+#input_path = "/etc/xdg/quickshell/noctalia-shell/Assets/Templates/noctalia.json"
+#output_path = "/home/hinne/.cache/noctalia/placeholder.json"

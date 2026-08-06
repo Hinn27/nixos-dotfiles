@@ -14,7 +14,7 @@
 
     # Theme (Managed by Noctalia Matugen)
     extraConfig = ''
-      include /home/hinne/.config/kitty/noctalia-colors.conf
+      include /home/hinne/.config/kitty/themes/noctalia.conf
     '';
 
     # Keybindings (from your kitty.conf)
