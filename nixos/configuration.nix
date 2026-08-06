@@ -61,11 +61,11 @@
     # Opinionated: disable channels
     channel.enable = false;
     # Automatic Garbage Collection
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
+    # gc = {
+    #   automatic = true;
+    #   dates = "weekly";
+    #   options = "--delete-older-than 7d";
+    # };
   };
 
   # Network hostname
@@ -172,9 +172,18 @@
     zsh
     niri
     pkgs-unstable.noctalia
-    thunar
     yazi
+    file-roller # Trình quản lý nén file cho Thunar
   ];
+
+  # Enable Thunar properly with plugins
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
+  };
 
   # Enable nh - Nix cli wrapper
   programs.nh = {
