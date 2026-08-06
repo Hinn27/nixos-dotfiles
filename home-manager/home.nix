@@ -125,7 +125,10 @@
   services.udiskie.enable = true;
 
   xdg.configFile = {
-    "nvim".source = ./nvim;
+    "nvim" = {
+      source = ./nvim;
+      recursive = true;
+    };
     "mpv".source = ./mpv;
   };
 
