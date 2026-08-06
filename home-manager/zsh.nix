@@ -46,7 +46,7 @@
     profileExtra = ''
       # Autostart Niri on TTY1 login
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
-        niri-session > ~/.niri.log 2>&1 || sleep 5
+        exec niri-session > ~/.niri.log 2>&1
       fi
     '';
 

@@ -3,7 +3,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home manager
@@ -17,6 +17,10 @@
     # Antigravity Nix
     antigravity.url = "github:jacopone/antigravity-nix";
     antigravity.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Thorium Browser
+    thorium.url = "github:Rishabh5321/thorium_flake";
+    thorium.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {

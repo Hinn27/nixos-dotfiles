@@ -7,7 +7,7 @@
     type = "fcitx5";
     fcitx5 = {
       addons = [
-        pkgs-unstable.fcitx5-lotus
+        pkgs.fcitx5-lotus
         pkgs.fcitx5-gtk
         pkgs.qt6Packages.fcitx5-configtool
       ];
