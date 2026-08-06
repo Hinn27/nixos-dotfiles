@@ -85,6 +85,7 @@
     libreoffice
     onlyoffice-desktopeditors
     mpv
+    imv
     upscayl
     inputs.thorium.packages.${pkgs.system}.thorium-avx2
     
@@ -146,6 +147,25 @@
       "x-scheme-handler/https" = "thorium-browser.desktop";
       "x-scheme-handler/about" = "thorium-browser.desktop";
       "x-scheme-handler/unknown" = "thorium-browser.desktop";
+      
+      # File Manager
+      "inode/directory" = "yazi.desktop";
+      
+      # Image Viewer
+      "image/jpeg" = "imv.desktop";
+      "image/png" = "imv.desktop";
+      "image/gif" = "imv.desktop";
+      "image/webp" = "imv.desktop";
+      
+      # Video Player
+      "video/mp4" = "mpv.desktop";
+      "video/mkv" = "mpv.desktop";
+      "video/x-matroska" = "mpv.desktop";
+      "video/webm" = "mpv.desktop";
+      
+      # Text Editor
+      "text/plain" = "nvim.desktop";
+      "text/markdown" = "nvim.desktop";
     };
   };
 
