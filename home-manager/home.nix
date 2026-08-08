@@ -156,6 +156,10 @@
         shuffle
       ];
       
+      enabledCustomApps = with spicePkgs.apps; [
+        lyricsPlus
+      ];
+      
       # Use Comfy theme as recommended for Noctalia
       theme = spicePkgs.themes.comfy;
       colorScheme = "custom";
