@@ -6,7 +6,7 @@
   # Zsh configuration
   programs.zsh = {
     enable = true;
-    
+
     # Enable syntax highlighting and autosuggestions
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -21,7 +21,7 @@
       ignoreSpace = true;
       share = true;
     };
-    
+
     # Shell aliases
     shellAliases = {
       ".." = "cd ..";

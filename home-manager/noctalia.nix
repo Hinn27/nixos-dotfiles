@@ -2,6 +2,9 @@
 { config, pkgs, ... }:
 
 {
-  # Symlink entire noctalia configuration directory to ~/.config/noctalia
-  xdg.configFile."noctalia".source = ./noctalia;
+  # Use recursive to allow Noctalia GUI to save settings
+  xdg.configFile."noctalia" = {
+    source = ./noctalia;
+    recursive = true;
+  };
 }

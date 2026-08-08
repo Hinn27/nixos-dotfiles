@@ -5,7 +5,7 @@
 {
   programs.git = {
     enable = true;
-    
+
     # All settings
     settings = {
       user = {

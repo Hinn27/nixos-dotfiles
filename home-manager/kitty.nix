@@ -72,4 +72,12 @@
       enabled_layouts = "splits,stack";
     };
   };
+
+  # Set Kitty as the default terminal for GUI apps (like Noctalia) to launch CLI apps
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [ "kitty.desktop" ];
+    };
+  };
 }

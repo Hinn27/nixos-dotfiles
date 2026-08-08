@@ -266,14 +266,14 @@ key = "Up"
 [hooks]
 colorGeneration = ""
 darkModeChange = ""
-enabled = false
+enabled = true
 performanceModeDisabled = ""
 performanceModeEnabled = ""
 screenLock = ""
 screenUnlock = ""
 session = ""
 startup = ""
-wallpaperChange = ""
+wallpaperChange = "matugen image \"$1\" --source-color-index 0 && pkill -USR1 nvim && pkill -USR1 kitty"
 
 # Idle Settings
 [idle]
