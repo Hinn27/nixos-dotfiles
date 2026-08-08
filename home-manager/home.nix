@@ -107,6 +107,7 @@
     imv
     upscayl
     evtest
+    wl-clipboard
     inputs.thorium.packages.${pkgs.system}.thorium-avx2
 
     # Yazi Dependencies
