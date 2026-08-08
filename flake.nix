@@ -21,6 +21,14 @@
     # Thorium Browser
     thorium.url = "github:Rishabh5321/thorium_flake";
     thorium.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Sidra
+    sidra.url = "github:wimpysworld/sidra";
+    sidra.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Spicetify
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

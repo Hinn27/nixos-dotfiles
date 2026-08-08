@@ -21,6 +21,8 @@
     ./niri.nix
     ./noctalia.nix
     ./fcitx5.nix
+
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   nixpkgs = {
@@ -138,7 +140,28 @@
 
     # Antigravity từ Nix flake
     inputs.antigravity.packages.${pkgs.system}.google-antigravity-cli
+
+    # Sidra (Apple Music Client)
+    inputs.sidra.packages.${pkgs.system}.sidra
   ];
+
+  # Enable Spicetify
+  programs.spicetify =
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in
+    {
+      enable = true;
+      enabledExtensions = with spicePkgs.extensions; [
+        adblock
+        hidePodcasts
+        shuffle
+      ];
+      
+      # Use Comfy theme as recommended for Noctalia
+      theme = spicePkgs.themes.comfy;
+      colorScheme = "comfy";
+    };
 
   # Enable home-manager
   programs.home-manager.enable = true;
