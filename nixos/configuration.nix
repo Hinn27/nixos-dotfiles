@@ -1,12 +1,11 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  pkgs-unstable,
-  ...
+{ inputs
+, lib
+, config
+, pkgs
+, pkgs-unstable
+, ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -102,7 +101,7 @@
   };
 
   # Nvidia Optimus setup
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
@@ -122,7 +121,9 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  programs.zsh.enable = true;
+ 
+
+
   users.users = {
     # FIXME: Replace with your username
     hinne = {
@@ -136,18 +137,18 @@
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
       # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = ["wheel" "networkmanager"];
+      extraGroups = [ "wheel" "networkmanager" ];
     };
   };
 
   # Sudo
   security.sudo.extraRules = [
     {
-      users = ["hinne"];
+      users = [ "hinne" ];
       commands = [
         {
           command = "ALL";
-          options = ["NOPASSWD"];
+          options = [ "NOPASSWD" ];
         }
       ];
     }
@@ -173,8 +174,12 @@
     niri
     pkgs-unstable.noctalia
     yazi
-    file-roller # Trình quản lý nén file cho Thunar
+    file-roller
     polkit_gnome
+    gcc
+    gnumake
+    fnm
+    pnpm 
   ];
 
   # Enable Thunar properly with plugins
@@ -185,6 +190,17 @@
       thunar-volman
     ];
   };
+
+  # Enable Zsh and config fnm
+  programs.zsh = {
+        enable = true;
+        interactiveShellInit = ''
+          eval "$(fnm env --use-on-cd --shell zsh)"
+        '';
+      };
+
+  # Allow NixOS run Node.js downloaded from internet
+  programs.nix-ld.enable = true;
 
   # Enable nh - Nix cli wrapper
   programs.nh = {
@@ -204,9 +220,9 @@
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-authentication-agent-1";
-    wantedBy = ["graphical-session.target"];
-    wants = ["graphical-session.target"];
-    after = ["graphical-session.target"];
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
     serviceConfig = {
       Type = "simple";
       ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
