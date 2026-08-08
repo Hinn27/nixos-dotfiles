@@ -40,3 +40,8 @@
 - **File changed**: Không sửa file NixOS
 - **Mô tả**: Xóa thủ công file `/home/hinne/.local/share/applications/spotify.desktop`.
 - **Lý do**: File này được tạo thủ công từ lúc đầu để ép cấu hình, bị bỏ sót trong đợt xóa trước khiến Launcher vẫn hiện icon Spotify.
+
+### [2026-08-08 17:49] - BẬT BLUETOOTH & QUẢN LÝ PIN LAPTOP
+- **File changed**: `nixos/configuration.nix`
+- **Mô tả**: Bật `hardware.bluetooth.enable`, kích hoạt `Experimental = true` để báo pin thiết bị. Bật `services.upower.enable` để đọc phần trăm pin laptop và `services.power-profiles-daemon.enable` để điều chỉnh hiệu năng.
+- **Lý do**: Sếp yêu cầu bật tính năng kết nối Bluetooth, xem dung lượng pin thiết bị và theo dõi pin laptop.

@@ -228,6 +228,22 @@
     };
   };
 
+  # Bluetooth config (with battery reporting)
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
+  };
+  services.blueman.enable = true;
+
+  # Quản lý Pin Laptop & Hiệu năng
+  services.upower.enable = true; # Dịch vụ đọc phần trăm pin laptop
+  services.power-profiles-daemon.enable = true; # Quản lý chế độ (Tiết kiệm pin / Hiệu năng cao)
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
 }
