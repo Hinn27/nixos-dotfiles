@@ -178,7 +178,6 @@
     polkit_gnome
     gcc
     gnumake
-    fnm
     pnpm 
   ];
 
@@ -191,12 +190,9 @@
     ];
   };
 
-  # Enable Zsh and config fnm
+  # Enable Zsh
   programs.zsh = {
         enable = true;
-        interactiveShellInit = ''
-          eval "$(fnm env --use-on-cd --shell zsh)"
-        '';
       };
 
   # Allow NixOS run Node.js downloaded from internet
