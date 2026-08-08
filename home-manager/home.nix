@@ -108,6 +108,7 @@
     upscayl
     evtest
     wl-clipboard
+    stremio-linux-shell
     inputs.thorium.packages.${pkgs.system}.thorium-avx2
 
     # Yazi Dependencies
@@ -223,6 +224,10 @@
       hi('NormalNC', { bg = 'NONE' })
       hi('SignColumn', { bg = 'NONE' })
       hi('EndOfBuffer', { bg = 'NONE' })
+      hi('NeoTreeNormal', { bg = 'NONE' })
+      hi('NeoTreeNormalNC', { bg = 'NONE' })
+      hi('NeoTreeWinSeparator', { fg = '{{colors.outline_variant.default.hex}}', bg = 'NONE' })
+      hi('WinSeparator', { fg = '{{colors.outline_variant.default.hex}}', bg = 'NONE' })
 
       hi('TelescopeNormal',         { fg = '{{colors.on_surface.default.hex}}', bg = 'NONE' })
       hi('TelescopeBorder',         { fg = '{{colors.outline_variant.default.hex}}', bg = 'NONE' })
