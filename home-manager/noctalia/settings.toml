@@ -273,7 +273,7 @@ screenLock = ""
 screenUnlock = ""
 session = ""
 startup = ""
-wallpaperChange = "matugen image \"$1\" --source-color-index 0 && pkill -USR1 nvim && pkill -USR1 kitty"
+wallpaperChange = "matugen image \"$1\" --source-color-index 0 && pkill -USR1 nvim && pkill -USR1 kitty && nh home switch ~/nix-config &"
 
 # Idle Settings
 [idle]

@@ -199,6 +199,7 @@
       {
         text = "{{colors.on_surface.default.hex_stripped}}";
         subtext = "{{colors.on_surface_variant.default.hex_stripped}}";
+        sidebar-text = "{{colors.on_surface_variant.default.hex_stripped}}";
         main = "{{colors.surface.default.hex_stripped}}";
         sidebar = "{{colors.surface_container.default.hex_stripped}}";
         player = "{{colors.surface_container_highest.default.hex_stripped}}";

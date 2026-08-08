@@ -18,6 +18,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./damx.nix
   ];
 
   nixpkgs = {
@@ -228,6 +229,11 @@
   # Quản lý Pin Laptop & Hiệu năng
   services.upower.enable = true; # Dịch vụ đọc phần trăm pin laptop
   services.power-profiles-daemon.enable = true; # Quản lý chế độ (Tiết kiệm pin / Hiệu năng cao)
+
+  # MChose Mouse Web Driver Udev Rule
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", ATTRS{idVendor}=="5253", MODE="0666", TAG+="uaccess"
+  '';
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "25.11";
