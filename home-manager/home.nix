@@ -141,8 +141,6 @@
     # Antigravity từ Nix flake
     inputs.antigravity.packages.${pkgs.system}.google-antigravity-cli
 
-    # Sidra (Apple Music Client)
-    inputs.sidra.packages.${pkgs.system}.sidra
   ];
 
   # Enable Spicetify
@@ -160,7 +158,7 @@
       
       # Use Comfy theme as recommended for Noctalia
       theme = spicePkgs.themes.comfy;
-      colorScheme = "comfy";
+      colorScheme = "Comfy";
     };
 
   # Enable home-manager
