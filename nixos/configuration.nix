@@ -86,6 +86,7 @@
 
   # Time zone & Locale
   time.timeZone = "Asia/Ho_Chi_Minh";
+  time.hardwareClockInLocalTime = false;
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16";
