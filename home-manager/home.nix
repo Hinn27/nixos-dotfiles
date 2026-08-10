@@ -56,7 +56,7 @@
     PNPM_HOME = "$HOME/.local/share/pnpm";
     EDITOR = "nvim";
     TERMINAL = "kitty";
-    BROWSER = "firefox";
+    BROWSER = "zen-browser";
   };
 
   # Tạo Desktop Entry đè lên mặc định để sửa lỗi launcher/file search
@@ -311,11 +311,11 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "firefox.desktop";
-      "x-scheme-handler/http" = "firefox.desktop";
-      "x-scheme-handler/https" = "firefox.desktop";
-      "x-scheme-handler/about" = "firefox.desktop";
-      "x-scheme-handler/unknown" = "firefox.desktop";
+      "text/html" = "zen-browser";
+      "x-scheme-handler/http" = "zen-browser";
+      "x-scheme-handler/https" = "zen-browser";
+      "x-scheme-handler/about" = "zen-browser";
+      "x-scheme-handler/unknown" = "zen-browser";
 
       # File Manager
       "inode/directory" = "yazi.desktop";
