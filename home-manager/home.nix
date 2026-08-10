@@ -56,6 +56,7 @@
     PNPM_HOME = "$HOME/.local/share/pnpm";
     EDITOR = "nvim";
     TERMINAL = "kitty";
+    BROWSER = "firefox";
   };
 
   # Tạo Desktop Entry đè lên mặc định để sửa lỗi launcher/file search
@@ -112,6 +113,7 @@
     wl-clipboard
     stremio-linux-shell
     power-profiles-daemon
+    firefox
     inputs.thorium.packages.${pkgs.system}.thorium-avx2
 
     # Yazi Dependencies
@@ -309,11 +311,11 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "thorium-browser.desktop";
-      "x-scheme-handler/http" = "thorium-browser.desktop";
-      "x-scheme-handler/https" = "thorium-browser.desktop";
-      "x-scheme-handler/about" = "thorium-browser.desktop";
-      "x-scheme-handler/unknown" = "thorium-browser.desktop";
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/about" = "firefox.desktop";
+      "x-scheme-handler/unknown" = "firefox.desktop";
 
       # File Manager
       "inode/directory" = "yazi.desktop";

@@ -19,7 +19,7 @@ binds {
     Mod+V hotkey-overlay-title="Mở trình quản lý Clipboard (Clipper)" { spawn "noctalia" "msg" "panel-toggle" "clipper"; }
     Mod+Period hotkey-overlay-title="Mở bảng chọn biểu tượng cảm xúc Emoji" { spawn "noctalia" "msg" "panel-toggle" "launcher" "/emo"; }
     // Mod+CTRL+Return hotkey-overlay-title="Mở trình khởi chạy ứng dụng (App Launcher)" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
-    Mod+B hotkey-overlay-title="Mở trình duyệt Web" { spawn "thorium"; }
+    Mod+B hotkey-overlay-title="Mở trình duyệt Web" { spawn "sh" "-c" "$BROWSER"; }
     Mod+ALT+L hotkey-overlay-title="Khóa màn hình máy tính" { spawn "noctalia" "msg" "session" "lock"; }
     Mod+Shift+Q hotkey-overlay-title="Hiện menu phiên làm việc (Tắt nguồn, Khởi động lại...)" { spawn "noctalia" "msg" "panel-toggle" "session"; }
 
