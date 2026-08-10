@@ -113,7 +113,6 @@
     wl-clipboard
     stremio-linux-shell
     power-profiles-daemon
-    firefox
     inputs.thorium.packages.${pkgs.system}.thorium-avx2
     inputs.zen-browser.packages.${pkgs.system}.default
     # Yazi Dependencies
@@ -174,6 +173,7 @@
 
   # Automount USB drives
   services.udiskie.enable = true;
+
 
   xdg.configFile = {
     "nvim" = {
