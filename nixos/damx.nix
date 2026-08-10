@@ -1,7 +1,7 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 let
-  damxSrc = /home/hinne/Projects/DAMX-1.0.2;
+  damxSrc = inputs.damx;
 
   linuwu-sense = config.boot.kernelPackages.callPackage ({ stdenv, kernel }: stdenv.mkDerivation {
     name = "linuwu-sense";

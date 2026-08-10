@@ -26,6 +26,10 @@
     # Spicetify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    # DAMX Source (Local)
+    damx.url = "path:/home/hinne/Projects/DAMX-1.0.2";
+    damx.flake = false;
   };
 
   outputs =

@@ -21,6 +21,19 @@
         "type": "github"
       }
     },
+    "damx": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786197932,
+        "narHash": "sha256-WiT5/4mGPUhP0PrPs/DUN9u1atomd9PH1BUbInFC5oI=",
+        "path": "/home/hinne/Projects/DAMX-1.0.2",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/hinne/Projects/DAMX-1.0.2",
+        "type": "path"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -95,6 +108,7 @@
     "root": {
       "inputs": {
         "antigravity": "antigravity",
+        "damx": "damx",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
