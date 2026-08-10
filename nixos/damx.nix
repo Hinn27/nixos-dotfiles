@@ -33,9 +33,9 @@ let
     name = "DivAcerManagerMax";
     targetPkgs = pkgs: with pkgs; [
       zlib stdenv.cc.cc.lib
-      xorg.libX11 xorg.libXext xorg.libXcursor xorg.libXrandr xorg.libXi xorg.libXinerama xorg.libXxf86vm xorg.libxcb
+      libx11 libxext libxcursor libxrandr libxi libxinerama libxxf86vm libxcb
       libGL alsa-lib pango cairo atk gtk3 glib nss nspr dbus
-      udev wayland libxkbcommon icu fontconfig xorg.libICE xorg.libSM
+      udev wayland libxkbcommon icu fontconfig libice libsm
     ];
     profile = ''
       export PATH=$PATH:/run/current-system/sw/bin
