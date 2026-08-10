@@ -35,21 +35,37 @@ let
       zlib stdenv.cc.cc.lib
       xorg.libX11 xorg.libXext xorg.libXcursor xorg.libXrandr xorg.libXi xorg.libXinerama xorg.libXxf86vm xorg.libxcb
       libGL alsa-lib pango cairo atk gtk3 glib nss nspr dbus
-      udev wayland libxkbcommon
+      udev wayland libxkbcommon icu fontconfig xorg.libICE xorg.libSM
     ];
+    profile = ''
+      export PATH=$PATH:/run/current-system/sw/bin
+      export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/run/opengl-driver/lib
+    '';
     runScript = "${damxSrc}/DAMX-GUI/DivAcerManagerMax";
+  };
+
+  damx-desktop = pkgs.makeDesktopItem {
+    name = "damx";
+    desktopName = "DAMX";
+    exec = "DivAcerManagerMax";
+    icon = "${damxSrc}/DAMX-GUI/icon.png";
+    categories = [ "System" "Settings" ];
+    comment = "Acer Laptop WMI Controls for Linux";
   };
 in
 {
   boot.extraModulePackages = [ linuwu-sense ];
   boot.kernelModules = [ "linuwu_sense" ];
   boot.blacklistedKernelModules = [ "acer_wmi" ];
+  boot.extraModprobeConfig = ''
+    options linuwu_sense enable_all=1
+  '';
 
   systemd.services.damx-daemon = {
     description = "DAMX Daemon";
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
-    path = [ pkgs.evtest ];
+    path = [ pkgs.evtest pkgs.kmod pkgs.sudo pkgs.bash pkgs.coreutils ];
     serviceConfig = {
       ExecStart = "${damx-daemon}/bin/damx-daemon";
       Restart = "on-failure";
@@ -57,7 +73,7 @@ in
     };
   };
 
-  environment.systemPackages = [ damx-gui pkgs.evtest ];
+  environment.systemPackages = [ damx-gui pkgs.evtest damx-desktop ];
   
   users.groups.linuwu_sense = {};
   users.users.hinne.extraGroups = [ "linuwu_sense" ];

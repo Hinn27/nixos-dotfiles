@@ -111,6 +111,7 @@
     evtest
     wl-clipboard
     stremio-linux-shell
+    power-profiles-daemon
     inputs.thorium.packages.${pkgs.system}.thorium-avx2
 
     # Yazi Dependencies
