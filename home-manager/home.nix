@@ -115,7 +115,7 @@
     power-profiles-daemon
     firefox
     inputs.thorium.packages.${pkgs.system}.thorium-avx2
-
+    inputs.zen-browser.packages.${pkgs.system}.default
     # Yazi Dependencies
     poppler-utils
     xlsx2csv

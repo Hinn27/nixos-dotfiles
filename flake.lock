@@ -114,7 +114,8 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "sops-nix": "sops-nix",
         "spicetify-nix": "spicetify-nix",
-        "thorium": "thorium"
+        "thorium": "thorium",
+        "zen-browser": "zen-browser"
       }
     },
     "sops-nix": {
@@ -205,6 +206,26 @@
       "original": {
         "owner": "Rishabh5321",
         "repo": "thorium_flake",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786164819,
+        "narHash": "sha256-tvBlGAYyzHYdLwn035bRCrB1mcMjvNNavcNZ293AIIA=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "f9af5f7017cea1c159e17922288fb38ff94d28cd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }

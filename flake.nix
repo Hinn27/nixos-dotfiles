@@ -22,7 +22,9 @@
     thorium.url = "github:Rishabh5321/thorium_flake";
     thorium.inputs.nixpkgs.follows = "nixpkgs";
 
-
+    # Zen Browser
+    zen-browser.url = "github:youwen5/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
     # Spicetify
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";

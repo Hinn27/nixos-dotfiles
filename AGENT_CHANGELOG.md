@@ -45,3 +45,8 @@
 - **File changed**: `nixos/configuration.nix`
 - **Mô tả**: Bật `hardware.bluetooth.enable`, kích hoạt `Experimental = true` để báo pin thiết bị. Bật `services.upower.enable` để đọc phần trăm pin laptop và `services.power-profiles-daemon.enable` để điều chỉnh hiệu năng.
 - **Lý do**: Sếp yêu cầu bật tính năng kết nối Bluetooth, xem dung lượng pin thiết bị và theo dõi pin laptop.
+
+### [2026-08-10 13:26] - CÀI ĐẶT ZEN BROWSER
+- **File changed**: `flake.nix`, `home-manager/home.nix`
+- **Mô tả**: Thêm input `zen-browser` từ flake `github:youwen5/zen-browser-flake` vào `flake.nix`. Thêm gói `inputs.zen-browser.packages.\${pkgs.system}.default` vào `home.packages` trong `home.nix`.
+- **Lý do**: Sếp yêu cầu cài đặt Zen Browser theo hướng dẫn từ NixOS Wiki.
