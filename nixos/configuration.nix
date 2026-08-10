@@ -226,7 +226,7 @@
   };
   services.blueman.enable = true;
 
-  # Quản lý Pin Laptop & Hiệu năng
+  # Battery and Preformance
   services.upower.enable = true; # Dịch vụ đọc phần trăm pin laptop
   services.power-profiles-daemon.enable = true; # Quản lý chế độ (Tiết kiệm pin / Hiệu năng cao)
 
