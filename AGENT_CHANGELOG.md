@@ -50,3 +50,8 @@
 - **File changed**: `flake.nix`, `home-manager/home.nix`
 - **Mô tả**: Thêm input `zen-browser` từ flake `github:youwen5/zen-browser-flake` vào `flake.nix`. Thêm gói `inputs.zen-browser.packages.\${pkgs.system}.default` vào `home.packages` trong `home.nix`.
 - **Lý do**: Sếp yêu cầu cài đặt Zen Browser theo hướng dẫn từ NixOS Wiki.
+
+### [2026-08-12 16:21] - CÀI ĐẶT NODEJS
+- **File changed**: `home-manager/home.nix`
+- **Mô tả**: Thêm gói `nodejs` vào `home.packages`.
+- **Lý do**: Sếp chạy `kilocode` được cài bằng `pnpm` nhưng báo lỗi thiếu `node`. Nguyên nhân là máy sếp mới chỉ cài trình quản lý gói `pnpm` chứ chưa cài môi trường chạy lõi là `nodejs`.

@@ -89,6 +89,7 @@
     neovim
     fastfetch
     pnpm
+    nodejs
 
     # Font
     nerd-fonts.jetbrains-mono
@@ -282,6 +283,10 @@
       hi('NeoTreeNormalNC', { bg = 'NONE' })
       hi('NeoTreeWinSeparator', { fg = '{{colors.outline_variant.default.hex}}', bg = 'NONE' })
       hi('WinSeparator', { fg = '{{colors.outline_variant.default.hex}}', bg = 'NONE' })
+      hi('NormalFloat', { bg = 'NONE' })
+      hi('FloatBorder', { bg = 'NONE' })
+      hi('LazyNormal', { bg = 'NONE' })
+      hi('MasonNormal', { bg = 'NONE' })
 
       hi('TelescopeNormal',         { fg = '{{colors.on_surface.default.hex}}', bg = 'NONE' })
       hi('TelescopeBorder',         { fg = '{{colors.outline_variant.default.hex}}', bg = 'NONE' })
