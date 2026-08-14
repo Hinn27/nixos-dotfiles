@@ -4,54 +4,67 @@
   programs.fastfetch = {
     enable = true;
     settings = {
+      logo = {
+        source = "nixos_small";
+        padding = {
+          top = 2;
+          right = 6;
+        };
+      };
       display = {
-        separator = " │ ";
+        separator = " •  ";
       };
       modules = [
+        "break"
+        "break"
         {
-          type = "custom";
-          format = "╭─────────────╮";
+          type = "title";
+          color = {
+            user = "32";
+            at = "37";
+            host = "32";
+          };
         }
+        "break"
         {
           type = "os";
-          key = "  OS       ";
+          key = "distribution   ";
+          keyColor = "33";
         }
         {
           type = "kernel";
-          key = "  Kernel   ";
+          key = "linux kernel   ";
+          keyColor = "33";
+        }
+        {
+          type = "packages";
+          format = "{} (nix)";
+          key = "packages       ";
+          keyColor = "33";
         }
         {
           type = "shell";
-          key = "  Shell    ";
+          key = "unix shell     ";
+          keyColor = "33";
         }
         {
           type = "terminal";
-          key = "  Terminal ";
+          key = "terminal       ";
+          keyColor = "33";
         }
         {
           type = "wm";
-          key = "  WM       ";
+          format = "{} ({3})";
+          key = "window manager ";
+          keyColor = "33";
         }
+        "break"
         {
-          type = "cpu";
-          key = "  CPU      ";
+          type = "colors";
+          symbol = "circle";
         }
-        {
-          type = "gpu";
-          key = " 󰢮 GPU      ";
-        }
-        {
-          type = "memory";
-          key = "  Memory   ";
-        }
-        {
-          type = "uptime";
-          key = " 󰅐 Uptime   ";
-        }
-        {
-          type = "custom";
-          format = "╰─────────────╯";
-        }
+        "break"
+        "break"
       ];
     };
   };

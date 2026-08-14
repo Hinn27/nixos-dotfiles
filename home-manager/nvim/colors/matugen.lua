@@ -9,7 +9,7 @@ local function read_kitty_colors()
   if not file then return nil end
   local colors = {}
   for line in file:lines() do
-    local key, hex = line:match("^(color%d+)%s+(#%x+)$")
+    local key, hex = line:match("^([a-z0-9_]+)%s+(#%x+)$")
     if key and hex then
       colors[key] = hex
     end
@@ -22,9 +22,9 @@ local function apply_theme()
   local c = read_kitty_colors()
   if c and c.color0 then
     require('base16-colorscheme').setup({
-      base00 = c.color0,
-      base01 = c.color8,
-      base02 = c.color8,
+      base00 = c.background or c.color0,
+      base01 = c.color0,
+      base02 = c.selection_background or c.color0,
       base03 = c.color8,
       base04 = c.color7,
       base05 = c.color7,

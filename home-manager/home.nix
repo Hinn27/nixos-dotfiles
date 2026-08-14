@@ -56,7 +56,7 @@
     PNPM_HOME = "$HOME/.local/share/pnpm";
     EDITOR = "nvim";
     TERMINAL = "kitty";
-    BROWSER = "zen-browser";
+    BROWSER = "zen";
   };
 
   # Tạo Desktop Entry đè lên mặc định để sửa lỗi launcher/file search

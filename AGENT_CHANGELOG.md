@@ -55,3 +55,18 @@
 - **File changed**: `home-manager/home.nix`
 - **Mô tả**: Thêm gói `nodejs` vào `home.packages`.
 - **Lý do**: Sếp chạy `kilocode` được cài bằng `pnpm` nhưng báo lỗi thiếu `node`. Nguyên nhân là máy sếp mới chỉ cài trình quản lý gói `pnpm` chứ chưa cài môi trường chạy lõi là `nodejs`.
+
+### [2026-08-14 11:43] - SỬA LỖI PHÍM TẮT MỞ ZEN BROWSER
+- **File changed**: `home-manager/home.nix`
+- **Mô tả**: Đổi giá trị biến môi trường `BROWSER` từ `zen-browser` thành `zen`.
+- **Lý do**: File cấu hình phím tắt của Niri dùng lệnh `$BROWSER` để mở web (phím Super+B). Lúc trước ta đặt `$BROWSER="zen-browser"`, nhưng tên file chạy thực tế của app lại là `zen`, dẫn tới việc bấm phím tắt bị lỗi không hiện gì.
+
+### [2026-08-14 11:47] - CẤU HÌNH FASTFETCH CHUẨN L=9 (NIXOS-SMALL)
+- **File changed**: `home-manager/fastfetch.nix`, `home-manager/zsh.nix`
+- **Mô tả**: Thiết lập thẳng `logo.source = "nixos_small"` trong file cấu hình JSONC của Fastfetch. Đồng thời, lược bỏ bớt mục hiển thị CPU và GPU để tổng số dòng text vừa khít 9 dòng (bao gồm 2 dòng khung viền cong), tạo sự cân bằng hoàn hảo `l=9` với logo NixOS nhỏ. Trả lại lệnh `fastfetch` gốc gọn gàng trong `zsh.nix`.
+- **Lý do**: Sếp yêu cầu copy 100% setup Fastfetch từ Reddit với logo nhỏ và thông tin vừa khít.
+
+### [2026-08-14 12:08] - CẬP NHẬT CẤU HÌNH FASTFETCH ASCII-ART
+- **File changed**: `home-manager/fastfetch.nix`
+- **Mô tả**: Cập nhật file cấu hình fastfetch theo thiết kế "ascii-art" từ repo LierB/fastfetch. Cấu hình mới sử dụng các ngắt dòng (break), hiển thị `title`, dấu phân cách dạng dấu chấm (•), và màu sắc tùy chỉnh. Logo vẫn giữ nguyên bản `nixos_small` cho đồng bộ.
+- **Lý do**: Sếp gửi link GitHub yêu cầu copy 100% cấu hình ascii-art.jsonc về máy.
