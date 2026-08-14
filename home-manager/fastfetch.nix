@@ -8,7 +8,6 @@
         source = "nixos_small";
         padding = {
           right = 4;
-          top = 1;
         };
       };
       display = {
@@ -23,6 +22,7 @@
             host = "32";
           };
         }
+        "break"
         {
           type = "os";
           key = "distribution   ";
