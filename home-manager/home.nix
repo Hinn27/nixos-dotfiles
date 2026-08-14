@@ -21,6 +21,7 @@
     ./niri.nix
     ./noctalia.nix
     ./fcitx5.nix
+    ./fastfetch.nix
 
     inputs.spicetify-nix.homeManagerModules.default
   ];
@@ -86,8 +87,9 @@
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
     # Shell + Terminal (Managed via native modules in zsh.nix, kitty.nix, tools.nix)
+    # CLI Tools
+    yazi
     neovim
-    fastfetch
     pnpm
     nodejs
 

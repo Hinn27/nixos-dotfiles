@@ -67,6 +67,6 @@
 - **Lý do**: Sếp yêu cầu copy 100% setup Fastfetch từ Reddit với logo nhỏ và thông tin vừa khít.
 
 ### [2026-08-14 12:08] - CẬP NHẬT CẤU HÌNH FASTFETCH ASCII-ART
-- **File changed**: `home-manager/fastfetch.nix`
-- **Mô tả**: Cập nhật file cấu hình fastfetch theo thiết kế "ascii-art" từ repo LierB/fastfetch. Cấu hình mới sử dụng các ngắt dòng (break), hiển thị `title`, dấu phân cách dạng dấu chấm (•), và màu sắc tùy chỉnh. Logo vẫn giữ nguyên bản `nixos_small` cho đồng bộ.
-- **Lý do**: Sếp gửi link GitHub yêu cầu copy 100% cấu hình ascii-art.jsonc về máy.
+- **File changed**: `home-manager/fastfetch.nix`, `home-manager/home.nix`
+- **Mô tả**: Cập nhật file cấu hình fastfetch theo thiết kế "ascii-art" từ repo LierB/fastfetch. Cấu hình mới sử dụng các ngắt dòng (break), hiển thị `title`, dấu phân cách dạng dấu chấm (•), và màu sắc tùy chỉnh. Logo vẫn giữ nguyên bản `nixos_small` cho đồng bộ. Thêm `./fastfetch.nix` vào danh sách `imports` trong `home.nix` để kích hoạt file cấu hình.
+- **Lý do**: Sếp gửi link GitHub yêu cầu copy 100% cấu hình ascii-art.jsonc về máy. Lỗi trước đó do chưa import file cấu hình vào lõi.
