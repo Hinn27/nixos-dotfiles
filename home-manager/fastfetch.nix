@@ -7,16 +7,14 @@
       logo = {
         source = "nixos_small";
         padding = {
-          top = 2;
-          right = 6;
+          right = 4;
+          top = 1;
         };
       };
       display = {
         separator = " •  ";
       };
       modules = [
-        "break"
-        "break"
         {
           type = "title";
           color = {
@@ -25,7 +23,6 @@
             host = "32";
           };
         }
-        "break"
         {
           type = "os";
           key = "distribution   ";
@@ -58,13 +55,6 @@
           key = "window manager ";
           keyColor = "33";
         }
-        "break"
-        {
-          type = "colors";
-          symbol = "circle";
-        }
-        "break"
-        "break"
       ];
     };
   };

@@ -70,3 +70,13 @@
 - **File changed**: `home-manager/fastfetch.nix`, `home-manager/home.nix`
 - **Mô tả**: Cập nhật file cấu hình fastfetch theo thiết kế "ascii-art" từ repo LierB/fastfetch. Cấu hình mới sử dụng các ngắt dòng (break), hiển thị `title`, dấu phân cách dạng dấu chấm (•), và màu sắc tùy chỉnh. Logo vẫn giữ nguyên bản `nixos_small` cho đồng bộ. Thêm `./fastfetch.nix` vào danh sách `imports` trong `home.nix` để kích hoạt file cấu hình.
 - **Lý do**: Sếp gửi link GitHub yêu cầu copy 100% cấu hình ascii-art.jsonc về máy. Lỗi trước đó do chưa import file cấu hình vào lõi.
+
+### [2026-08-14 12:20] - ĐIỀU CHỈNH KHOẢNG CÁCH CỬA SỔ NIRI
+- **File changed**: `home-manager/niri/cfg/layout.kdl`
+- **Mô tả**: Giảm khoảng cách (`gaps`) giữa các cửa sổ từ 6px xuống 3px trong phần `layout` của cấu hình Niri.
+- **Lý do**: Sếp yêu cầu chỉnh gap của các cửa sổ về 3px để tối ưu không gian hiển thị màn hình.
+
+### [2026-08-14 12:26] - XÓA KHOẢNG TRỐNG THỪA TRONG FASTFETCH
+- **File changed**: `home-manager/fastfetch.nix`
+- **Mô tả**: Xóa bỏ các dòng ngắt (`break`) thừa ở đầu và cuối danh sách modules, đồng thời bỏ `padding.top = 2` và giảm `padding.right = 4` của logo. Thiết kế này giúp logo và text ôm sát viền trên cùng và cân xứng 100%.
+- **Lý do**: Sếp yêu cầu dọn dẹp các khoảng trống thừa thãi. Đã thử thêm 1 dòng trống ở mép trên theo yêu cầu nhưng sau đó sếp đổi ý muốn xóa hẳn để cho gọn.

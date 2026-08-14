@@ -1,5 +1,5 @@
     layout {
-        gaps 6 // Gap between windows
+        gaps 3 // Gap between windows
         center-focused-column "never"
 
         background-color "transparent"
