@@ -20,14 +20,17 @@
     # Keybindings (from your kitty.conf)
     keybindings = {
       # Phím tắt chia cửa sổ dọc/ngang
-      "ctrl+b>v" = "launch --location=vsplit";
-      "ctrl+b>h" = "launch --location=hsplit";
+      "ctrl+shift+enter" = "launch --location=hsplit";
+      "ctrl+shift+o" = "launch --location=vsplit";
 
-      # Di chuyển giữa các cửa sổ bằng Ctrl + các phím mũi tên
-      "ctrl+left" = "neighboring_window left";
-      "ctrl+right" = "neighboring_window right";
-      "ctrl+up" = "neighboring_window up";
-      "ctrl+down" = "neighboring_window down";
+      # Di chuyển giữa các cửa sổ bằng vim keys
+      "ctrl+shift+h" = "neighboring_window left";
+      "ctrl+shift+j" = "neighboring_window down";
+      "ctrl+shift+k" = "neighboring_window up";
+      "ctrl+shift+l" = "neighboring_window right";
+
+      # Phóng to/thu nhỏ cửa sổ (như zoom trong tmux)
+      "ctrl+shift+z" = "toggle_layout stack";
 
       # Plugin search.py
       "ctrl+f" = "launch --location=vsplit --allow-remote-control kitty +kitten search.py @active-kitty-window-id";
