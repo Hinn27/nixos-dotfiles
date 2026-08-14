@@ -128,6 +128,8 @@
     unar
     p7zip
     zip
+    rich-cli
+    glow
     (python3.withPackages (p: [ p.rich p.docx2txt ]))
 
     # Text Editor + IDE
