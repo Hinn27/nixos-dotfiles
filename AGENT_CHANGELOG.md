@@ -136,3 +136,8 @@
 - **File changed**: `nixos/configuration.nix`
 - **Mô tả**: Bỏ gói `azure-data-studio` ra khỏi danh sách cài đặt.
 - **Lý do**: Lệnh cài đặt bị lỗi `undefined variable` do gói phần mềm này không còn tồn tại trên kho Nixpkgs hiện tại của hệ thống. Chuyển hướng sếp về dùng Máy ảo Windows hoặc DataGrip.
+
+### [2026-08-17 17:41] - GỠ BỎ TOÀN BỘ JETBRAINS IDES, CHUYỂN SANG TOOLBOX
+- **File changed**: `home-manager/home.nix`, `nixos/configuration.nix`
+- **Mô tả**: Gỡ bỏ các gói `jetbrains.idea`, `jetbrains.webstorm`, và `jetbrains.datagrip`. Chỉ giữ lại duy nhất `jetbrains-toolbox`.
+- **Lý do**: Các IDE cài qua Nix bị khóa cứng, không thể Update và khó kích hoạt bản quyền Edu. Việc chuyển qua cài đặt từ bên trong giao diện JetBrains Toolbox sẽ giải quyết triệt để mọi vấn đề: Tự động cập nhật dễ dàng, quản lý bản quyền tập trung, không sinh ra nhiều shortcut trùng lặp rác máy.

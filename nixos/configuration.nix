@@ -180,7 +180,6 @@
     jdk25
     inputs.polymc.packages.${pkgs.system}.polymc
     mangohud
-    jetbrains.datagrip
     quickemu
   ];
 

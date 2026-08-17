@@ -118,6 +118,7 @@
     power-profiles-daemon
     inputs.thorium.packages.${pkgs.system}.thorium-avx2
     inputs.zen-browser.packages.${pkgs.system}.default
+
     # Yazi Dependencies
     poppler-utils
     xlsx2csv
@@ -139,9 +140,6 @@
     fd
     unzip
     jetbrains-toolbox
-    jetbrains.datagrip
-    jetbrains.idea
-    jetbrains.webstorm
     zed-editor
 
     # Antigravity từ Nix flake
