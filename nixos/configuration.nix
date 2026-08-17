@@ -79,7 +79,7 @@
     efi.canTouchEfiVariables = true;
     efi.efiSysMountPoint = "/boot";
   };
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Network
   networking.networkmanager.enable = true;
@@ -122,9 +122,7 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
-
  
-
 
   users.users = {
     # FIXME: Replace with your username
@@ -138,8 +136,7 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "wheel" "networkmanager" "input" ];
+      extraGroups = [ "wheel" "networkmanager" "input" "docker" "kvm" ];
     };
   };
 
@@ -179,7 +176,12 @@
     file-roller
     gcc
     gnumake
-    pnpm 
+    pnpm
+    jdk25
+    inputs.polymc.packages.${pkgs.system}.polymc
+    mangohud
+    jetbrains.datagrip
+    quickemu
   ];
 
   # Enable Thunar properly with plugins
@@ -230,6 +232,12 @@
   # Battery and Preformance
   services.upower.enable = true; # Dịch vụ đọc phần trăm pin laptop
   services.power-profiles-daemon.enable = true; # Quản lý chế độ (Tiết kiệm pin / Hiệu năng cao)
+
+  # Gaming Optimizations
+  programs.gamemode.enable = true;
+
+  # Virtualisation (Docker)
+  virtualisation.docker.enable = true;
 
   # MChose Mouse Web Driver Udev Rule
   services.udev.extraRules = ''

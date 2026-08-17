@@ -80,3 +80,59 @@
 - **File changed**: `home-manager/fastfetch.nix`
 - **Mô tả**: Xóa bỏ các dòng ngắt (`break`) thừa ở đầu và cuối danh sách modules, đồng thời bỏ `padding.top = 2` và giảm `padding.right = 4` của logo. Thiết kế này giúp logo và text ôm sát viền trên cùng và cân xứng 100%.
 - **Lý do**: Sếp yêu cầu dọn dẹp các khoảng trống thừa thãi. Đã thử thêm 1 dòng trống ở mép trên theo yêu cầu nhưng sau đó sếp đổi ý muốn xóa hẳn để cho gọn.
+
+### [2026-08-15 00:27] - CẬP NHẬT PHÍM TẮT KITTY & SỔ TAY
+- **File changed**: `home-manager/kitty.nix`, `/home/hinne/Documents/Note-Obsidian/Notes/Phím tắt Niri và Yazi.md`
+- **Mô tả**: Thay thế phím tắt chia pane Kitty thành `Ctrl + Shift + Enter` (chia ngang) và `Ctrl + Shift + O` (chia dọc). Viết lại nội dung file ghi chú Obsidian, chắt lọc các phím tắt cốt lõi của Neovim và Kitty theo yêu cầu, đồng thời khôi phục lại bảng phím tắt của Yazi xuống cuối file.
+- **Lý do**: Sếp yêu cầu tinh gọn lại file ghi chú, đồng bộ cấu hình Kitty theo bộ phím tắt mới, và sau đó yêu cầu giữ lại phần hướng dẫn của Yazi.
+
+### [2026-08-15 00:31] - BẬT RENDER MARKDOWN ĐẸP CHO YAZI
+- **File changed**: `home-manager/home.nix`
+- **Mô tả**: Bổ sung gói `rich-cli` và `glow` vào danh sách Yazi Dependencies.
+- **Lý do**: Yazi đã được cài sẵn plugin `rich-preview` để xem Markdown/JSON/CSV, nhưng trước đó do hệ thống thiếu thư viện `rich-cli` nên nó bị giáng cấp xuống thành text trần. Cài thêm gói này để plugin hoạt động hết công suất.
+
+### [2026-08-15 00:32] - GỠ BỎ PHÍM TẮT V THỪA TRONG YAZI
+- **File changed**: `~/.config/yazi/keymap.toml`, `/home/hinne/Documents/Note-Obsidian/Notes/Phím tắt Niri và Yazi.md`
+- **Mô tả**: Xóa bỏ phím tắt `v` (mở video bằng mpv) khỏi cấu hình Yazi và xóa dòng hướng dẫn tương ứng trong sổ tay Obsidian.
+- **Lý do**: Phím `v` mặc định của Yazi là dùng để kích hoạt chế độ chọn file (Visual Mode). Việc gán phím `v` để mở video bị đè lên tính năng gốc, trong khi ấn Enter thì Yazi cũng tự động mở bằng mpv rồi nên phím tắt này là hoàn toàn vô dụng và gây lỗi.
+
+### [2026-08-15 00:36] - TỐI ƯU HÓA HIỆU NĂNG CUỘN YAZI (GLOW)
+- **File changed**: `~/.config/yazi/yazi.toml`, `~/.config/yazi/plugins/glow.yazi`
+- **Mô tả**: Clone plugin `glow.yazi` từ github và đổi cấu hình preview file Markdown (MD) từ `rich-preview` sang `glow`.
+- **Lý do**: Lệnh `rich` khởi động bằng Python quá chậm (tốn hàng trăm ms), dẫn đến việc mỗi khi giữ phím cuộn nhanh qua một danh sách file thì CPU bị nghẽn do liên tục gọi Python, tạo cảm giác giật lag. `glow` được viết bằng Go, khởi động tức thì, giúp Yazi render Markdown siêu tốc mà không làm giảm frame rate.
+
+### [2026-08-15 00:40] - GỠ BỎ GLOW, QUAY VỀ RICH-CLI
+- **File changed**: `home-manager/home.nix`, `~/.config/yazi/yazi.toml`, `~/.config/yazi/plugins/glow.yazi`
+- **Mô tả**: Gỡ sạch gói `glow` và plugin `glow.yazi`, cấu hình lại `yazi.toml` để trỏ Markdown về lại `rich-preview` như cũ.
+- **Lý do**: Sếp phản hồi rằng dùng glow không hề mượt hơn tí nào, có thể lag do bản thân giao thức dựng hình ảnh hoặc render của Terminal chứ không phải do tốc độ khởi động của Python. Sếp quyết định trung thành với `rich-cli` vì nó xem được cả JSON/CSV đồng bộ.
+
+### [2026-08-16 20:28] - SỬA LỖI CHUỘT KHÔNG QUA ĐƯỢC MÀN HÌNH LAPTOP
+- **File changed**: `home-manager/niri/cfg/display.kdl`
+- **Mô tả**: Sửa lại tọa độ `x` của màn hình laptop (`eDP-1`) từ `-1920` thành `-1745`.
+- **Lý do**: Màn hình laptop được sếp cài scale 1.1, nên chiều ngang thực tế (logical width) bị thu hẹp còn 1745px. Việc đặt tọa độ ở -1920 tạo ra một "vùng chết" (dead zone) rộng 175px giữa 2 màn hình, khiến con trỏ chuột bị kẹt lại không sang được. Đã dời tọa độ về -1745 để hai mép màn hình dính sát vào nhau.
+
+### [2026-08-17 12:35] - TỐI ƯU HÓA GAMING & CÀI ĐẶT POLYMC
+### [2026-08-17 12:37] - CHỮA CHÁY LỖI THIẾU GÓI POLYMC
+- **File changed**: `nixos/configuration.nix`
+- **Mô tả**: Thay thế gói `polymc` (đã bị xóa khỏi nixpkgs) bằng `hmcl` (Hello Minecraft! Launcher).
+- **Lý do**: Kho ứng dụng Nixpkgs đã gỡ bỏ hoàn toàn PolyMC do các lùm xùm nội bộ của dự án này. Để chơi được Minecraft crack (Offline mode), đã chuyển sang sử dụng HMCL - một launcher mã nguồn mở rất xịn sò, hỗ trợ tải mod từ CurseForge/Modrinth trực tiếp mà vẫn cho phép tạo tài khoản Offline.
+
+### [2026-08-17 12:46] - SỬA LỖI LAG CHUỘT TRÊN GIAO DIỆN HMCL
+- **File changed**: `~/.local/share/applications/hmcl.desktop` (Tạo mới file override)
+- **Mô tả**: Ghi đè biểu tượng khởi động (shortcut) của HMCL để chèn thêm các biến môi trường `_JAVA_OPTIONS="-Dprism.order=sw"` và `GDK_BACKEND=x11`.
+- **Lý do**: HMCL sử dụng bộ khung giao diện JavaFX. Khi chạy trên môi trường Wayland kết hợp với card đồ họa Nvidia Optimus, tính năng tăng tốc phần cứng (Hardware Acceleration) của JavaFX bị lỗi nhịp Vsync, gây ra hiện tượng chuột di chuyển bị khựng/lag. Chèn lệnh ép JavaFX chuyển sang dựng hình bằng CPU (Software Rendering) và ép chạy qua X11 để xử lý triệt để tình trạng này (chỉ áp dụng cho giao diện của Launcher, không ảnh hưởng đến FPS khi vào trong game Minecraft).
+
+### [2026-08-17 14:04] - QUAY XE VỀ LẠI POLYMC BẰNG FLAKE CHÍNH THỨC
+- **File changed**: `flake.nix`, `nixos/configuration.nix`
+- **Mô tả**: Khai báo nguồn `github:PolyMC/PolyMC` vào `flake.nix` và cài đặt gói `inputs.polymc.packages.${pkgs.system}.polymc` vào hệ thống thay cho HMCL.
+- **Lý do**: Sếp muốn dùng PolyMC gốc cho quen tay, mà kho Nixpkgs lại không có. Nên tui đã kéo thẳng bản cài đặt mới nhất từ mã nguồn Github chính thức của PolyMC về để sếp dùng thoải mái.
+
+### [2026-08-17 16:14] - CÀI ĐẶT MÔI TRƯỜNG DOCKER, DATAGRIP VÀ QUICKEMU
+- **File changed**: `nixos/configuration.nix`
+- **Mô tả**: Bật tính năng `virtualisation.docker.enable`, thêm user vào nhóm `docker` và `kvm`. Cài đặt thêm các gói `jetbrains.datagrip` và `quickemu`.
+- **Lý do**: Chuẩn bị môi trường để chạy MS SQL Server (qua Docker), công cụ quản lý cơ sở dữ liệu (DataGrip) và công cụ tạo máy ảo siêu tốc (Quickemu) để cài Windows 10 phục vụ việc chạy SSMS cho thầy giáo kiểm tra.
+
+### [2026-08-17 17:13] - GỠ BỎ AZURE DATA STUDIO VÌ LỖI NIXPKGS
+- **File changed**: `nixos/configuration.nix`
+- **Mô tả**: Bỏ gói `azure-data-studio` ra khỏi danh sách cài đặt.
+- **Lý do**: Lệnh cài đặt bị lỗi `undefined variable` do gói phần mềm này không còn tồn tại trên kho Nixpkgs hiện tại của hệ thống. Chuyển hướng sếp về dùng Máy ảo Windows hoặc DataGrip.
