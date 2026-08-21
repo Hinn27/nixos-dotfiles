@@ -40,6 +40,7 @@
       v = "nvim";
       dotfiles = "/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
       live = "pnpm dlx live-server";
+      quickwin10 = "cd ~ && quickemu --vm windows-10.conf";
     };
 
     # Extra configuration added to ~/.zprofile for login shells

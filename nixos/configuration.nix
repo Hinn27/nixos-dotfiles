@@ -102,6 +102,11 @@
     jack.enable = true;
   };
 
+  # Disable audio power saving to prevent stuttering/dropouts
+  boot.extraModprobeConfig = ''
+    options snd_hda_intel power_save=0 power_save_controller=N
+  '';
+
   # Nvidia Optimus setup
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
@@ -178,7 +183,7 @@
     gnumake
     pnpm
     jdk25
-    inputs.polymc.packages.${pkgs.system}.polymc
+    glfw3-minecraft
     mangohud
     quickemu
   ];
@@ -234,6 +239,7 @@
 
   # Gaming Optimizations
   programs.gamemode.enable = true;
+  programs.steam.enable = true;
 
   # Virtualisation (Docker)
   virtualisation.docker.enable = true;

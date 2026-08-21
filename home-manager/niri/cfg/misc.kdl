@@ -11,8 +11,8 @@
 }
 
     cursor {
-        xcursor-theme "Arlecchino-v2"
-        xcursor-size 24
+        xcursor-theme "Bibata-Modern-Classic"
+        xcursor-size 28
 }
 
     debug {

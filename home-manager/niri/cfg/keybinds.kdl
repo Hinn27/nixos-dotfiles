@@ -1,10 +1,11 @@
 binds {
     // ─── Screenshots ───
     Print { spawn "noctalia" "msg" "screenshot-region"; }
-    Ctrl+Print { spawn "noctalia" "msg" "screenshot-fullscreen"; }
+    Ctrl+Print { spawn "/home/hinne/.local/bin/screenshot-all"; }
     Alt+Print { spawn "noctalia" "msg" "screenshot-fullscreen" "pick"; }
     Mod+Print { spawn "noctalia" "msg" "screenshot-region"; }
-    Mod+Ctrl+Print { spawn "noctalia" "msg" "screenshot-fullscreen"; }
+    Mod+Ctrl+Print { spawn "/home/hinne/.local/bin/screenshot-all"; }
+
 
     // ────────────── Keybindings ──────────────
     // https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings

@@ -86,6 +86,10 @@
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
+    grim
+    wl-clipboard
+    libnotify
+    bibata-cursors
     # Shell + Terminal (Managed via native modules in zsh.nix, kitty.nix, tools.nix)
     # CLI Tools
     yazi
@@ -95,11 +99,15 @@
 
     # Font
     nerd-fonts.jetbrains-mono
+    corefonts
+    vista-fonts
+    carlito
 
     # Desktop shell, WM
     niri
     xwayland-satellite
     matugen
+    linux-wallpaperengine
 
     # General Apps
     vesktop
@@ -317,11 +325,11 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "zen-browser";
-      "x-scheme-handler/http" = "zen-browser";
-      "x-scheme-handler/https" = "zen-browser";
-      "x-scheme-handler/about" = "zen-browser";
-      "x-scheme-handler/unknown" = "zen-browser";
+      "text/html" = "zen.desktop";
+      "x-scheme-handler/http" = "zen.desktop";
+      "x-scheme-handler/https" = "zen.desktop";
+      "x-scheme-handler/about" = "zen.desktop";
+      "x-scheme-handler/unknown" = "zen.desktop";
 
       # File Manager
       "inode/directory" = "yazi.desktop";
@@ -346,6 +354,14 @@
 
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
+  home.pointerCursor = {
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
+    size = 28;
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
   home.stateVersion = "25.11";
 
   # Enable font discovery for home-manager fonts

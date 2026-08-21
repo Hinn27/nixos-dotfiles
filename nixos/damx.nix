@@ -40,6 +40,7 @@ let
     profile = ''
       export PATH=$PATH:/run/current-system/sw/bin
       export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/run/opengl-driver/lib
+      export GDK_BACKEND=wayland,x11
     '';
     runScript = "${damxSrc}/DAMX-GUI/DivAcerManagerMax";
   };
@@ -47,7 +48,7 @@ let
   damx-desktop = pkgs.makeDesktopItem {
     name = "damx";
     desktopName = "DAMX";
-    exec = "DivAcerManagerMax";
+    exec = "DivAcerManagerMax --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-features=WaylandWindowDecorations";
     icon = "${damxSrc}/DAMX-GUI/icon.png";
     categories = [ "System" "Settings" ];
     comment = "Acer Laptop WMI Controls for Linux";

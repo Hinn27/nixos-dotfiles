@@ -141,3 +141,8 @@
 - **File changed**: `home-manager/home.nix`, `nixos/configuration.nix`
 - **Mô tả**: Gỡ bỏ các gói `jetbrains.idea`, `jetbrains.webstorm`, và `jetbrains.datagrip`. Chỉ giữ lại duy nhất `jetbrains-toolbox`.
 - **Lý do**: Các IDE cài qua Nix bị khóa cứng, không thể Update và khó kích hoạt bản quyền Edu. Việc chuyển qua cài đặt từ bên trong giao diện JetBrains Toolbox sẽ giải quyết triệt để mọi vấn đề: Tự động cập nhật dễ dàng, quản lý bản quyền tập trung, không sinh ra nhiều shortcut trùng lặp rác máy.
+
+### [2026-08-17 23:43] - THÊM ALIAS QUICKWIN10
+- **File changed**: `home-manager/zsh.nix`
+- **Mô tả**: Thêm lệnh tắt `quickwin10` vào danh sách alias của Zsh.
+- **Lý do**: Sếp muốn gõ `quickwin10` thay vì phải gõ dài dòng `quickemu --vm ~/windows-10/windows-10.conf` mỗi lần muốn mở máy ảo.
