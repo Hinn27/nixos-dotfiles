@@ -44,6 +44,8 @@
       fan-auto = "echo 0,0 | sudo tee /sys/devices/platform/acer-wmi/nitro_sense/fan_speed";
       fan-max = "echo 100,100 | sudo tee /sys/devices/platform/acer-wmi/nitro_sense/fan_speed";
       fan-med = "echo 60,60 | sudo tee /sys/devices/platform/acer-wmi/nitro_sense/fan_speed";
+      bat-limit-on = "echo 1 | sudo tee /sys/devices/platform/acer-wmi/nitro_sense/battery_limiter";
+      bat-limit-off = "echo 0 | sudo tee /sys/devices/platform/acer-wmi/nitro_sense/battery_limiter";
     };
 
     # Extra configuration added to ~/.zprofile for login shells
