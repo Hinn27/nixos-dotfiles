@@ -22,6 +22,7 @@
     ./noctalia.nix
     ./fcitx5.nix
     ./fastfetch.nix
+    ./sway.nix
 
     inputs.spicetify-nix.homeManagerModules.default
   ];
@@ -167,11 +168,11 @@
         hidePodcasts
         shuffle
       ];
-      
+
       enabledCustomApps = with spicePkgs.apps; [
         lyricsPlus
       ];
-      
+
       # Use Comfy theme as recommended for Noctalia
       theme = spicePkgs.themes.comfy;
       colorScheme = "custom";
@@ -207,7 +208,7 @@
       input_path = "/home/hinne/.config/matugen/templates/spicetify-colors.nix"
       output_path = "/home/hinne/nix-config/home-manager/spicetify-colors.nix"
     '';
-    
+
     "matugen/templates/spicetify-colors.nix".text = ''
       {
         text = "{{colors.on_surface.default.hex_stripped}}";

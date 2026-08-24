@@ -1,0 +1,99 @@
+# Default modifier key (Mod4 is the Super/Windows key)
+set $mod Mod4
+
+# Apps
+set $term kitty
+set $menu noctalia msg panel-toggle launcher
+set $browser $BROWSER
+
+# Font for window titles
+font pango:monospace 10
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Key bindings
+# ─── Applications ───
+bindsym $mod+Return exec $term
+bindsym $mod+v exec noctalia msg panel-toggle clipper
+bindsym $mod+period exec noctalia msg panel-toggle launcher /emo
+bindsym $mod+b exec sh -c $browser
+bindsym $mod+Mod1+l exec noctalia msg session lock
+bindsym $mod+Shift+q exec noctalia msg panel-toggle session
+bindsym $mod+e exec $term -e yazi
+bindsym $mod+d exec $menu
+bindsym $mod+n exec $term -e nvim
+
+# ─── Window Management ───
+bindsym $mod+q kill
+
+# ─── Focus ───
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# ─── Move Window ───
+bindsym $mod+Ctrl+h move left
+bindsym $mod+Ctrl+j move down
+bindsym $mod+Ctrl+k move up
+bindsym $mod+Ctrl+l move right
+bindsym $mod+Ctrl+Left move left
+bindsym $mod+Ctrl+Down move down
+bindsym $mod+Ctrl+Up move up
+bindsym $mod+Ctrl+Right move right
+
+# ─── Workspaces ───
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+
+bindsym $mod+Ctrl+1 move container to workspace number 1
+bindsym $mod+Ctrl+2 move container to workspace number 2
+bindsym $mod+Ctrl+3 move container to workspace number 3
+bindsym $mod+Ctrl+4 move container to workspace number 4
+bindsym $mod+Ctrl+5 move container to workspace number 5
+bindsym $mod+Ctrl+6 move container to workspace number 6
+bindsym $mod+Ctrl+7 move container to workspace number 7
+bindsym $mod+Ctrl+8 move container to workspace number 8
+bindsym $mod+Ctrl+9 move container to workspace number 9
+
+# ─── Layout ───
+bindsym $mod+f fullscreen
+bindsym $mod+t floating toggle
+bindsym $mod+space focus mode_toggle
+
+# ─── Screenshots ───
+bindsym Print exec noctalia msg screenshot-region
+bindsym Ctrl+Print exec /home/hinne/.local/bin/screenshot-all
+bindsym Mod1+Print exec noctalia msg screenshot-fullscreen pick
+bindsym $mod+Print exec noctalia msg screenshot-region
+bindsym $mod+Ctrl+Print exec /home/hinne/.local/bin/screenshot-all
+
+# ─── Media & Brightness ───
+bindsym XF86AudioRaiseVolume exec noctalia msg volume-up
+bindsym XF86AudioLowerVolume exec noctalia msg volume-down
+bindsym XF86AudioMute exec noctalia msg volume-mute
+bindsym XF86AudioMicMute exec noctalia msg mic-mute
+bindsym XF86AudioNext exec noctalia msg media next
+bindsym XF86AudioPrev exec noctalia msg media previous
+bindsym XF86AudioPlay exec noctalia msg media toggle
+bindsym XF86AudioPause exec noctalia msg media toggle
+bindsym XF86MonBrightnessUp exec noctalia msg brightness-up
+bindsym XF86MonBrightnessDown exec noctalia msg brightness-down
+
+# ─── Exit ───
+bindsym Ctrl+Mod1+Delete exec swaymsg exit
+
+# ─── Autostart ───
+exec fcitx5 -d
