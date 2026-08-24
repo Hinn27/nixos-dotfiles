@@ -71,6 +71,7 @@
   # Network hostname
   networking.hostName = "nixos";
   programs.niri.enable = true;
+  programs.sway.enable = true;
   hardware.graphics.enable = true;
 
   # Bootloader
@@ -127,7 +128,7 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
   };
- 
+
 
   users.users = {
     # FIXME: Replace with your username
@@ -199,8 +200,8 @@
 
   # Enable Zsh
   programs.zsh = {
-        enable = true;
-      };
+    enable = true;
+  };
 
   # Allow NixOS run Node.js downloaded from internet
   programs.nix-ld.enable = true;
