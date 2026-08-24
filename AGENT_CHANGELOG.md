@@ -146,3 +146,13 @@
 - **File changed**: `home-manager/zsh.nix`
 - **Mô tả**: Thêm lệnh tắt `quickwin10` vào danh sách alias của Zsh.
 - **Lý do**: Sếp muốn gõ `quickwin10` thay vì phải gõ dài dòng `quickemu --vm ~/windows-10/windows-10.conf` mỗi lần muốn mở máy ảo.
+
+### [2026-08-24 15:08] - TỐI ƯU DAMX VÀ THÊM ALIAS ĐIỀU KHIỂN
+- **File changed**: `nixos/damx.nix`, `home-manager/zsh.nix`
+- **Mô tả**: Xóa bỏ giao diện DAMX (GUI) và tiến trình chạy ngầm (Daemon), chỉ giữ lại kernel module `linuwu-sense`. Thêm các alias Zsh để điều khiển quạt (`fan-auto`, `fan-max`, `fan-med`) và bật/tắt giới hạn sạc pin (`bat-limit-on`, `bat-limit-off`).
+- **Lý do**: Khắc phục tình trạng DAMX GUI giật lag và tốn tài nguyên hệ thống, chuyển sang điều khiển nhẹ nhàng bằng dòng lệnh.
+
+### [2026-08-24 15:00] - CÀI ĐẶT VÀ CẤU HÌNH SWAY 
+- **File changed**: `nixos/configuration.nix`, `home-manager/zsh.nix`, `home-manager/sway.nix`, `home-manager/sway/config`, `home-manager/home.nix`
+- **Mô tả**: Bật tính năng cài đặt Sway trong NixOS, cấu hình file `zsh.nix` để tự động chọn Niri ở tty1 và Sway ở tty2. Tạo cấu hình phím tắt cho Sway ánh xạ 1-1 với phím tắt từ Niri (Kitty, Noctalia, Yazi, thao tác cửa sổ...) thông qua thư mục `home-manager/sway`.
+- **Lý do**: Sếp muốn dùng thử Sway nhưng vẫn muốn giữ lại Niri phòng hờ để có thể dễ dàng quay lại bất cứ lúc nào, đồng thời muốn toàn bộ phím tắt quen thuộc từ Niri được mang qua Sway để dùng thử cho thuận tiện.
