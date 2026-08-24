@@ -97,3 +97,5 @@ bindsym Ctrl+Mod1+Delete exec swaymsg exit
 
 # ─── Autostart ───
 exec fcitx5 -d
+exec noctalia
+exec jetbrains-toolbox --minimize
