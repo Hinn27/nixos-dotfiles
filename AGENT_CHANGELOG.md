@@ -166,3 +166,8 @@
 - **File changed**: `home-manager/zsh.nix`
 - **Mô tả**: Xóa các alias `mirror` và `update` vì đây là cấu hình cũ từ Arch/CachyOS không còn tác dụng trên NixOS.
 - **Lý do**: Sếp yêu cầu dọn dẹp để tự gõ lệnh chuẩn của NixOS (`nh os switch` / `nh home switch`).
+
+### [2026-08-24 16:05] - SỬA LỖI SWAY KHÔNG CHẠY VỚI NVIDIA
+- **File changed**: `home-manager/zsh.nix`
+- **Mô tả**: Bổ sung cờ `--unsupported-gpu` vào lệnh khởi chạy Sway.
+- **Lý do**: Máy sếp dùng card Nvidia với driver độc quyền (proprietary). Mặc định Sway sẽ báo lỗi và từ chối khởi động nếu phát hiện driver này, bắt buộc phải chèn cờ này để vượt rào.

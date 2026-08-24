@@ -54,7 +54,7 @@
         if [ "$(tty)" = "/dev/tty1" ]; then
           exec niri-session > ~/.niri.log 2>&1
         elif [ "$(tty)" = "/dev/tty2" ]; then
-          exec sway > ~/.sway.log 2>&1
+          exec sway --unsupported-gpu > ~/.sway.log 2>&1
         fi
       fi
     '';
