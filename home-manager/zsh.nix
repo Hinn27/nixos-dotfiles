@@ -1,8 +1,10 @@
 # Zsh and Terminal Utilities Configuration
 # This module sets up Zsh, aliases, and related tools (starship, zoxide, eza).
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Zsh configuration
   programs.zsh = {
     enable = true;
@@ -50,9 +52,13 @@
 
     # Extra configuration added to ~/.zprofile for login shells
     profileExtra = ''
-      # Autostart Niri on TTY login
+      # Autostart Niri/Sway on TTY login
       if [[ -o interactive ]] && [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ]; then
-        exec niri-session > ~/.niri.log 2>&1
+        if [ "$(tty)" = "/dev/tty1" ]; then
+          exec niri-session > ~/.niri.log 2>&1
+        elif [ "$(tty)" = "/dev/tty2" ]; then
+          exec sway > ~/.sway.log 2>&1
+        fi
       fi
     '';
 
@@ -64,7 +70,7 @@
       fi
 
       # Set shell options
-      setopt HIST_FCNTL_LOCK NO_APPEND_HISTORY NO_EXTENDED_HISTORY 
+      setopt HIST_FCNTL_LOCK NO_APPEND_HISTORY NO_EXTENDED_HISTORY
       setopt NO_HIST_FIND_NO_DUPS NO_HIST_IGNORE_ALL_DUPS NO_HIST_SAVE_NO_DUPS
 
       # Quick activate venv function
@@ -85,13 +91,11 @@
     '';
   };
 
-
-
   # Zoxide (better cd)
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
-    options = [ "--cmd cd" ]; # alias cd="z"
+    options = ["--cmd cd"]; # alias cd="z"
   };
 
   # Eza (better ls)
