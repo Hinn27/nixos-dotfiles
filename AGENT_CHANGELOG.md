@@ -156,3 +156,8 @@
 - **File changed**: `nixos/configuration.nix`, `home-manager/zsh.nix`, `home-manager/sway.nix`, `home-manager/sway/config`, `home-manager/home.nix`
 - **Mô tả**: Bật tính năng cài đặt Sway trong NixOS, cấu hình file `zsh.nix` để tự động chọn Niri ở tty1 và Sway ở tty2. Tạo cấu hình phím tắt cho Sway ánh xạ 1-1 với phím tắt từ Niri (Kitty, Noctalia, Yazi, thao tác cửa sổ...) thông qua thư mục `home-manager/sway`.
 - **Lý do**: Sếp muốn dùng thử Sway nhưng vẫn muốn giữ lại Niri phòng hờ để có thể dễ dàng quay lại bất cứ lúc nào, đồng thời muốn toàn bộ phím tắt quen thuộc từ Niri được mang qua Sway để dùng thử cho thuận tiện.
+
+### [2026-08-24 15:10] - THÊM JETBRAINS TOOLBOX VÀO AUTOSTART
+- **File changed**: `home-manager/niri/cfg/autostart.kdl`, `home-manager/sway/config`
+- **Mô tả**: Sửa cấu hình tự động khởi chạy của cả Niri và Sway để chạy `jetbrains-toolbox` kèm cờ `--minimize` (chạy ngầm). Đồng thời bổ sung `noctalia` vào autostart của Sway để đồng bộ thanh công cụ.
+- **Lý do**: Sếp yêu cầu bật tự khởi động cho Jetbrains Toolbox. Việc thêm `--minimize` giúp Toolbox tự động thu nhỏ xuống khay hệ thống, không làm phiền người dùng lúc khởi động.
