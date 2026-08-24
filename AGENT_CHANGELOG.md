@@ -161,3 +161,8 @@
 - **File changed**: `home-manager/niri/cfg/autostart.kdl`, `home-manager/sway/config`
 - **Mô tả**: Sửa cấu hình tự động khởi chạy của cả Niri và Sway để chạy `jetbrains-toolbox` kèm cờ `--minimize` (chạy ngầm). Đồng thời bổ sung `noctalia` vào autostart của Sway để đồng bộ thanh công cụ.
 - **Lý do**: Sếp yêu cầu bật tự khởi động cho Jetbrains Toolbox. Việc thêm `--minimize` giúp Toolbox tự động thu nhỏ xuống khay hệ thống, không làm phiền người dùng lúc khởi động.
+
+### [2026-08-24 15:22] - XÓA ALIAS CŨ TỪ CACHYOS
+- **File changed**: `home-manager/zsh.nix`
+- **Mô tả**: Xóa các alias `mirror` và `update` vì đây là cấu hình cũ từ Arch/CachyOS không còn tác dụng trên NixOS.
+- **Lý do**: Sếp yêu cầu dọn dẹp để tự gõ lệnh chuẩn của NixOS (`nh os switch` / `nh home switch`).

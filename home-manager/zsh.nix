@@ -36,8 +36,6 @@
       ll = "eza -l --color=always --group-directories-first --icons";
       ls = "eza -al --color=always --group-directories-first --icons";
       lt = "eza -aT --color=always --group-directories-first --icons";
-      mirror = "sudo cachyos-rate-mirrors";
-      update = "/home/hinne/secure-update.sh";
       v = "nvim";
       dotfiles = "/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
       live = "pnpm dlx live-server";
