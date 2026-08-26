@@ -92,7 +92,8 @@ bindsym XF86AudioPause exec noctalia msg media toggle
 bindsym XF86MonBrightnessUp exec noctalia msg brightness-up
 bindsym XF86MonBrightnessDown exec noctalia msg brightness-down
 
-# ─── Exit ───
+# ─── Exit & Reload ───
+bindsym $mod+Shift+c reload
 bindsym Ctrl+Mod1+Delete exec swaymsg exit
 
 # ─── Autostart ───

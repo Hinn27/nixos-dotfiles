@@ -171,3 +171,8 @@
 - **File changed**: `home-manager/zsh.nix`
 - **Mô tả**: Bổ sung cờ `--unsupported-gpu` vào lệnh khởi chạy Sway.
 - **Lý do**: Máy sếp dùng card Nvidia với driver độc quyền (proprietary). Mặc định Sway sẽ báo lỗi và từ chối khởi động nếu phát hiện driver này, bắt buộc phải chèn cờ này để vượt rào.
+
+### [2026-08-26 21:03] - THÊM PHÍM TẮT RELOAD CHO SWAY
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Bổ sung phím tắt `Super + Shift + C` để reload cấu hình Sway trực tiếp.
+- **Lý do**: Sway cần lệnh reload để áp dụng cấu hình mới mà không cần đăng xuất. Quên chưa thêm vào ở bản trước.
