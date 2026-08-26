@@ -27,6 +27,11 @@ input type:pointer {
     # accel_profile flat
 }
 
+input type:keyboard {
+    repeat_delay 250
+    repeat_rate 50
+}
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 mouse_warping container

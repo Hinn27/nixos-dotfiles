@@ -226,3 +226,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Thêm cấu hình `input` để tăng tốc độ chuột lên 0.5 (mặc định là 0), bật vuốt tự nhiên và tap-to-click cho touchpad.
 - **Lý do**: Sway dùng mặc định của libinput hơi chậm nên sếp than con trỏ chuột không lướt nhanh như bên Niri.
+
+### [2026-08-26 21:35] - CHỈNH TỐC ĐỘ LẶP BÀN PHÍM (KEYBOARD REPEAT RATE)
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Thêm `input type:keyboard` với `repeat_delay 250` và `repeat_rate 50`.
+- **Lý do**: Sếp phàn nàn khi ấn giữ phím mũi tên thì con trỏ (văn bản) chạy quá chậm, không nhanh như cài đặt bên Niri.
