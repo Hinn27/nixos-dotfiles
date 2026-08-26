@@ -191,3 +191,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Thêm luật `for_window [title="Picture-in-Picture"] floating enable, sticky enable`.
 - **Lý do**: Sếp yêu cầu chế độ Picture-in-Picture của trình duyệt Zen phải luôn nổi và ghim trên mọi màn hình.
+
+### [2026-08-26 21:18] - FIX LỖI MẤT ĐỒNG BỘ MÀU ZEN BROWSER TRÊN SWAY
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Bổ sung lệnh `dbus-update-activation-environment` và `systemctl import-environment` vào autostart của Sway.
+- **Lý do**: Sway không tự động cập nhật biến môi trường Wayland vào DBus như Niri (Niri có script `niri-session` làm hộ). Thiếu bước này khiến XDG Desktop Portal bị hỏng, làm Zen Browser không đọc được mã màu GTK từ Noctalia.
