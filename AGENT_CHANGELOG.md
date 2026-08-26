@@ -241,3 +241,8 @@
 - **File changed**: `home-manager/noctalia/settings.json`
 - **Mô tả**: Sửa cấu hình `"enableExclusionZoneInset": true` cho thanh bar của Noctalia.
 - **Lý do**: Mặc định thanh bar của Noctalia được cài là trôi nổi (trôi đè lên cả cửa sổ). Việc bật Exclusion Zone giúp báo cho Sway biết để chừa chỗ cho thanh bar, từ đó lệnh `gaps inner 5` của Sway sẽ tạo khoảng cách 5px cực chuẩn giữa mép cửa sổ và thanh bar.
+
+### [2026-08-26 21:47] - GIẢM ĐỘ DÀY VIỀN CỬA SỔ XUỐNG 3PX
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Thay đổi `default_border pixel 5` thành 3, và `default_floating_border normal 5` thành 3.
+- **Lý do**: Sếp thấy viền 5px hơi dày nên muốn ép mỏng lại còn 3px cho thanh thoát hơn.
