@@ -221,3 +221,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Thêm phím tắt `Super + \` để chia dọc và `Super + -` để chia ngang.
 - **Lý do**: Sếp muốn dùng Tabbed làm gốc nhưng thỉnh thoảng vẫn có thể cắt đôi một cái Tab ra thành 2 nửa (như Tmux) cho tiện làm việc.
+
+### [2026-08-26 21:33] - CHỈNH TỐC ĐỘ CHUỘT VÀ TOUCHPAD
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Thêm cấu hình `input` để tăng tốc độ chuột lên 0.5 (mặc định là 0), bật vuốt tự nhiên và tap-to-click cho touchpad.
+- **Lý do**: Sway dùng mặc định của libinput hơi chậm nên sếp than con trỏ chuột không lướt nhanh như bên Niri.
