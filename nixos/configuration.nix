@@ -76,15 +76,9 @@
 
   # Bootloader & Secure Boot
   boot.loader = {
-    # Systemd-boot must be disabled for lanzaboote to work
-    systemd-boot.enable = lib.mkForce false;
+    systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
     efi.efiSysMountPoint = "/boot";
-  };
-
-  boot.lanzaboote = {
-    enable = true;
-    pkiBundle = "/var/lib/sbctl";
   };
 
   boot.kernelPackages = pkgs.linuxPackages_zen;

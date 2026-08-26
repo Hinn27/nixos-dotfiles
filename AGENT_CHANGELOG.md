@@ -259,3 +259,8 @@
   - Bật extension hỗ trợ `java` và `typescript` cho LazyVim.
   - Cập nhật `flake.lock` (thêm input `lanzaboote` và các phụ thuộc liên quan).
 - **Lý do**: Sếp bổ sung các công cụ cần thiết cho việc lập trình (Java, TS, Android, API) và cấu hình lại flake.
+
+### [2026-08-26 22:05] - GỠ BỎ LANZABOOTE (SECURE BOOT)
+- **File changed**: `flake.nix`, `flake.lock`, `nixos/configuration.nix`
+- **Mô tả**: Xóa `lanzaboote` khỏi inputs và modules trong `flake.nix`. Xóa cấu hình `boot.lanzaboote` và bật lại `systemd-boot` mặc định trong `configuration.nix`. Chạy `nix flake update` để gỡ bỏ phụ thuộc khỏi lockfile.
+- **Lý do**: Sếp đổi ý không muốn xài Secure Boot nữa.
