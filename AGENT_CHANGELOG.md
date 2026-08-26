@@ -236,3 +236,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Căn giữa tiêu đề, dùng font JetBrainsMono NF. Định dạng lại nội dung tiêu đề gồm Tên App (in đậm) và Tiêu đề gốc (in nghiêng), thêm icon dấu chấm cách điệu. Bổ sung bảng màu `client.focused`, v.v.. đồng bộ với Noctalia.
 - **Lý do**: Tút tát lại nhan sắc cho giao diện Tabbed theo yêu cầu của sếp.
+
+### [2026-08-26 21:43] - ĐỒNG BỘ KHOẢNG CÁCH (GAPS) CHO THANH BAR NOCTALIA
+- **File changed**: `home-manager/noctalia/settings.json`
+- **Mô tả**: Sửa cấu hình `"enableExclusionZoneInset": true` cho thanh bar của Noctalia.
+- **Lý do**: Mặc định thanh bar của Noctalia được cài là trôi nổi (trôi đè lên cả cửa sổ). Việc bật Exclusion Zone giúp báo cho Sway biết để chừa chỗ cho thanh bar, từ đó lệnh `gaps inner 5` của Sway sẽ tạo khoảng cách 5px cực chuẩn giữa mép cửa sổ và thanh bar.
