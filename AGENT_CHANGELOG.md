@@ -201,3 +201,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Bổ sung luật `mouse_warping container`.
 - **Lý do**: Sếp muốn con trỏ chuột phải tự động bay theo sang cửa sổ mới mỗi khi dùng phím tắt di chuyển vùng sáng (focus).
+
+### [2026-08-26 21:25] - TÙY CHỈNH THANH STATUS BAR VÀ CẬP NHẬT GAPS, BORDER
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Tăng viền thành 5px, giảm viền trôi nổi xuống 1px, thêm khoảng cách `gaps inner 5`. Thêm cấu hình `bar { id swaywm }` với bảng màu chuẩn của Noctalia.
+- **Lý do**: Sếp yêu cầu tùy chỉnh mạnh phần hiển thị và tạo một thanh bar riêng với id `swaywm` đồng bộ màu Noctalia.
