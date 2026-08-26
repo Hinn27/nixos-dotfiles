@@ -127,6 +127,7 @@
     power-profiles-daemon
     inputs.thorium.packages.${pkgs.system}.thorium-avx2
     inputs.zen-browser.packages.${pkgs.system}.default
+    postman
 
     # Yazi Dependencies
     poppler-utils
@@ -154,6 +155,7 @@
     # Antigravity từ Nix flake
     inputs.antigravity.packages.${pkgs.system}.google-antigravity-cli
 
+    android-tools
   ];
 
   # Enable Spicetify

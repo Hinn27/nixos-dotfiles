@@ -251,3 +251,11 @@
 - **File changed**: `home-manager/noctalia/settings.json`
 - **Mô tả**: Chỉnh thông số `frameRadius` từ 12 xuống 0.
 - **Lý do**: Sway vốn dĩ là Window Manager dùng góc vuông sắc cạnh. Việc chỉnh `frameRadius = 0` giúp giao diện của thanh bar Noctalia và các ứng dụng GTK đồng bộ hóa hoàn toàn với sự sắc sảo của Sway, loại bỏ các góc bo tròn.
+
+### [2026-08-26 21:53] - THÊM CÔNG CỤ LẬP TRÌNH VÀ CẬP NHẬT FLAKE.LOCK
+- **File changed**: `flake.lock`, `home-manager/home.nix`, `home-manager/nvim/lazyvim.json`
+- **Mô tả**: 
+  - Thêm `postman` và `android-tools` vào cấu hình Home Manager.
+  - Bật extension hỗ trợ `java` và `typescript` cho LazyVim.
+  - Cập nhật `flake.lock` (thêm input `lanzaboote` và các phụ thuộc liên quan).
+- **Lý do**: Sếp bổ sung các công cụ cần thiết cho việc lập trình (Java, TS, Android, API) và cấu hình lại flake.
