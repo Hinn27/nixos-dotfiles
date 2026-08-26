@@ -83,6 +83,8 @@ bindsym $mod+Ctrl+8 move container to workspace number 8
 bindsym $mod+Ctrl+9 move container to workspace number 9
 
 # ─── Layout ───
+bindsym $mod+backslash splith
+bindsym $mod+minus splitv
 bindsym $mod+f fullscreen
 bindsym $mod+t floating toggle
 bindsym $mod+space focus mode_toggle

@@ -216,3 +216,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Đổi `default_floating_border` từ `pixel 5` thành `normal 5`.
 - **Lý do**: Sếp muốn cửa sổ nổi cũng có thanh tiêu đề giống như các cửa sổ chìm trong chế độ Tabbed.
+
+### [2026-08-26 21:31] - THÊM PHÍM TẮT CHIA MÀN HÌNH (SPLIT) NHƯ TMUX
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Thêm phím tắt `Super + \` để chia dọc và `Super + -` để chia ngang.
+- **Lý do**: Sếp muốn dùng Tabbed làm gốc nhưng thỉnh thoảng vẫn có thể cắt đôi một cái Tab ra thành 2 nửa (như Tmux) cho tiện làm việc.
