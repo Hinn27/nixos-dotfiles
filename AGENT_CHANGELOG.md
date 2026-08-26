@@ -181,3 +181,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Sắp xếp lại vị trí 2 màn hình: laptop (`eDP-1`) nằm bên trái (`pos 0 0`) và màn hình rời (`HDMI-A-1`) nằm bên phải (`pos 1920 0`). Đồng thời thiết lập tần số quét chuẩn.
 - **Lý do**: Sway tự động nhận diện sai thứ tự màn hình, khiến màn hình laptop bị đẩy sang phải, gây khó chịu cho người dùng.
+
+### [2026-08-26 21:11] - ĐẶT LAYOUT TABBED VÀ BORDER PIXEL MẶC ĐỊNH CHO SWAY
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Thêm cấu hình `workspace_layout tabbed` để mọi workspace mới đều dùng chế độ tab làm mặc định. Đặt `default_border pixel 2` và `default_floating_border pixel 2` để làm mỏng viền và xóa thanh tiêu đề thừa thãi.
+- **Lý do**: Sếp ưng ý với kiểu chia Tab và giao diện tối giản, yêu cầu đưa làm cài đặt mặc định.
