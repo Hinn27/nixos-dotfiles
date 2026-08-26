@@ -142,6 +142,7 @@ bindsym Ctrl+Mod1+Delete exec swaymsg exit
 # ─── Autostart ───
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec systemctl --user start sway-session.target
 exec fcitx5 -d
 exec noctalia
 exec jetbrains-toolbox --minimize

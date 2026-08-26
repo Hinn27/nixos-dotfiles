@@ -269,3 +269,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Thay thế các mã màu tĩnh (hex) bằng dòng lệnh `include ~/.config/sway/noctalia`.
 - **Lý do**: Sếp phát hiện Noctalia có xuất sẵn một file template màu riêng cho Sway. Việc `include` file này vào sẽ giúp Sway tự động thay đổi màu sắc của thanh tiêu đề, viền cửa sổ mỗi khi sếp đổi theme trên Noctalia mà không cần thao tác lại nữa.
+
+### [2026-08-26 22:27] - SỬA LỖI ZEN BROWSER KHÔNG NHẬN THEME
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Thêm lệnh `exec systemctl --user start sway-session.target` vào cuối config.
+- **Lý do**: Sway chưa kích hoạt `graphical-session.target` của systemd nên hệ thống XDG Desktop Portal bị lỗi dependency không khởi động được, dẫn tới Zen Browser không đọc được biến màu Dark/Light từ hệ thống. Sửa lỗi này giúp Zen đồng bộ màu với Noctalia bình thường.
