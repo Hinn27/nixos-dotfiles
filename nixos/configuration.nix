@@ -74,12 +74,19 @@
   programs.sway.enable = true;
   hardware.graphics.enable = true;
 
-  # Bootloader
+  # Bootloader & Secure Boot
   boot.loader = {
-    systemd-boot.enable = true;
+    # Systemd-boot must be disabled for lanzaboote to work
+    systemd-boot.enable = lib.mkForce false;
     efi.canTouchEfiVariables = true;
     efi.efiSysMountPoint = "/boot";
   };
+
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/var/lib/sbctl";
+  };
+
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Network
@@ -187,6 +194,7 @@
     glfw3-minecraft
     mangohud
     quickemu
+    sbctl # tool for secure boot
   ];
 
   # Enable Thunar properly with plugins

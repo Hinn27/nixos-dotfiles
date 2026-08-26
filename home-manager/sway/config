@@ -9,6 +9,10 @@ set $browser $BROWSER
 # Font for window titles
 font pango:monospace 10
 
+# ─── Displays ───
+output eDP-1 pos 0 0 mode 1920x1080@143.998Hz
+output HDMI-A-1 pos 1920 0 mode 1920x1080@200.000Hz
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 

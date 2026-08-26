@@ -33,6 +33,12 @@
     # DAMX Source (Local)
     damx.url = "path:/home/hinne/Projects/DAMX-1.0.2";
     damx.flake = false;
+
+    # Lanzaboote for Secure Boot
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -56,11 +62,17 @@
         nixos = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs pkgs-unstable; };
           # > Our main nixos configuration file <
-          modules = [ ./nixos/configuration.nix ];
+          modules = [
+            inputs.lanzaboote.nixosModules.lanzaboote
+            ./nixos/configuration.nix
+          ];
         };
         arch = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs pkgs-unstable; };
-          modules = [ ./nixos/configuration.nix ];
+          modules = [
+            inputs.lanzaboote.nixosModules.lanzaboote
+            ./nixos/configuration.nix
+          ];
         };
       };
 

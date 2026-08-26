@@ -176,3 +176,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Bổ sung phím tắt `Super + Shift + C` để reload cấu hình Sway trực tiếp.
 - **Lý do**: Sway cần lệnh reload để áp dụng cấu hình mới mà không cần đăng xuất. Quên chưa thêm vào ở bản trước.
+
+### [2026-08-26 21:05] - CẤU HÌNH LẠI VỊ TRÍ MÀN HÌNH TRONG SWAY
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Sắp xếp lại vị trí 2 màn hình: laptop (`eDP-1`) nằm bên trái (`pos 0 0`) và màn hình rời (`HDMI-A-1`) nằm bên phải (`pos 1920 0`). Đồng thời thiết lập tần số quét chuẩn.
+- **Lý do**: Sway tự động nhận diện sai thứ tự màn hình, khiến màn hình laptop bị đẩy sang phải, gây khó chịu cho người dùng.
