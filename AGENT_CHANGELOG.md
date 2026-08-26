@@ -196,3 +196,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Bổ sung lệnh `dbus-update-activation-environment` và `systemctl import-environment` vào autostart của Sway.
 - **Lý do**: Sway không tự động cập nhật biến môi trường Wayland vào DBus như Niri (Niri có script `niri-session` làm hộ). Thiếu bước này khiến XDG Desktop Portal bị hỏng, làm Zen Browser không đọc được mã màu GTK từ Noctalia.
+
+### [2026-08-26 21:19] - CẤU HÌNH CHUỘT TỰ THEO DÕI VÙNG CHỌN
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Bổ sung luật `mouse_warping container`.
+- **Lý do**: Sếp muốn con trỏ chuột phải tự động bay theo sang cửa sổ mới mỗi khi dùng phím tắt di chuyển vùng sáng (focus).

@@ -15,6 +15,7 @@ output HDMI-A-1 pos 1920 0 mode 1920x1080@200.000Hz
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+mouse_warping container
 
 # ─── Default Layout & Borders ───
 workspace_layout tabbed
