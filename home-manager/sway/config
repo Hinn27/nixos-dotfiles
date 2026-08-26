@@ -20,7 +20,7 @@ mouse_warping container
 # ─── Default Layout & Borders ───
 workspace_layout tabbed
 default_border pixel 5
-default_floating_border pixel 5
+default_floating_border normal 5
 gaps inner 5
 
 # ─── Window Rules ───
