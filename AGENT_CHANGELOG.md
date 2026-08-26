@@ -264,3 +264,8 @@
 - **File changed**: `flake.nix`, `flake.lock`, `nixos/configuration.nix`
 - **Mô tả**: Xóa `lanzaboote` khỏi inputs và modules trong `flake.nix`. Xóa cấu hình `boot.lanzaboote` và bật lại `systemd-boot` mặc định trong `configuration.nix`. Chạy `nix flake update` để gỡ bỏ phụ thuộc khỏi lockfile.
 - **Lý do**: Sếp đổi ý không muốn xài Secure Boot nữa.
+
+### [2026-08-26 22:12] - TỰ ĐỘNG ĐỒNG BỘ MÀU THANH TIÊU ĐỀ SWAY THEO NOCTALIA
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Thay thế các mã màu tĩnh (hex) bằng dòng lệnh `include ~/.config/sway/noctalia`.
+- **Lý do**: Sếp phát hiện Noctalia có xuất sẵn một file template màu riêng cho Sway. Việc `include` file này vào sẽ giúp Sway tự động thay đổi màu sắc của thanh tiêu đề, viền cửa sổ mỗi khi sếp đổi theme trên Noctalia mà không cần thao tác lại nữa.

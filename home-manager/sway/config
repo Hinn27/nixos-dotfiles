@@ -15,11 +15,7 @@ for_window [app_id=".*"] title_format "<b>%app_id</b>  <i>%title</i>"
 for_window [class=".*"] title_format "<b>%class</b>  <i>%title</i>"
 
 # ─── Window Colors (Noctalia Palette) ───
-# class                 border  bground text    indicator child_border
-client.focused          #3daee9 #3daee9 #141618 #3daee9   #3daee9
-client.focused_inactive #292d32 #292d32 #fcfcfc #292d32   #292d32
-client.unfocused        #202224 #202224 #a1a9b1 #202224   #202224
-client.urgent           #da4453 #da4453 #141618 #da4453   #da4453
+include ~/.config/sway/noctalia
 
 # ─── Displays ───
 output eDP-1 pos 0 0 mode 1920x1080@143.998Hz
