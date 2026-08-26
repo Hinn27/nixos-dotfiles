@@ -14,6 +14,20 @@ titlebar_border_thickness 3
 # Định dạng tiêu đề: <b>App ID/Class (In đậm)</b> - <i>Tiêu đề (In nghiêng)</i>
 for_window [app_id=".*"] title_format "<b>%app_id</b>  <i>%title</i>"
 for_window [class=".*"] title_format "<b>%class</b>  <i>%title</i>"
+# ─── Dynamic Window Icons ───
+for_window [app_id="(?i)kitty"] title_format "󰄛 <b>%app_id</b>  <i>%title</i>"
+for_window [app_id="(?i)zen.*"] title_format "󰈹 <b>%app_id</b>  <i>%title</i>"
+for_window [app_id="(?i)thorium.*|chromium|chrome"] title_format " <b>%app_id</b>  <i>%title</i>"
+for_window [app_id="(?i)firefox.*"] title_format "󰈹 <b>%app_id</b>  <i>%title</i>"
+for_window [app_id="(?i)yazi"] title_format " <b>%app_id</b>  <i>%title</i>"
+for_window [app_id="(?i)nvim|neovim"] title_format " <b>%app_id</b>  <i>%title</i>"
+for_window [app_id="(?i)code|vscodium"] title_format "󰨞 <b>%app_id</b>  <i>%title</i>"
+for_window [class="(?i)vesktop|discord"] title_format " <b>%class</b>  <i>%title</i>"
+for_window [class="(?i)spotify"] title_format " <b>%class</b>  <i>%title</i>"
+for_window [app_id="(?i)obs"] title_format "󰑋 <b>%app_id</b>  <i>%title</i>"
+for_window [class="(?i)stremio"] title_format "󰎁 <b>%class</b>  <i>%title</i>"
+for_window [app_id="(?i)mpv"] title_format " <b>%app_id</b>  <i>%title</i>"
+for_window [app_id="(?i)org.gnome.Nautilus"] title_format " <b>%app_id</b>  <i>%title</i>"
 
 # ─── Window Colors (Noctalia Palette) ───
 # Nạp các biến màu từ Noctalia ($primary, $surface, v.v...)
@@ -122,6 +136,7 @@ bindsym $mod+Ctrl+9 move container to workspace number 9
 # ─── Layout ───
 bindsym $mod+backslash splith
 bindsym $mod+minus splitv
+bindsym $mod+w layout tabbed
 bindsym $mod+f fullscreen
 bindsym $mod+t floating toggle
 bindsym $mod+space focus mode_toggle

@@ -281,3 +281,10 @@
   - Thêm `titlebar_border_thickness 3` để viền của thanh tiêu đề tab dày bằng viền cửa sổ (3px).
   - Ghi đè lại luật `client.focused` để dùng màu `$primary` cho cả nền lẫn viền, giúp thanh tab và viền tạo thành một khối liền mạch.
 - **Lý do**: File tự động của Noctalia chỉnh viền màu sáng nhưng lại để nền màu tối, tạo cảm giác bị đứt gãy. Cách này giúp giữ được tính năng tự đổi màu nhưng giao diện nguyên khối đẹp hơn.
+
+### [2026-08-26 22:38] - THÊM ICON ĐỘNG CHO THANH TAB & SỬA LỖI LAYOUT
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: 
+  - Thêm một loạt các luật `for_window` dùng Regex để gán icon Nerd Font cho các phần mềm phổ biến (Zen, Kitty, Yazi, Neovim, Discord, Spotify, OBS,...).
+  - Thêm phím tắt `Super + W` để ép cửa sổ quay về chế độ Tabbed (hủy thao tác chia màn hình).
+- **Lý do**: Tăng tính thẩm mỹ theo yêu cầu của sếp, và thêm phím tắt lối thoát để chống lỗi người dùng khi lỡ tay bấm chia dọc/chia ngang.
