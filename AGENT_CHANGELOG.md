@@ -274,3 +274,10 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Thêm lệnh `exec systemctl --user start sway-session.target` vào cuối config.
 - **Lý do**: Sway chưa kích hoạt `graphical-session.target` của systemd nên hệ thống XDG Desktop Portal bị lỗi dependency không khởi động được, dẫn tới Zen Browser không đọc được biến màu Dark/Light từ hệ thống. Sửa lỗi này giúp Zen đồng bộ màu với Noctalia bình thường.
+
+### [2026-08-26 22:32] - ĐỒNG BỘ ĐỘ DÀY VÀ MÀU SẮC VIỀN CỬA SỔ
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: 
+  - Thêm `titlebar_border_thickness 3` để viền của thanh tiêu đề tab dày bằng viền cửa sổ (3px).
+  - Ghi đè lại luật `client.focused` để dùng màu `$primary` cho cả nền lẫn viền, giúp thanh tab và viền tạo thành một khối liền mạch.
+- **Lý do**: File tự động của Noctalia chỉnh viền màu sáng nhưng lại để nền màu tối, tạo cảm giác bị đứt gãy. Cách này giúp giữ được tính năng tự đổi màu nhưng giao diện nguyên khối đẹp hơn.
