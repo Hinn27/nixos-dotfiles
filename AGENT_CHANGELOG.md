@@ -231,3 +231,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Thêm `input type:keyboard` với `repeat_delay 250` và `repeat_rate 50`.
 - **Lý do**: Sếp phàn nàn khi ấn giữ phím mũi tên thì con trỏ (văn bản) chạy quá chậm, không nhanh như cài đặt bên Niri.
+
+### [2026-08-26 21:41] - CẬP NHẬT GIAO DIỆN THANH TIÊU ĐỀ (TABS)
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Căn giữa tiêu đề, dùng font JetBrainsMono NF. Định dạng lại nội dung tiêu đề gồm Tên App (in đậm) và Tiêu đề gốc (in nghiêng), thêm icon dấu chấm cách điệu. Bổ sung bảng màu `client.focused`, v.v.. đồng bộ với Noctalia.
+- **Lý do**: Tút tát lại nhan sắc cho giao diện Tabbed theo yêu cầu của sếp.
