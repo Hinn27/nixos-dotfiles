@@ -288,3 +288,8 @@
   - Thêm một loạt các luật `for_window` dùng Regex để gán icon Nerd Font cho các phần mềm phổ biến (Zen, Kitty, Yazi, Neovim, Discord, Spotify, OBS,...).
   - Thêm phím tắt `Super + W` để ép cửa sổ quay về chế độ Tabbed (hủy thao tác chia màn hình).
 - **Lý do**: Tăng tính thẩm mỹ theo yêu cầu của sếp, và thêm phím tắt lối thoát để chống lỗi người dùng khi lỡ tay bấm chia dọc/chia ngang.
+
+### [2026-08-26 22:41] - SỬA LỖI LỒNG TAB KHI HỦY CHIA MÀN HÌNH
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Đổi lệnh của phím `Super + W` từ `layout tabbed` thành `split none`.
+- **Lý do**: Lệnh `layout tabbed` sẽ tạo thêm một tầng Tab mới lồng vào trong Tab cũ (gây ra hiện tượng 2 thanh tiêu đề đè lên nhau). Lệnh `split none` mới là lệnh chuẩn để hủy thao tác chia màn hình trước đó mà không làm hỏng cấu trúc Tab.
