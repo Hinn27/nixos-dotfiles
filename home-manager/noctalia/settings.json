@@ -63,7 +63,7 @@
         "enableExclusionZoneInset": true,
         "enableMediaSection": true,
         "fontScale": 1,
-        "frameRadius": 12,
+        "frameRadius": 0,
         "frameThickness": 8,
         "hideOnOverview": true,
         "marginHorizontal": 10,

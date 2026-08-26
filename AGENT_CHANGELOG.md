@@ -246,3 +246,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Thay đổi `default_border pixel 5` thành 3, và `default_floating_border normal 5` thành 3.
 - **Lý do**: Sếp thấy viền 5px hơi dày nên muốn ép mỏng lại còn 3px cho thanh thoát hơn.
+
+### [2026-08-26 21:49] - ÉP TOÀN BỘ GIAO DIỆN VỀ GÓC VUÔNG (SQUARE)
+- **File changed**: `home-manager/noctalia/settings.json`
+- **Mô tả**: Chỉnh thông số `frameRadius` từ 12 xuống 0.
+- **Lý do**: Sway vốn dĩ là Window Manager dùng góc vuông sắc cạnh. Việc chỉnh `frameRadius = 0` giúp giao diện của thanh bar Noctalia và các ứng dụng GTK đồng bộ hóa hoàn toàn với sự sắc sảo của Sway, loại bỏ các góc bo tròn.
