@@ -21,6 +21,9 @@ workspace_layout tabbed
 default_border pixel 2
 default_floating_border pixel 2
 
+# ─── Window Rules ───
+for_window [title="Picture-in-Picture"] floating enable, sticky enable
+
 # Key bindings
 # ─── Applications ───
 bindsym $mod+Return exec $term

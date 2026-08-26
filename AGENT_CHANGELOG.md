@@ -186,3 +186,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Thêm cấu hình `workspace_layout tabbed` để mọi workspace mới đều dùng chế độ tab làm mặc định. Đặt `default_border pixel 2` và `default_floating_border pixel 2` để làm mỏng viền và xóa thanh tiêu đề thừa thãi.
 - **Lý do**: Sếp ưng ý với kiểu chia Tab và giao diện tối giản, yêu cầu đưa làm cài đặt mặc định.
+
+### [2026-08-26 21:14] - CẤU HÌNH CỬA SỔ PIP NỔI
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Thêm luật `for_window [title="Picture-in-Picture"] floating enable, sticky enable`.
+- **Lý do**: Sếp yêu cầu chế độ Picture-in-Picture của trình duyệt Zen phải luôn nổi và ghim trên mọi màn hình.
