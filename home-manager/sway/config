@@ -20,28 +20,11 @@ mouse_warping container
 # ─── Default Layout & Borders ───
 workspace_layout tabbed
 default_border pixel 5
-default_floating_border pixel 1
+default_floating_border pixel 5
 gaps inner 5
 
 # ─── Window Rules ───
 for_window [title="Picture-in-Picture"] floating enable, sticky enable
-
-# ─── Status Bar ───
-bar {
-    id swaywm
-    position top
-    colors {
-        background #202224
-        statusline #fcfcfc
-        separator #707d8a
-
-        # State             Border  Background Text
-        focused_workspace   #3daee9 #3daee9    #141618
-        active_workspace    #292d32 #292d32    #fcfcfc
-        inactive_workspace  #202224 #202224    #a1a9b1
-        urgent_workspace    #da4453 #da4453    #141618
-    }
-}
 
 # Key bindings
 # ─── Applications ───

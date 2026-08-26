@@ -206,3 +206,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Tăng viền thành 5px, giảm viền trôi nổi xuống 1px, thêm khoảng cách `gaps inner 5`. Thêm cấu hình `bar { id swaywm }` với bảng màu chuẩn của Noctalia.
 - **Lý do**: Sếp yêu cầu tùy chỉnh mạnh phần hiển thị và tạo một thanh bar riêng với id `swaywm` đồng bộ màu Noctalia.
+
+### [2026-08-26 21:26] - XÓA THANH BAR SWAY VÀ TĂNG VIỀN NỔI LÊN 5PX
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Gỡ bỏ khối cấu hình `bar { id swaywm }` của Sway và tăng `default_floating_border` từ 1px lên 5px.
+- **Lý do**: Sếp không muốn dùng thanh bar phụ của Sway nữa và muốn viền cửa sổ nổi cũng dày 5px cho đồng bộ.
