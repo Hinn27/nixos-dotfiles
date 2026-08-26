@@ -293,3 +293,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Đổi lệnh của phím `Super + W` từ `layout tabbed` thành `split none`.
 - **Lý do**: Lệnh `layout tabbed` sẽ tạo thêm một tầng Tab mới lồng vào trong Tab cũ (gây ra hiện tượng 2 thanh tiêu đề đè lên nhau). Lệnh `split none` mới là lệnh chuẩn để hủy thao tác chia màn hình trước đó mà không làm hỏng cấu trúc Tab.
+
+### [2026-08-26 22:43] - ĐỔI PHÍM SUPER+W THÀNH CHẾ ĐỘ TOGGLE
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Đổi `split none` thành `layout toggle tabbed split` cho phím `Super + W`.
+- **Lý do**: Lệnh `split none` bị lỗi xóa luôn chế độ Tabbed của toàn màn hình (khiến toàn bộ thanh tiêu đề biến mất). Lệnh mới đóng vai trò như công tắc bật/tắt: bấm 1 lần đổi sang Split (mất thanh tab), bấm lần nữa đổi lại Tabbed (hiện thanh tab).

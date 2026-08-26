@@ -136,7 +136,7 @@ bindsym $mod+Ctrl+9 move container to workspace number 9
 # ─── Layout ───
 bindsym $mod+backslash splith
 bindsym $mod+minus splitv
-bindsym $mod+w split none
+bindsym $mod+w layout toggle tabbed split
 bindsym $mod+f fullscreen
 bindsym $mod+t floating toggle
 bindsym $mod+space focus mode_toggle
