@@ -59,6 +59,11 @@
     EDITOR = "nvim";
     TERMINAL = "kitty";
     BROWSER = "zen";
+    # Wayland/Qt variables (ported from Niri)
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+    QT_QPA_PLATFORM = "wayland";
+    QT_QPA_PLATFORMTHEME = "gtk3";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
   };
 
   # Tạo Desktop Entry đè lên mặc định để sửa lỗi launcher/file search

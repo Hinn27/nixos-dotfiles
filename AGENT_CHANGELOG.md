@@ -298,3 +298,8 @@
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Đổi `split none` thành `layout toggle tabbed split` cho phím `Super + W`.
 - **Lý do**: Lệnh `split none` bị lỗi xóa luôn chế độ Tabbed của toàn màn hình (khiến toàn bộ thanh tiêu đề biến mất). Lệnh mới đóng vai trò như công tắc bật/tắt: bấm 1 lần đổi sang Split (mất thanh tab), bấm lần nữa đổi lại Tabbed (hiện thanh tab).
+
+### [2026-08-27 07:19] - SỬA LỖI MẤT THEME TRÊN TELEGRAM VÀ ZEN SAU KHI REBOOT
+- **File changed**: `home-manager/home.nix`, `home-manager/zsh.nix`, `home-manager/sway/config`
+- **Mô tả**: Bổ sung các biến môi trường `QT_QPA_PLATFORMTHEME=gtk3`, `XDG_CURRENT_DESKTOP=sway` và nạp trực tiếp vào systemd (DBus).
+- **Lý do**: Sway không tự động xuất các biến môi trường cho ứng dụng Qt (như Telegram) và trình duyệt. Việc bổ sung biến `QT_QPA_PLATFORMTHEME=gtk3` sẽ ép Telegram đọc giao diện GTK (do Noctalia tạo ra). Các biến XDG giúp cổng Desktop Portal hoạt động ổn định sau mỗi lần khởi động lại máy.
