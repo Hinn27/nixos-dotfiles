@@ -303,3 +303,8 @@
 - **File changed**: `home-manager/home.nix`, `home-manager/zsh.nix`, `home-manager/sway/config`
 - **Mô tả**: Bổ sung các biến môi trường `QT_QPA_PLATFORMTHEME=gtk3`, `XDG_CURRENT_DESKTOP=sway` và nạp trực tiếp vào systemd (DBus).
 - **Lý do**: Sway không tự động xuất các biến môi trường cho ứng dụng Qt (như Telegram) và trình duyệt. Việc bổ sung biến `QT_QPA_PLATFORMTHEME=gtk3` sẽ ép Telegram đọc giao diện GTK (do Noctalia tạo ra). Các biến XDG giúp cổng Desktop Portal hoạt động ổn định sau mỗi lần khởi động lại máy.
+
+### [2026-08-28 06:47] - ĐẢO TTY CHO SWAY VÀ NIRI
+- **File changed**: `home-manager/zsh.nix`
+- **Mô tả**: Đổi TTY1 thành Sway và TTY2 thành Niri.
+- **Lý do**: Đưa Sway làm môi trường đồ họa chính (mặc định khởi động) cho sếp.
