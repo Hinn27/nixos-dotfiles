@@ -96,7 +96,8 @@
     wl-clipboard
     libnotify
     bibata-cursors
-    # Shell + Terminal (Managed via native modules in zsh.nix, kitty.nix, tools.nix)
+
+    # Shell + Terminal
     # CLI Tools
     yazi
     neovim
@@ -134,7 +135,7 @@
     inputs.zen-browser.packages.${pkgs.system}.default
     postman
 
-    # Yazi Dependencies
+    # Yazi Plugin
     poppler-utils
     xlsx2csv
     libreoffice
@@ -156,6 +157,7 @@
     unzip
     jetbrains-toolbox
     zed-editor
+    aider-chat
 
     # Antigravity từ Nix flake
     inputs.antigravity.packages.${pkgs.system}.google-antigravity-cli

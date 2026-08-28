@@ -162,6 +162,8 @@
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
+  services.tailscale.enable = true;
+
   services.openssh = {
     enable = true;
     settings = {
@@ -189,6 +191,7 @@
     mangohud
     quickemu
     sbctl # tool for secure boot
+    nest-cli
   ];
 
   # Enable Thunar properly with plugins
