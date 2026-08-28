@@ -308,3 +308,10 @@
 - **File changed**: `home-manager/zsh.nix`
 - **Mô tả**: Đổi TTY1 thành Sway và TTY2 thành Niri.
 - **Lý do**: Đưa Sway làm môi trường đồ họa chính (mặc định khởi động) cho sếp.
+
+### [2026-08-28 07:02] - THÊM OVERVIEW VÀ PHÍM CHỌN TOÀN BỘ TAB
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: 
+  - Thêm phím `Super + Tab` để gọi `window-switcher` của Noctalia (giống hệt chế độ Overview).
+  - Thêm phím `Super + A` để Focus Parent (chọn toàn bộ cụm Tab đang mở).
+- **Lý do**: Giúp người dùng quản lý đa cửa sổ dễ dàng hơn và có thể di chuyển cả cụm Tab sang Workspace khác.
