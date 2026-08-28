@@ -315,3 +315,7 @@
   - Thêm phím `Super + Tab` để gọi `window-switcher` của Noctalia (giống hệt chế độ Overview).
   - Thêm phím `Super + A` để Focus Parent (chọn toàn bộ cụm Tab đang mở).
 - **Lý do**: Giúp người dùng quản lý đa cửa sổ dễ dàng hơn và có thể di chuyển cả cụm Tab sang Workspace khác.
+
+### [2026-08-28 07:05] - XÓA PHÍM OVERVIEW
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Xóa phím `Super + Tab` (Noctalia window-switcher) theo yêu cầu.
