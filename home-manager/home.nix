@@ -96,6 +96,7 @@
     wl-clipboard
     libnotify
     bibata-cursors
+    jq
 
     # Shell + Terminal
     # CLI Tools

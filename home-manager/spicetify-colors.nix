@@ -1,17 +1,18 @@
 {
-  text = "f1dfda";
-  subtext = "d8c2bc";
-  main = "1a110f";
-  sidebar = "271d1b";
-  player = "3d322f";
-  card = "322825";
+  text = "e5e3d6";
+  subtext = "c9c7b6";
+  sidebar-text = "c9c7b6";
+  main = "14140c";
+  sidebar = "202018";
+  player = "35352c";
+  card = "2a2a22";
   shadow = "000000";
-  selected-row = "5d4036";
-  button = "ffb59e";
-  button-active = "ffb59e";
-  button-disabled = "53433f";
-  tab-active = "5d4036";
-  notification = "d7c68d";
+  selected-row = "47492e";
+  button = "c7cc79";
+  button-active = "c7cc79";
+  button-disabled = "47473b";
+  tab-active = "47492e";
+  notification = "a3d0bf";
   notification-error = "ffb4ab";
-  misc = "a08d87";
+  misc = "929182";
 }

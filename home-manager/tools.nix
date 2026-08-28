@@ -33,7 +33,7 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    # Ví dụ khai báo (nếu có key riêng):
+    addKeysToAgent = "yes";
     # matchBlocks = {
     #   "github.com" = {
     #     hostname = "github.com";
@@ -42,4 +42,7 @@
     #   };
     # };
   };
+
+  # Enable the SSH agent service globally
+  services.ssh-agent.enable = true;
 }

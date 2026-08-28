@@ -22,3 +22,18 @@ sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins"
 name = "polkit-agent"
 enabled = false
 sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins"
+
+[[states]]
+name = "obsidian"
+enabled = true
+sourceUrl = "https://github.com/noctalia-dev/community-plugins"
+
+[[states]]
+name = "discord-voice"
+enabled = true
+sourceUrl = "https://github.com/noctalia-dev/community-plugins"
+
+[[states]]
+name = "tailscale"
+enabled = true
+sourceUrl = "https://github.com/noctalia-dev/community-plugins"

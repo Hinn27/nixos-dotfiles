@@ -22,6 +22,18 @@
         "polkit-agent": {
             "enabled": false,
             "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+        },
+        "davemhammer/obsidian": {
+            "enabled": true,
+            "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
+        },
+        "raycursive/discord-voice": {
+            "enabled": true,
+            "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
+        },
+        "davemhammer/tailscale": {
+            "enabled": true,
+            "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
         }
     },
     "version": 2

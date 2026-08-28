@@ -35,7 +35,7 @@
         "showCategories": true,
         "showIconBackground": false,
         "sortByMostUsed": true,
-        "terminalCommand": "/usr/bin/kitty -e",
+        "terminalCommand": "kitty --hold -e",
         "viewMode": "list"
     },
     "audio": {
@@ -607,6 +607,29 @@
     "plugins": {
         "autoUpdate": false,
         "notifyUpdates": true
+    },
+    "pluginConfig": {
+        "davemhammer/obsidian": {
+            "vault_path": "/home/hinne/Documents/Note-Obsidian",
+            "daily_folder": "",
+            "daily_format": "%Y-%m-%d",
+            "git_commit_message": "vault: capture from Noctalia",
+            "refresh_interval": 20,
+            "notify_on_action": true,
+            "show_dirty": true
+        },
+        "raycursive/discord-voice": {
+            "discord_binary": "/home/hinne/.nix-profile/bin/vesktop",
+            "glyph": "brand-discord",
+            "show_channel_name": true,
+            "hide_when_disconnected": false
+        },
+        "davemhammer/tailscale": {
+            "refresh_interval": 10,
+            "notify_on_peer_change": true,
+            "tailscale_bin": "tailscale",
+            "show_counts": true
+        }
     },
     "sessionMenu": {
         "countdownDuration": 10000,
