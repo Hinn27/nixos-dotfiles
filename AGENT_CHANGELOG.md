@@ -319,3 +319,8 @@
 ### [2026-08-28 07:05] - XÓA PHÍM OVERVIEW
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Xóa phím `Super + Tab` (Noctalia window-switcher) theo yêu cầu.
+
+### [2026-08-28 12:26] - THÊM HOOK TỰ ĐỘNG RELOAD SWAY KHI ĐỔI THEME
+- **File changed**: `home-manager/noctalia/user-templates.toml`
+- **Mô tả**: Thêm hook `swaymsg reload` vào `user-templates.toml` của Noctalia.
+- **Lý do**: Để Sway tự động áp dụng ngay lập tức màu viền mới mỗi khi người dùng đổi theme trên Noctalia mà không cần bấm phím reload thủ công.
