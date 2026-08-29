@@ -72,6 +72,21 @@
   networking.hostName = "nixos";
   programs.niri.enable = true;
   programs.sway.enable = true;
+  programs.gpu-screen-recorder.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    wlr = {
+      enable = true;
+      settings = {
+        screencast = {
+          chooser_type = "simple";
+          chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
+        };
+      };
+    };
+  };
+
   hardware.graphics.enable = true;
 
   # Bootloader & Secure Boot
@@ -175,9 +190,10 @@
     };
   };
 
-  # System packages
   environment.systemPackages = with pkgs; [
     git
+    slurp
+    grim
     zsh
     niri
     pkgs-unstable.noctalia
