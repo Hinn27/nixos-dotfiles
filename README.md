@@ -77,12 +77,16 @@ sudo nixos-rebuild switch --flake .#nixos
 ### Bước 1.4: Kích hoạt phần người dùng (Home Manager)
 
 Bước này sẽ thiết lập toàn bộ môi trường lập trình, giao diện terminal và tự động giải mã cấu hình SSH.
+Vì công cụ `nh` đã được cài đặt ở Bước 1.3, bạn chỉ cần chạy:
 
 ```bash
-nix run home-manager/master -- switch --flake .#hinne@nixos
+nh home switch
 ```
 
 Sau khi lệnh chạy xong, hãy khởi động lại máy hoặc đăng nhập lại để các cấu hình có hiệu lực toàn diện.
+
+> **💡 Lưu ý về dọn dẹp hệ thống:** 
+> Hệ thống đã được lập trình sẵn để **tự động dọn rác (Garbage Collection) mỗi tuần**. Đi kèm với đó là một dịch vụ chạy ngầm tự động đồng bộ Bootloader (`switch-to-configuration boot`). Bạn không bao giờ phải lo lắng về việc đầy ổ cứng hay rác menu Boot!
 
 ---
 

@@ -410,3 +410,8 @@
   - `home-manager/noctalia/settings.json`
 - **Mô tả**: Đã cài đặt thêm font `Maple Mono Normal` và cập nhật cấu hình cho Kitty, Noctalia để sử dụng font mới này. JSON của Noctalia cũng được lưu lại và format cấu hình cho plugin tailscale.
 - **Lý do**: Áp dụng theo yêu cầu commit thay đổi hiện tại của sếp.
+
+### [2026-08-29 20:16] - CẬP NHẬT TÀI LIỆU README
+- **File changed**: README.md
+- **Mô tả**: Cập nhật lệnh kích hoạt Home Manager thành lệnh `nh home switch` cho ngắn gọn, đồng thời bổ sung ghi chú về tính năng tự động dọn rác và đồng bộ Bootloader.
+- **Lý do**: Giúp tài liệu phản ánh chính xác cấu hình tự động hóa hiện tại của hệ thống.
