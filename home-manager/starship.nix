@@ -1,9 +1,8 @@
 # Starship Prompt Configuration
 # We use builtins.fromTOML to parse your exact starship.toml file into native Nix!
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   programs.starship = {
     enable = true;

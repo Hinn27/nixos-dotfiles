@@ -1,9 +1,8 @@
 # Kitty Terminal Configuration
 # This module configures the Kitty terminal emulator natively using Home Manager.
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   programs.kitty = {
     enable = true;
@@ -82,7 +81,7 @@
   xdg.terminal-exec = {
     enable = true;
     settings = {
-      default = ["kitty.desktop"];
+      default = [ "kitty.desktop" ];
     };
   };
 }

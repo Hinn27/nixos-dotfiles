@@ -1,10 +1,10 @@
 # Custom Shell Scripts
 # This module defines global shell scripts directly in Nix, replacing things in ~/.local/bin
-{
-  config,
-  pkgs,
-  ...
-}: let
+{ config
+, pkgs
+, ...
+}:
+let
   secureUpdate = pkgs.writeShellScriptBin "secure-update" ''
     #!/bin/bash
     # Script cập nhật hệ thống an toàn - Heuristic Security Scanner
@@ -46,7 +46,8 @@
 
     echo "✅ Hệ thống đã được cập nhật an toàn."
   '';
-in {
+in
+{
   home.packages = [
     secureUpdate
   ];

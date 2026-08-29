@@ -1,8 +1,7 @@
 # Niri Compositor Configuration Module
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   # Ensure Niri package is available
   home.packages = with pkgs; [
