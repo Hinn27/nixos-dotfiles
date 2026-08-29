@@ -1,8 +1,10 @@
 # General CLI Tools Configuration
 # This module sets up natively supported CLI tools like Fzf, Bat, Direnv, Yazi, SSH
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Fzf (Fuzzy Finder)
   programs.fzf = {
     enable = true;
@@ -25,7 +27,7 @@
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
-    # (Phần cấu hình giao diện TOML và Flavors của Yazi 
+    # (Phần cấu hình giao diện TOML và Flavors của Yazi
     #  bạn có thể symlink từ repo dotfiles về ~/.config/yazi sau)
   };
 
