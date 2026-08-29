@@ -28,8 +28,6 @@ viewMode = "list"
 [[appLauncher.pinnedApps]]
 name = "io.github.nirimod"
 
-[[appLauncher.pinnedApps]]
-name = "cachyos-pi"
 
 [[appLauncher.pinnedApps]]
 name = "org.telegram.desktop"
@@ -471,7 +469,7 @@ useCustomColors = false
 boxBorderEnabled = false
 fontDefault = "Adwaita Sans"
 fontDefaultScale = 1.0
-fontFixed = "monospace"
+fontFixed = "Maple Mono NF"
 fontFixedScale = 1.0
 panelBackgroundOpacity = 1.0
 panelsAttachedToBar = true
