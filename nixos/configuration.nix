@@ -87,7 +87,14 @@
     };
   };
 
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-vaapi-driver
+      libvdpau-va-gl
+    ];
+  };
 
   # Bootloader & Secure Boot
   boot.loader = {
@@ -132,6 +139,7 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;
+    nvidiaPersistenced = true;
     prime = {
       sync.enable = true;
       intelBusId = "PCI:0:2:0";
@@ -158,7 +166,7 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      extraGroups = [ "wheel" "networkmanager" "input" "docker" "kvm" ];
+      extraGroups = [ "wheel" "networkmanager" "input" "docker" "kvm" "video" "render" ];
     };
   };
 
