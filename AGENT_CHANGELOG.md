@@ -387,3 +387,7 @@
 - **File changed**: Toàn bộ các file `.nix`
 - **Mô tả**: Chạy `nixpkgs-fmt` trên toàn dự án và cập nhật lại log git theo quy tắc Conventional Commits tiếng Việt mới.
 - **Lý do**: Áp dụng luật mới của hệ thống (nixos_system_rules.md).
+
+### [2026-08-29 15:42] - BỎ VIỀN ỨNG DỤNG
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Tắt hoàn toàn viền cửa sổ (`default_border pixel 0`) và viền thanh tab (`titlebar_border_thickness 0`).

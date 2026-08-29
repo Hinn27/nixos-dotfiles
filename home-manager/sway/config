@@ -9,7 +9,7 @@ set $browser $BROWSER
 # ─── Typography & Window Titles ───
 font pango:Maple Mono NF 10
 title_align center
-titlebar_border_thickness 3
+titlebar_border_thickness 0
 
 # Định dạng tiêu đề: <b>App ID/Class (In đậm)</b> - <i>Tiêu đề (In nghiêng)</i>
 for_window [app_id=".*"] title_format "<b>%app_id</b>  <i>%title</i>"
@@ -68,8 +68,8 @@ mouse_warping container
 
 # ─── Default Layout & Borders ───
 workspace_layout tabbed
-default_border pixel 3
-default_floating_border normal 3
+default_border pixel 0
+default_floating_border normal 0
 gaps inner 5
 
 # ─── Window Rules ───
