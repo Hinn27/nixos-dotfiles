@@ -19,7 +19,6 @@
         "overviewLayer": true,
         "pinnedApps": [
             "io.github.nirimod",
-            "cachyos-pi",
             "org.telegram.desktop",
             "com.usebottles.bottles",
             "vesktop",
@@ -779,7 +778,7 @@
         "boxBorderEnabled": false,
         "fontDefault": "Adwaita Sans",
         "fontDefaultScale": 1,
-        "fontFixed": "monospace",
+        "fontFixed": "Maple Mono NF",
         "fontFixedScale": 1,
         "panelBackgroundOpacity": 0.2,
         "panelsAttachedToBar": true,
