@@ -1,11 +1,12 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{ inputs
-, lib
-, config
-, pkgs
-, pkgs-unstable
-, ...
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
 }: {
   # You can import other NixOS modules here
   imports = [
@@ -132,7 +133,7 @@
   '';
 
   # Nvidia Optimus setup
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
@@ -153,7 +154,6 @@
     NIXOS_OZONE_WL = "1";
   };
 
-
   users.users = {
     # FIXME: Replace with your username
     hinne = {
@@ -166,18 +166,18 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      extraGroups = [ "wheel" "networkmanager" "input" "docker" "kvm" "video" "render" ];
+      extraGroups = ["wheel" "networkmanager" "input" "docker" "kvm" "video" "render"];
     };
   };
 
   # Sudo
   security.sudo.extraRules = [
     {
-      users = [ "hinne" ];
+      users = ["hinne"];
       commands = [
         {
           command = "ALL";
-          options = [ "NOPASSWD" ];
+          options = ["NOPASSWD"];
         }
       ];
     }
@@ -241,6 +241,18 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 3";
     flake = "/home/hinne/nix-config";
+  };
+
+  # Auto sync bootloader after NixOS garbage collection
+  systemd.services.sync-bootloader = {
+    description = "Sync bootloader after NixOS garbage collection";
+    after = ["nh-clean.service"];
+    wants = ["nh-clean.service"];
+    wantedBy = ["nh-clean.service"];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/nix/var/nix/profiles/system/bin/switch-to-configuration boot";
+    };
   };
 
   # Enable USB automounting and trash support

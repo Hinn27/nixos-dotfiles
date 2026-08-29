@@ -396,3 +396,8 @@
 - **File changed**: `nixos/configuration.nix`
 - **Mô tả**: Bổ sung `hardware.graphics.extraPackages` với `intel-media-driver`, `intel-vaapi-driver` và `libvdpau-va-gl` để bật Intel VAAPI. Bật `hardware.nvidia.nvidiaPersistenced = true` để giữ kết nối với GPU Nvidia không bị ngủ đông. Thêm user vào group `video` và `render`.
 - **Lý do**: GPU Screen Recorder báo lỗi không tìm thấy hardware video encoder. Lỗi do thiếu driver VAAPI của Intel, Card Nvidia bị sleep (Persistenced tắt), và user không có quyền truy cập trực tiếp vào các render node của đồ họa.
+
+### [2026-08-29 20:03] - TỰ ĐỘNG DỌN DẸP MENU BOOT
+- **File changed**: nixos/configuration.nix
+- **Mô tả**: Thêm dịch vụ systemd `sync-bootloader` để tự động chạy lệnh `switch-to-configuration boot` ngay sau khi tiến trình dọn dẹp hệ thống `nh-clean.service` hoàn tất.
+- **Lý do**: Khắc phục tình trạng rác các mục khởi động (old generations) trong Bootloader do lệnh xóa mặc định của Nix không xóa chúng.
