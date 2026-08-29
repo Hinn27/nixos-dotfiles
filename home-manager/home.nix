@@ -108,6 +108,8 @@
     # Font
     maple-mono.truetype
     maple-mono.NF
+    maple-mono.Normal-TTF
+    maple-mono.Normal-NF
     nerd-fonts.jetbrains-mono
     corefonts
     vista-fonts
