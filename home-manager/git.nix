@@ -1,8 +1,10 @@
 # Git Configuration
 # Managed entirely by Home Manager (replaces ~/.gitconfig)
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.git = {
     enable = true;
 
