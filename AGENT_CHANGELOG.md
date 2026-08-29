@@ -1,3 +1,43 @@
+### [2026-08-28 16:52] - FIX LỖI KHỞI ĐỘNG SWAY VÀ NOCTALIA
+- **File changed**: home-manager/zsh.nix, home-manager/sway/config
+- **Mô tả**: Thêm lại cờ `--unsupported-gpu` cho Sway. Phục hồi thời gian chờ của Noctalia về `1.5s`.
+- **Lý do**: wlroots (Sway) chặn khởi động nếu phát hiện driver NVIDIA dù đã ép dùng Intel qua `WLR_DRM_DEVICES`. Thời gian 0.5s quá nhanh khiến Noctalia bị crash (Race Condition).
+
+### [2026-08-28 16:48] - XÓA CỜ UNSUPPORTED-GPU CỦA SWAY
+- **File changed**: home-manager/zsh.nix
+- **Mô tả**: Xóa cờ `--unsupported-gpu` trong lệnh tự khởi động Sway qua TTY1.
+- **Lý do**: Sway hiện tại đã được ép sử dụng card đồ họa Intel (Native Wayland Support) nên cờ này trở thành nguyên nhân gây lỗi vòng lặp DRM Atomic Commit, làm CPU quá tải 30%.
+
+### [2026-08-28 16:37] - GỠ BỎ SPOTIFY VÀ SPICETIFY HOÀN TOÀN
+- **File changed**: flake.nix, home-manager/home.nix, home-manager/sway/config, flake.lock
+- **Mô tả**: Xóa block khai báo `programs.spicetify`, module `spicetify-nix`, các template Matugen của Spicetify và cấu hình Sway liên quan. Dọn dẹp rác cấu hình ở `~/.config/spotify`, `~/.cache/spotify`, v.v.
+- **Lý do**: Xóa sạch sẽ Spotify, Spicetify và spicetify-cli theo yêu cầu của người dùng.
+
+### [2026-08-28 16:23] - CẬP NHẬT VÀ TẮT TỰ KHỞI ĐỘNG JETBRAINS TOOLBOX
+- **File changed**: home-manager/sway/config, home-manager/niri/cfg/autostart.kdl, flake.lock
+- **Mô tả**: Xóa lệnh khởi động cùng hệ thống của Jetbrains Toolbox trên cả Niri và Sway. Chạy lệnh `nix flake update nixpkgs` để cập nhật phiên bản mới nhất của gói.
+- **Lý do**: Làm theo yêu cầu người dùng để hệ thống bớt nặng lúc khởi động.
+
+### [2026-08-28 16:21] - ÉP SWAY DÙNG INTEL GPU ĐỂ TỐI ƯU HIỆU NĂNG
+- **File changed**: nixos/configuration.nix
+- **Mô tả**: Thêm biến môi trường `WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0"`.
+- **Lý do**: Sửa lỗi wlroots (Sway) chọn nhầm NVIDIA làm GPU render mặc định dẫn đến ngốn CPU.
+
+### [2026-08-28 16:15] - GIẢM THỜI GIAN DELAY NOCTALIA
+- **File changed**: home-manager/sway/config
+- **Mô tả**: Giảm thời gian chờ khởi động Noctalia từ 1.5s xuống còn 0.5s.
+- **Lý do**: Theo yêu cầu của người dùng để tăng tốc độ khởi động (fast boot).
+
+### [2026-08-28 16:08] - FIX LỖI NOCTALIA CRASH KHI KHỞI ĐỘNG
+- **File changed**: home-manager/sway/config
+- **Mô tả**: Thêm `sleep 1.5` trước lệnh khởi động Noctalia (`exec sh -c 'sleep 1.5 && noctalia'`).
+- **Lý do**: Xử lý tình trạng Race Condition (Noctalia khởi động quá nhanh trước khi Sway/DBus sẵn sàng) dẫn đến crash.
+
+### [2026-08-28 15:37] - CHUYỂN ĐỔI CHẾ ĐỘ NVIDIA OPTIMUS SANG OFFLOAD
+- **File changed**: nixos/configuration.nix
+- **Mô tả**: Thay đổi cấu hình NVIDIA Prime từ `sync.enable` sang `offload.enable` và bật `powerManagement.enable`.
+- **Lý do**: Khắc phục tình trạng hao tài nguyên, ngốn CPU của Sway WM và làm mát hệ thống.
+
 ### [2026-08-06 15:28] - FIX POLKIT AND ZSH SHELL
 - **File changed**: nixos/configuration.nix
 - **Mô tả**: Đã thêm group `networkmanager`, package `polkit_gnome`, cấu hình `systemd.user.services.polkit-gnome-authentication-agent-1`
@@ -324,3 +364,17 @@
 - **File changed**: `home-manager/noctalia/user-templates.toml`
 - **Mô tả**: Thêm hook `swaymsg reload` vào `user-templates.toml` của Noctalia.
 - **Lý do**: Để Sway tự động áp dụng ngay lập tức màu viền mới mỗi khi người dùng đổi theme trên Noctalia mà không cần bấm phím reload thủ công.
+
+### [2026-08-28 15:15] - CẤU HÌNH XDG DESKTOP PORTAL CHO SWAY
+- **File changed**: `nixos/configuration.nix`
+- **Mô tả**: Bổ sung cấu hình `xdg.portal` (với `wlr` và `gtk`), sử dụng `lib.mkForce` cho `config.sway.default` để tránh xung đột với cấu hình mặc định của module Sway.
+- **Lý do**: Cho phép các phần mềm như OBS Studio có thể quay màn hình (Screen Capture thông qua PipeWire) trên Wayland/Sway.
+
+### [2026-08-29 12:45] - ĐỔI OBS SANG GPU SCREEN RECORDER VÀ SỬA LỖI XDG PORTAL
+- **File changed**: `home-manager/home.nix`, `nixos/configuration.nix`
+- **Mô tả**: Sửa `gpu-recorder` thành `gpu-screen-recorder-gtk`, cài thêm `slurp` (để XDG Portal có thể hiển thị menu chọn màn hình quay). Bật module `programs.gpu-screen-recorder.enable = true` ở cấp hệ thống.
+- **Lý do**: Sếp muốn dùng GPU Screen Recorder thay cho OBS. Lỗi OBS lúc nãy là do XDG Portal thiếu `bemenu` hoặc `slurp` nên không bật được hộp thoại chọn màn hình.
+
+### [2026-08-29 13:31] - ĐỔI FONT CHỮ THANH TAB
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Đổi font chữ hiển thị trên thanh tiêu đề (Tabs) từ `JetBrainsMono NF` sang `Maple Mono NF` theo yêu cầu.
