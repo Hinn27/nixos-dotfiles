@@ -9,7 +9,7 @@
 
     # Font configuration
     font = {
-      name = "Maple Mono NF";
+      name = "Maple Mono Normal NF";
       size = 14.0;
     };
 
