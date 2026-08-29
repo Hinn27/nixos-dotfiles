@@ -1,14 +1,16 @@
 # Kitty Terminal Configuration
 # This module configures the Kitty terminal emulator natively using Home Manager.
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.kitty = {
     enable = true;
 
     # Font configuration
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "Maple Mono NF";
       size = 14.0;
     };
 
@@ -80,7 +82,7 @@
   xdg.terminal-exec = {
     enable = true;
     settings = {
-      default = [ "kitty.desktop" ];
+      default = ["kitty.desktop"];
     };
   };
 }
