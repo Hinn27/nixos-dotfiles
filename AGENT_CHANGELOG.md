@@ -382,3 +382,8 @@
 ### [2026-08-29 14:24] - CẬP NHẬT ICON ĐỘNG
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Thay thế OBS bằng GPU Screen Recorder, bổ sung icon cho Telegram và các JetBrains IDE.
+
+### [2026-08-29 14:27] - CHUẨN HÓA ĐỊNH DẠNG NIX VÀ GIT COMMIT
+- **File changed**: Toàn bộ các file `.nix`
+- **Mô tả**: Chạy `nixpkgs-fmt` trên toàn dự án và cập nhật lại log git theo quy tắc Conventional Commits tiếng Việt mới.
+- **Lý do**: Áp dụng luật mới của hệ thống (nixos_system_rules.md).
