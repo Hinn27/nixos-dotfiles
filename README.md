@@ -64,7 +64,7 @@ cd ~/nix-config
 
 ### Bước 1.3: Kích hoạt phần hệ thống (OS)
 
-_Lưu ý: Nếu bạn cài trên một phần cứng khác hoàn toàn, hãy tạo lại file hardware-configuration trước._
+_Lưu ý: Nếu cài trên một phần cứng khác hoàn toàn, hãy tạo lại file hardware-configuration trước._
 
 ```bash
 # (Tuỳ chọn) Tạo file hardware-configuration.nix cho máy mới:
@@ -77,16 +77,16 @@ sudo nixos-rebuild switch --flake .#nixos
 ### Bước 1.4: Kích hoạt phần người dùng (Home Manager)
 
 Bước này sẽ thiết lập toàn bộ môi trường lập trình, giao diện terminal và tự động giải mã cấu hình SSH.
-Vì công cụ `nh` đã được cài đặt ở Bước 1.3, bạn chỉ cần chạy:
+Vì công cụ `nh` đã được cài đặt ở Bước 1.3, chỉ cần:
 
 ```bash
 nh home switch
 ```
 
-Sau khi lệnh chạy xong, hãy khởi động lại máy hoặc đăng nhập lại để các cấu hình có hiệu lực toàn diện.
+Sau khi lệnh chạy xong, khởi động lại máy hoặc đăng nhập lại để các cấu hình có hiệu lực toàn diện.
 
-> **💡 Lưu ý về dọn dẹp hệ thống:** 
-> Hệ thống đã được lập trình sẵn để **tự động dọn rác (Garbage Collection) mỗi tuần**. Đi kèm với đó là một dịch vụ chạy ngầm tự động đồng bộ Bootloader (`switch-to-configuration boot`). Bạn không bao giờ phải lo lắng về việc đầy ổ cứng hay rác menu Boot!
+> **💡 Lưu ý về dọn dẹp hệ thống:**
+> Hệ thống đã có sẵn **tự động dọn rác (Garbage Collection) mỗi tuần**. Đi kèm với đó là dịch vụ chạy ngầm tự động đồng bộ Bootloader (`switch-to-configuration boot`).
 
 ---
 
