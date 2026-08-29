@@ -391,3 +391,8 @@
 ### [2026-08-29 15:42] - BỎ VIỀN ỨNG DỤNG
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Tắt hoàn toàn viền cửa sổ (`default_border pixel 0`) và viền thanh tab (`titlebar_border_thickness 0`).
+
+### [2026-08-29 15:50] - CẤU HÌNH PHẦN CỨNG ENCODER CHO GPU SCREEN RECORDER
+- **File changed**: `nixos/configuration.nix`
+- **Mô tả**: Bổ sung `hardware.graphics.extraPackages` với `intel-media-driver`, `intel-vaapi-driver` và `libvdpau-va-gl` để bật Intel VAAPI. Bật `hardware.nvidia.nvidiaPersistenced = true` để giữ kết nối với GPU Nvidia không bị ngủ đông. Thêm user vào group `video` và `render`.
+- **Lý do**: GPU Screen Recorder báo lỗi không tìm thấy hardware video encoder. Lỗi do thiếu driver VAAPI của Intel, Card Nvidia bị sleep (Persistenced tắt), và user không có quyền truy cập trực tiếp vào các render node của đồ họa.
