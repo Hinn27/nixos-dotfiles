@@ -401,3 +401,12 @@
 - **File changed**: nixos/configuration.nix
 - **Mô tả**: Thêm dịch vụ systemd `sync-bootloader` để tự động chạy lệnh `switch-to-configuration boot` ngay sau khi tiến trình dọn dẹp hệ thống `nh-clean.service` hoàn tất.
 - **Lý do**: Khắc phục tình trạng rác các mục khởi động (old generations) trong Bootloader do lệnh xóa mặc định của Nix không xóa chúng.
+
+### [2026-08-29 20:11] - CẬP NHẬT CẤU HÌNH FONT & NOCTALIA
+- **File changed**: 
+  - `home-manager/home.nix`
+  - `home-manager/kitty.nix`
+  - `home-manager/noctalia/settings.toml`
+  - `home-manager/noctalia/settings.json`
+- **Mô tả**: Đã cài đặt thêm font `Maple Mono Normal` và cập nhật cấu hình cho Kitty, Noctalia để sử dụng font mới này. JSON của Noctalia cũng được lưu lại và format cấu hình cho plugin tailscale.
+- **Lý do**: Áp dụng theo yêu cầu commit thay đổi hiện tại của sếp.
