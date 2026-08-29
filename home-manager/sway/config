@@ -14,6 +14,7 @@ titlebar_border_thickness 3
 # Định dạng tiêu đề: <b>App ID/Class (In đậm)</b> - <i>Tiêu đề (In nghiêng)</i>
 for_window [app_id=".*"] title_format "<b>%app_id</b>  <i>%title</i>"
 for_window [class=".*"] title_format "<b>%class</b>  <i>%title</i>"
+
 # ─── Dynamic Window Icons ───
 for_window [app_id="(?i)kitty"] title_format "󰄛 <b>%app_id</b>  <i>%title</i>"
 for_window [app_id="(?i)zen.*"] title_format "󰈹 <b>%app_id</b>  <i>%title</i>"
@@ -23,13 +24,14 @@ for_window [app_id="(?i)yazi"] title_format " <b>%app_id</b>  <i>%title</i
 for_window [app_id="(?i)nvim|neovim"] title_format " <b>%app_id</b>  <i>%title</i>"
 for_window [app_id="(?i)code|vscodium"] title_format "󰨞 <b>%app_id</b>  <i>%title</i>"
 for_window [class="(?i)vesktop|discord"] title_format " <b>%class</b>  <i>%title</i>"
-for_window [app_id="(?i)obs"] title_format "󰑋 <b>%app_id</b>  <i>%title</i>"
+for_window [app_id="(?i)gpu-screen-recorder|com\.dec05eba\.gpu_screen_recorder"] title_format " <b>%app_id</b>  <i>%title</i>"
+for_window [app_id="(?i)telegram.*|org\.telegram\.desktop"] title_format " <b>%app_id</b>  <i>%title</i>"
+for_window [class="(?i)jetbrains-.*"] title_format " <b>%class</b>  <i>%title</i>"
 for_window [class="(?i)stremio"] title_format "󰎁 <b>%class</b>  <i>%title</i>"
 for_window [app_id="(?i)mpv"] title_format " <b>%app_id</b>  <i>%title</i>"
 for_window [app_id="(?i)org.gnome.Nautilus"] title_format " <b>%app_id</b>  <i>%title</i>"
 
 # ─── Window Colors (Noctalia Palette) ───
-# Nạp các biến màu từ Noctalia ($primary, $surface, v.v...)
 include ~/.config/sway/noctalia
 
 # Ghi đè lại cách phối màu để thanh tiêu đề và viền đồng bộ thành 1 khối rắn
@@ -52,9 +54,7 @@ input type:touchpad {
 }
 
 input type:pointer {
-    # Tăng tốc độ chuột (từ -1.0 đến 1.0)
     pointer_accel 0.5
-    # Loại bỏ gia tốc để chuột di chuyển đều và chuẩn xác hơn (tùy chọn)
     # accel_profile flat
 }
 
@@ -63,7 +63,6 @@ input type:keyboard {
     repeat_rate 50
 }
 
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 mouse_warping container
 

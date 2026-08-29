@@ -378,3 +378,7 @@
 ### [2026-08-29 13:31] - ĐỔI FONT CHỮ THANH TAB
 - **File changed**: `home-manager/sway/config`
 - **Mô tả**: Đổi font chữ hiển thị trên thanh tiêu đề (Tabs) từ `JetBrainsMono NF` sang `Maple Mono NF` theo yêu cầu.
+
+### [2026-08-29 14:24] - CẬP NHẬT ICON ĐỘNG
+- **File changed**: `home-manager/sway/config`
+- **Mô tả**: Thay thế OBS bằng GPU Screen Recorder, bổ sung icon cho Telegram và các JetBrains IDE.
