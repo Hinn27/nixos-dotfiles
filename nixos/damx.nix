@@ -1,43 +1,42 @@
-{ config
-, pkgs
-, lib
-, inputs
-, ...
-}:
-let
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: let
   damxSrc = inputs.damx;
 
   linuwu-sense =
     config.boot.kernelPackages.callPackage
-      ({ stdenv
-       , kernel
-       ,
-       }:
-        stdenv.mkDerivation {
-          name = "linuwu-sense";
-          src = damxSrc + "/Linuwu-Sense";
-          nativeBuildInputs = kernel.moduleBuildDependencies;
-          makeFlags = [
-            "KDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
-            "KVER=${kernel.modDirVersion}"
-          ];
-          installPhase = ''
-            mkdir -p $out/lib/modules/${kernel.modDirVersion}/kernel/drivers/platform/x86
-            cp src/linuwu_sense.ko $out/lib/modules/${kernel.modDirVersion}/kernel/drivers/platform/x86/
-          '';
-        })
-      { };
-in
-{
-  boot.extraModulePackages = [ linuwu-sense ];
-  boot.kernelModules = [ "linuwu_sense" ];
-  boot.blacklistedKernelModules = [ "acer_wmi" ];
+    ({
+      stdenv,
+      kernel,
+    }:
+      stdenv.mkDerivation {
+        name = "linuwu-sense";
+        src = damxSrc + "/Linuwu-Sense";
+        nativeBuildInputs = kernel.moduleBuildDependencies;
+        makeFlags = [
+          "KDIR=${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
+          "KVER=${kernel.modDirVersion}"
+        ];
+        installPhase = ''
+          mkdir -p $out/lib/modules/${kernel.modDirVersion}/kernel/drivers/platform/x86
+          cp src/linuwu_sense.ko $out/lib/modules/${kernel.modDirVersion}/kernel/drivers/platform/x86/
+        '';
+      })
+    {};
+in {
+  boot.extraModulePackages = [linuwu-sense];
+  boot.kernelModules = ["linuwu_sense"];
+  boot.blacklistedKernelModules = ["acer_wmi"];
   boot.extraModprobeConfig = ''
     options linuwu_sense enable_all=1
   '';
 
-  users.groups.linuwu_sense = { };
-  users.users.hinne.extraGroups = [ "linuwu_sense" ];
+  users.groups.linuwu_sense = {};
+  users.users.hinne.extraGroups = ["linuwu_sense"];
 
   # Udev rules to set permissions for the driver sysfs files so the GUI can access them
   services.udev.extraRules = ''

@@ -1,7 +1,8 @@
 # Noctalia Shell Configuration Module
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   # Use recursive to allow Noctalia GUI to save settings
   xdg.configFile."noctalia" = {

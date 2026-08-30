@@ -1,8 +1,9 @@
 # General CLI Tools Configuration
 # This module sets up natively supported CLI tools like Fzf, Bat, Direnv, Yazi, SSH
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   # Fzf (Fuzzy Finder)
   programs.fzf = {

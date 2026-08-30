@@ -1,8 +1,9 @@
 # Fcitx5 Vietnamese Input Method (Lotus Engine) Module
-{ config
-, pkgs
-, pkgs-unstable
-, ...
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
 }: {
   i18n.inputMethod = {
     enable = true;
