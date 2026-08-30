@@ -1,10 +1,11 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{ inputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   # You can import other home-manager modules here
   imports = [
@@ -70,15 +71,15 @@
       name = "Yazi";
       exec = "kitty -e yazi %u";
       terminal = false;
-      categories = [ "System" "FileTools" "FileManager" "ConsoleOnly" ];
-      mimeType = [ "inode/directory" ];
+      categories = ["System" "FileTools" "FileManager" "ConsoleOnly"];
+      mimeType = ["inode/directory"];
     };
     nvim = {
       name = "Neovim";
       exec = "kitty -e nvim %F";
       terminal = false;
-      categories = [ "Utility" "TextEditor" ];
-      mimeType = [ "text/plain" ];
+      categories = ["Utility" "TextEditor"];
+      mimeType = ["text/plain"];
     };
   };
 
@@ -152,7 +153,7 @@
     p7zip
     zip
     rich-cli
-    (python3.withPackages (p: [ p.rich p.docx2txt ]))
+    (python3.withPackages (p: [p.rich p.docx2txt]))
 
     # Text Editor + IDE
     neovim
