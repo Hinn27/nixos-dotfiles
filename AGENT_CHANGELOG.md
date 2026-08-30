@@ -415,3 +415,13 @@
 - **File changed**: README.md
 - **Mô tả**: Cập nhật lệnh kích hoạt Home Manager thành lệnh `nh home switch` cho ngắn gọn, đồng thời bổ sung ghi chú về tính năng tự động dọn rác và đồng bộ Bootloader.
 - **Lý do**: Giúp tài liệu phản ánh chính xác cấu hình tự động hóa hiện tại của hệ thống.
+
+### [2026-08-30 16:45] - CẤU HÌNH FONT MAPLE MONO
+- **File changed**: 
+  - `home-manager/home.nix`
+  - `home-manager/kitty.nix`
+  - `home-manager/noctalia/settings.toml`
+  - `home-manager/noctalia/settings.json`
+  - `nixos/configuration.nix`
+- **Mô tả**: Cài đặt font `Maple Mono` (cả bản thường và bản Normal, NF). Cấu hình hệ thống NixOS (`fonts.packages`) để ứng dụng Obsidian nhận diện được. Thiết lập font cho Kitty và Noctalia.
+- **Lý do**: Sếp yêu cầu cài đặt font và sửa lỗi Obsidian không nhận font.
