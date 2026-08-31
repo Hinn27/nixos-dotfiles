@@ -27,6 +27,7 @@
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
+    shellWrapperName = "y";
     # (Phần cấu hình giao diện TOML và Flavors của Yazi
     #  bạn có thể symlink từ repo dotfiles về ~/.config/yazi sau)
   };
@@ -35,9 +36,7 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks."*" = {
-      addKeysToAgent = "yes";
-    };
+    extraConfig = "AddKeysToAgent yes";
     # matchBlocks = {
     #   "github.com" = {
     #     hostname = "github.com";

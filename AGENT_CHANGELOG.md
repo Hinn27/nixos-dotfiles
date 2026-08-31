@@ -457,3 +457,12 @@
 - **File changed**: `home-manager/zsh.nix`
 - **Mô tả**: Dọn dẹp thư mục `/home/hinne/` (xóa các thư mục tmp, các file rác code). Chuyển toàn bộ dữ liệu máy ảo Windows 10 vào trong `~/VMs/` và cập nhật lại đường dẫn cho alias `quickwin10` trong ZSH để trỏ tới thư mục mới.
 - **Lý do**: User yêu cầu dọn dẹp nhà cửa và quy hoạch lại các file máy ảo cho gọn gàng.
+
+### [2026-09-01 00:06] - SỬA CÁC LỖI CẢNH BÁO HOME-MANAGER
+- **File changed**:
+  - `home-manager/home.nix`
+  - `home-manager/tools.nix`
+- **Mô tả**:
+  - `home.nix`: Thêm `enable = true` vào block `home.pointerCursor`.
+  - `tools.nix`: Sửa `programs.ssh` sang dùng `extraConfig` và thêm `shellWrapperName = "y"` cho cấu hình `programs.yazi`.
+- **Lý do**: Cập nhật lại các syntax cũ đang bị báo lỗi `deprecated` khi build Home Manager bản mới nhất (đã xin phép user).

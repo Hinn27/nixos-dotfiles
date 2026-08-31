@@ -352,6 +352,7 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.pointerCursor = {
+    enable = true;
     name = "Bibata-Modern-Classic";
     package = pkgs.bibata-cursors;
     size = 28;
