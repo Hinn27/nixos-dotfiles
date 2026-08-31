@@ -7,7 +7,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # Sops-nix for secrets management
@@ -19,7 +19,7 @@
     antigravity.inputs.nixpkgs.follows = "nixpkgs";
 
     # Thorium Browser
-    thorium.url = "github:Rishabh5321/thorium_flake";
+    thorium.url = "github:Rishabh5321/custom-packages-flake";
     thorium.inputs.nixpkgs.follows = "nixpkgs";
 
     # Zen Browser

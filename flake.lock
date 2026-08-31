@@ -59,16 +59,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1779506708,
-        "narHash": "sha256-QOD/CNm196nCJRheux/URi4/HE66fthdOMqCJoPP1Y0=",
+        "lastModified": 1788146656,
+        "narHash": "sha256-XmJmvk9rytTb7dCotO/aqR+YysB8HOqnprlOdv+LAF4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "3ee51fbdac8c8bdfe1e7e1fcaba6520a563f394f",
+        "rev": "82c265faf4e3161d6015db07c9b0f1ee36a9029b",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-25.11",
         "repo": "home-manager",
         "type": "github"
       }
@@ -159,16 +158,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1778638427,
-        "narHash": "sha256-aje+PAsZBOjr437/imhIyDSIR6WoqWwMzwmnRhEgfxU=",
+        "lastModified": 1788181404,
+        "narHash": "sha256-gQPUcqeB8hzh+Iv4WiLRBIEmCR17QsBj3uO/4Xa+PRM=",
         "owner": "Rishabh5321",
-        "repo": "thorium_flake",
-        "rev": "262fef20a18fecf7cd0229259ebba3083b19b908",
+        "repo": "custom-packages-flake",
+        "rev": "4a2494e482b0e2429dc93255d9f8008f93fac212",
         "type": "github"
       },
       "original": {
         "owner": "Rishabh5321",
-        "repo": "thorium_flake",
+        "repo": "custom-packages-flake",
         "type": "github"
       }
     },

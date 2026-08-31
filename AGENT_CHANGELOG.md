@@ -444,3 +444,11 @@
 - **File changed**: `home-manager/home.nix`
 - **Mô tả**: Tổ chức lại cấu trúc mảng `home.packages`, chia thành các danh mục rõ ràng (System, Apps, Fonts, Toolkit...), sắp xếp theo vần ABC và loại bỏ các phần mềm bị khai báo lặp lại (ví dụ như `neovim`, `grim`, `libreoffice`).
 - **Lý do**: User yêu cầu dọn dẹp lại danh sách cho gọn gàng, dễ quản lý hơn.
+
+### [2026-08-31 23:38] - SỬA LỖI CẢNH BÁO LÚC BUILD HOME-MANAGER
+- **File changed**:
+  - `flake.nix`
+  - `flake.lock`
+  - `home-manager/tools.nix`
+- **Mô tả**: Sửa url repo `home-manager` trỏ về nhánh `master` (khớp với nixpkgs-unstable), cập nhật link kho chứa trình duyệt Thorium mới, và viết lại cú pháp SSH key `addKeysToAgent` cho chuẩn với bản cập nhật mới nhất.
+- **Lý do**: Khắc phục hàng loạt lỗi cảnh báo đỏ lòm lúc sếp chạy lệnh build `nh home switch`.
