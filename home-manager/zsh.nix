@@ -64,11 +64,6 @@
 
     # Extra configuration added to ~/.zshrc
     initContent = ''
-      # Iris Autocomplete
-      if command -v iris >/dev/null; then
-        eval "$(iris init zsh)"
-      fi
-
       # Set shell options
       setopt HIST_FCNTL_LOCK NO_APPEND_HISTORY NO_EXTENDED_HISTORY
       setopt NO_HIST_FIND_NO_DUPS NO_HIST_IGNORE_ALL_DUPS NO_HIST_SAVE_NO_DUPS
@@ -83,11 +78,6 @@
               echo "Lỗi: Không tìm thấy môi trường ảo (venv hoặc .venv)"
           fi
       }
-
-      # Run fastfetch on startup
-      if [[ -t 1 ]] && command -v fastfetch >/dev/null; then
-        fastfetch
-      fi
     '';
   };
 

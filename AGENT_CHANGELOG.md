@@ -476,3 +476,8 @@
 - **File changed**: `home-manager/tools.nix`
 - **Mô tả**: Thay thế `extraConfig` bằng cấu trúc `settings."*"` trong cấu hình `programs.ssh`.
 - **Lý do**: Home Manager phiên bản mới ném lỗi Assertion Failed nếu dùng `extraConfig` mà không khai báo `settings."*"`. Đã sửa lại theo đúng rule.
+
+### [2026-09-01 00:23] - TỐI ƯU HÓA TỐC ĐỘ MỞ ZSH
+- **File changed**: `home-manager/zsh.nix`
+- **Mô tả**: Gỡ bỏ lệnh tự động khởi động `fastfetch` và bứng luôn đoạn mã khởi tạo `iris` autocomplete ra khỏi quá trình load `.zshrc`.
+- **Lý do**: User yêu cầu dọn dẹp bớt plugin nặng để tăng tốc độ mở Terminal.
