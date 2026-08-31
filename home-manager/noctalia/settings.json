@@ -198,13 +198,20 @@
       ],
       "right": [
         {
+          "id": "plugin:alexander/screen-toolkit:widget"
+        },
+        {
           "blacklist": [],
           "chevronColor": "none",
           "colorizeIcons": false,
           "drawerEnabled": true,
           "hidePassive": false,
           "id": "Tray",
-          "pinned": ["Keyboard - English (US)", "Lotus", "Input Method"]
+          "pinned": [
+            "Keyboard - English (US)",
+            "Lotus",
+            "Input Method"
+          ]
         },
         {
           "hideWhenZero": false,
@@ -354,6 +361,9 @@
         },
         {
           "id": "NoctaliaPerformance"
+        },
+        {
+          "id": "plugin:alexander/screen-toolkit:toggle"
         }
       ],
       "right": [
@@ -402,7 +412,10 @@
     "launcherUseDistroLogo": false,
     "monitors": [],
     "onlySameOutput": true,
-    "pinnedApps": ["com.stremio.stremio", "kitty"],
+    "pinnedApps": [
+      "com.stremio.stremio",
+      "kitty"
+    ],
     "pinnedStatic": false,
     "position": "bottom",
     "showDockIndicator": false,
@@ -429,13 +442,28 @@
     "forceBlackScreenCorners": false,
     "iRadiusRatio": 1,
     "keybinds": {
-      "keyDown": ["Down"],
-      "keyEnter": ["Return", "Enter"],
-      "keyEscape": ["Esc"],
-      "keyLeft": ["Left"],
-      "keyRemove": ["Del"],
-      "keyRight": ["Right"],
-      "keyUp": ["Up"]
+      "keyDown": [
+        "Down"
+      ],
+      "keyEnter": [
+        "Return",
+        "Enter"
+      ],
+      "keyEscape": [
+        "Esc"
+      ],
+      "keyLeft": [
+        "Left"
+      ],
+      "keyRemove": [
+        "Del"
+      ],
+      "keyRight": [
+        "Right"
+      ],
+      "keyUp": [
+        "Up"
+      ]
     },
     "language": "vi",
     "lockOnSuspend": true,
@@ -559,7 +587,12 @@
     "autoHideMs": 2000,
     "backgroundOpacity": 1,
     "enabled": true,
-    "enabledTypes": [0, 1, 2, 3],
+    "enabledTypes": [
+      0,
+      1,
+      2,
+      3
+    ],
     "location": "top_right",
     "monitors": [],
     "overlayLayer": true

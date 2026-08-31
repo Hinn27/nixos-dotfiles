@@ -430,3 +430,12 @@
 - **File changed**: flake.lock
 - **Mô tả**: Cập nhật `nixpkgs` (từ 26/08 lên 29/08) và `zen-browser` (từ 20/08 lên 30/08).
 - **Lý do**: User yêu cầu kiểm tra và nâng cấp hệ thống lên phiên bản mới nhất.
+
+### [2026-08-31 23:32] - CÀI ĐẶT SCREEN TOOLKIT
+- **File changed**:
+  - `home-manager/home.nix`
+  - `home-manager/noctalia/plugins.json`
+  - `home-manager/noctalia/plugins.toml`
+  - `home-manager/noctalia/settings.json`
+- **Mô tả**: Bổ sung các công cụ cần thiết (`grim`, `slurp`, `tesseract`, v.v.) vào Home Manager, bật plugin `alexander/screen-toolkit` và thêm widget của nó vào thanh Bar (bên phải) và Control Center (bên trái).
+- **Lý do**: User yêu cầu cài đặt và cấu hình plugin Screen Toolkit.

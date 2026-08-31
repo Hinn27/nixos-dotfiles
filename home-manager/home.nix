@@ -91,6 +91,7 @@
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
+    sops
     ansible
     grim
     wl-clipboard
@@ -121,6 +122,19 @@
     xwayland-satellite
     matugen
     linux-wallpaperengine
+
+    # Screen Toolkit Plugin Dependencies
+    grim
+    hyprpicker
+    tesseract
+    imagemagick
+    zbar
+    wl-screenrec
+    gpu-screen-recorder
+    satty
+    bc
+    translate-shell
+    xdg-utils
 
     # General Apps
     vesktop
