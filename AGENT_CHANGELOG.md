@@ -425,3 +425,8 @@
   - `nixos/configuration.nix`
 - **Mô tả**: Cài đặt font `Maple Mono` (cả bản thường và bản Normal, NF). Cấu hình hệ thống NixOS (`fonts.packages`) để ứng dụng Obsidian nhận diện được. Thiết lập font cho Kitty và Noctalia.
 - **Lý do**: Sếp yêu cầu cài đặt font và sửa lỗi Obsidian không nhận font.
+
+### [2026-08-31 23:25] - CẬP NHẬT FLAKE.LOCK
+- **File changed**: flake.lock
+- **Mô tả**: Cập nhật `nixpkgs` (từ 26/08 lên 29/08) và `zen-browser` (từ 20/08 lên 30/08).
+- **Lý do**: User yêu cầu kiểm tra và nâng cấp hệ thống lên phiên bản mới nhất.
