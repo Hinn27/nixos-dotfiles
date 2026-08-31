@@ -439,3 +439,8 @@
   - `home-manager/noctalia/settings.json`
 - **Mô tả**: Bổ sung các công cụ cần thiết (`grim`, `slurp`, `tesseract`, v.v.) vào Home Manager, bật plugin `alexander/screen-toolkit` và thêm widget của nó vào thanh Bar (bên phải) và Control Center (bên trái).
 - **Lý do**: User yêu cầu cài đặt và cấu hình plugin Screen Toolkit.
+
+### [2026-08-31 23:34] - SẮP XẾP LẠI DANH SÁCH PHẦN MỀM
+- **File changed**: `home-manager/home.nix`
+- **Mô tả**: Tổ chức lại cấu trúc mảng `home.packages`, chia thành các danh mục rõ ràng (System, Apps, Fonts, Toolkit...), sắp xếp theo vần ABC và loại bỏ các phần mềm bị khai báo lặp lại (ví dụ như `neovim`, `grim`, `libreoffice`).
+- **Lý do**: User yêu cầu dọn dẹp lại danh sách cho gọn gàng, dễ quản lý hơn.

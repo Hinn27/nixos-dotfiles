@@ -91,99 +91,116 @@
 
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
-    sops
+    # ---------------------------------------------------
+    # System & Core Tools
+    # ---------------------------------------------------
+    android-tools
     ansible
-    grim
-    wl-clipboard
-    libnotify
-    bibata-cursors
-    jq
+    evtest
     htop
-
-    # Shell + Terminal
-    # CLI Tools
-    yazi
-    neovim
-    pnpm
-    nodejs
-
-    # Font
-    maple-mono.truetype
-    maple-mono.NF
-    maple-mono.Normal-TTF
-    maple-mono.Normal-NF
-    nerd-fonts.jetbrains-mono
-    corefonts
-    vista-fonts
-    carlito
-
-    # Desktop shell, WM
-    niri
-    xwayland-satellite
-    matugen
-    linux-wallpaperengine
-
-    # Screen Toolkit Plugin Dependencies
-    grim
-    hyprpicker
-    tesseract
-    imagemagick
-    zbar
-    wl-screenrec
-    gpu-screen-recorder
-    satty
-    bc
-    translate-shell
+    jq
+    libnotify
+    power-profiles-daemon
+    sops
+    wl-clipboard
     xdg-utils
 
-    # General Apps
-    vesktop
-    telegram-desktop
-    gpu-screen-recorder-gtk
-    slurp
-    localsend
-    obsidian
-    libreoffice
-    onlyoffice-desktopeditors
-    mpv
-    imv
-    upscayl
-    evtest
-    wl-clipboard
-    stremio-linux-shell
-    power-profiles-daemon
-    inputs.thorium.packages.${pkgs.system}.thorium-avx2
-    inputs.zen-browser.packages.${pkgs.system}.default
-    postman
+    # ---------------------------------------------------
+    # Desktop Shell & WM
+    # ---------------------------------------------------
+    bibata-cursors
+    linux-wallpaperengine
+    matugen
+    niri
+    xwayland-satellite
 
-    # Yazi Plugin
-    poppler-utils
-    xlsx2csv
-    libreoffice
-    ffmpegthumbnailer
-    ffmpeg
-    mediainfo
-    unar
-    p7zip
-    zip
-    rich-cli
-    (python3.withPackages (p: [p.rich p.docx2txt]))
-
-    # Text Editor + IDE
-    neovim
+    # ---------------------------------------------------
+    # Shell & CLI Tools
+    # ---------------------------------------------------
+    fd
     gcc
     gnumake
+    nodejs
+    pnpm
     ripgrep
-    fd
     unzip
-    jetbrains-toolbox
-    zed-editor
+    yazi
+
+    # ---------------------------------------------------
+    # Text Editor & IDE
+    # ---------------------------------------------------
     aider-chat
+    jetbrains-toolbox
+    neovim
+    zed-editor
 
-    # Antigravity từ Nix flake
+    # ---------------------------------------------------
+    # General Apps
+    # ---------------------------------------------------
+    libreoffice
+    localsend
+    obsidian
+    onlyoffice-desktopeditors
+    postman
+    telegram-desktop
+    vesktop
+    inputs.thorium.packages.${pkgs.system}.thorium-avx2
+    inputs.zen-browser.packages.${pkgs.system}.default
+
+    # ---------------------------------------------------
+    # Media & Graphics
+    # ---------------------------------------------------
+    imv
+    mpv
+    stremio-linux-shell
+    upscayl
+
+    # ---------------------------------------------------
+    # Screen Toolkit & Capture
+    # ---------------------------------------------------
+    bc
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
+    grim
+    hyprpicker
+    imagemagick
+    satty
+    slurp
+    tesseract
+    translate-shell
+    wl-screenrec
+    zbar
+
+    # ---------------------------------------------------
+    # Yazi Plugins & Utilities
+    # ---------------------------------------------------
+    ffmpeg
+    ffmpegthumbnailer
+    mediainfo
+    p7zip
+    poppler-utils
+    rich-cli
+    unar
+    xlsx2csv
+    zip
+    (python3.withPackages (p: [p.rich p.docx2txt]))
+
+    # ---------------------------------------------------
+    # Fonts
+    # ---------------------------------------------------
+    carlito
+    corefonts
+    maple-mono.NF
+    maple-mono.Normal-NF
+    maple-mono.Normal-TTF
+    maple-mono.truetype
+    nerd-fonts.jetbrains-mono
+    vista-fonts
+
+    # ---------------------------------------------------
+    # Antigravity CLI
+    # ---------------------------------------------------
     inputs.antigravity.packages.${pkgs.system}.google-antigravity-cli
-
-    android-tools
   ];
   # Enable home-manager
   programs.home-manager.enable = true;
