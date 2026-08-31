@@ -40,7 +40,7 @@
       v = "nvim";
       dotfiles = "/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
       live = "pnpm dlx live-server";
-      quickwin10 = "cd ~ && quickemu --vm windows-10.conf";
+      quickwin10 = "cd ~/VMs && quickemu --vm windows-10.conf";
       fan-auto = "echo 0,0 | sudo tee /sys/devices/platform/acer-wmi/nitro_sense/fan_speed";
       fan-max = "echo 100,100 | sudo tee /sys/devices/platform/acer-wmi/nitro_sense/fan_speed";
       fan-med = "echo 60,60 | sudo tee /sys/devices/platform/acer-wmi/nitro_sense/fan_speed";

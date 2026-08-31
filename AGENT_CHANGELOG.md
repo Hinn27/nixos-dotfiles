@@ -452,3 +452,8 @@
   - `home-manager/tools.nix`
 - **Mô tả**: Sửa url repo `home-manager` trỏ về nhánh `master` (khớp với nixpkgs-unstable), cập nhật link kho chứa trình duyệt Thorium mới, và viết lại cú pháp SSH key `addKeysToAgent` cho chuẩn với bản cập nhật mới nhất.
 - **Lý do**: Khắc phục hàng loạt lỗi cảnh báo đỏ lòm lúc sếp chạy lệnh build `nh home switch`.
+
+### [2026-08-31 23:54] - DỌN DẸP THƯ MỤC HOME VÀ SỬA ALIAS VM
+- **File changed**: `home-manager/zsh.nix`
+- **Mô tả**: Dọn dẹp thư mục `/home/hinne/` (xóa các thư mục tmp, các file rác code). Chuyển toàn bộ dữ liệu máy ảo Windows 10 vào trong `~/VMs/` và cập nhật lại đường dẫn cho alias `quickwin10` trong ZSH để trỏ tới thư mục mới.
+- **Lý do**: User yêu cầu dọn dẹp nhà cửa và quy hoạch lại các file máy ảo cho gọn gàng.
