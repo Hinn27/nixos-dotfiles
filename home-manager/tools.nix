@@ -36,7 +36,11 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    extraConfig = "AddKeysToAgent yes";
+    settings = {
+      "*" = {
+        AddKeysToAgent = "yes";
+      };
+    };
     # matchBlocks = {
     #   "github.com" = {
     #     hostname = "github.com";

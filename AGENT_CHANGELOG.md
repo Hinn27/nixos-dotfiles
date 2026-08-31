@@ -471,3 +471,8 @@
 - **File changed**: `secrets/secrets.yaml`
 - **Mô tả**: Mở khóa (decrypt) file secrets.yaml, đổi toán tử `|-` thành `|` và chèn thêm 1 dấu xuống dòng (newline) vào cuối chuỗi Private Key. Đóng gói (encrypt) lại như cũ.
 - **Lý do**: File OpenSSH Private Key bắt buộc phải kết thúc bằng dấu newline, nếu không Git (SSH) sẽ báo lỗi `invalid format` và từ chối kết nối.
+
+### [2026-09-01 00:12] - SỬA LỖI BUILD SSH CỦA HOME-MANAGER
+- **File changed**: `home-manager/tools.nix`
+- **Mô tả**: Thay thế `extraConfig` bằng cấu trúc `settings."*"` trong cấu hình `programs.ssh`.
+- **Lý do**: Home Manager phiên bản mới ném lỗi Assertion Failed nếu dùng `extraConfig` mà không khai báo `settings."*"`. Đã sửa lại theo đúng rule.
