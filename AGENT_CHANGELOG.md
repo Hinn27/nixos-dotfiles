@@ -466,3 +466,8 @@
   - `home.nix`: Thêm `enable = true` vào block `home.pointerCursor`.
   - `tools.nix`: Sửa `programs.ssh` sang dùng `extraConfig` và thêm `shellWrapperName = "y"` cho cấu hình `programs.yazi`.
 - **Lý do**: Cập nhật lại các syntax cũ đang bị báo lỗi `deprecated` khi build Home Manager bản mới nhất (đã xin phép user).
+
+### [2026-09-01 00:10] - SỬA LỖI ĐỊNH DẠNG SSH KEY
+- **File changed**: `secrets/secrets.yaml`
+- **Mô tả**: Mở khóa (decrypt) file secrets.yaml, đổi toán tử `|-` thành `|` và chèn thêm 1 dấu xuống dòng (newline) vào cuối chuỗi Private Key. Đóng gói (encrypt) lại như cũ.
+- **Lý do**: File OpenSSH Private Key bắt buộc phải kết thúc bằng dấu newline, nếu không Git (SSH) sẽ báo lỗi `invalid format` và từ chối kết nối.
