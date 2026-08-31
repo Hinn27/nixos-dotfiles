@@ -144,8 +144,8 @@
     postman
     telegram-desktop
     vesktop
-    inputs.thorium.packages.${pkgs.system}.thorium-avx2
-    inputs.zen-browser.packages.${pkgs.system}.default
+    inputs.thorium.packages.${pkgs.stdenv.hostPlatform.system}.thorium-avx2
+    inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # ---------------------------------------------------
     # Media & Graphics
@@ -200,7 +200,7 @@
     # ---------------------------------------------------
     # Antigravity CLI
     # ---------------------------------------------------
-    inputs.antigravity.packages.${pkgs.system}.google-antigravity-cli
+    inputs.antigravity.packages.${pkgs.stdenv.hostPlatform.system}.google-antigravity-cli
   ];
   # Enable home-manager
   programs.home-manager.enable = true;

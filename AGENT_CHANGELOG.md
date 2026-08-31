@@ -481,3 +481,8 @@
 - **File changed**: `home-manager/zsh.nix`
 - **Mô tả**: Gỡ bỏ lệnh tự động khởi động `fastfetch` và bứng luôn đoạn mã khởi tạo `iris` autocomplete ra khỏi quá trình load `.zshrc`.
 - **Lý do**: User yêu cầu dọn dẹp bớt plugin nặng để tăng tốc độ mở Terminal.
+
+### [2026-09-01 00:25] - SỬA LỖI CẢNH BÁO KIẾN TRÚC HỆ THỐNG
+- **File changed**: `home-manager/home.nix`
+- **Mô tả**: Thay thế toàn bộ các biến `pkgs.system` (cũ) thành `pkgs.stdenv.hostPlatform.system` (mới) khi trỏ lấy package của Thorium, Zen Browser và Antigravity CLI.
+- **Lý do**: Lệnh gọi cũ đã bị Nixpkgs deprecate gây ra cảnh báo `evaluation warning` khi build hệ thống.
