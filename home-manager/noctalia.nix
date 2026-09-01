@@ -5,8 +5,5 @@
   ...
 }: {
   # Use recursive to allow Noctalia GUI to save settings
-  xdg.configFile."noctalia" = {
-    source = ./noctalia;
-    recursive = true;
-  };
+  xdg.configFile."noctalia".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix-config/home-manager/noctalia";
 }

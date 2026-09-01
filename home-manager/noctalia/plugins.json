@@ -1,44 +1,52 @@
 {
-    "sources": [
-        {
-            "enabled": true,
-            "name": "Noctalia Plugins",
-            "url": "https://github.com/noctalia-dev/noctalia-plugins"
-        }
-    ],
-    "states": {
-        "arch-updater": {
-            "enabled": false,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
-        },
-        "clipper": {
-            "enabled": false,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
-        },
-        "cloudflare-warp": {
-            "enabled": false,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
-        },
-        "polkit-agent": {
-            "enabled": false,
-            "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
-        },
-        "davemhammer/obsidian": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
-        },
-        "raycursive/discord-voice": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
-        },
-        "davemhammer/tailscale": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
-        },
-        "alexander/screen-toolkit": {
-            "enabled": true,
-            "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
-        }
+  "sources": [
+    {
+      "enabled": true,
+      "name": "Noctalia Plugins",
+      "url": "https://github.com/noctalia-dev/noctalia-plugins"
+    }
+  ],
+  "states": {
+    "arch-updater": {
+      "enabled": false,
+      "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
     },
-    "version": 2
+    "clipper": {
+      "enabled": false,
+      "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+    },
+    "cloudflare-warp": {
+      "enabled": false,
+      "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+    },
+    "polkit-agent": {
+      "enabled": false,
+      "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+    },
+    "davemhammer/obsidian": {
+      "enabled": true,
+      "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
+    },
+    "raycursive/discord-voice": {
+      "enabled": true,
+      "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
+    },
+    "davemhammer/tailscale": {
+      "enabled": true,
+      "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
+    },
+    "alexander/screen-toolkit": {
+      "enabled": true,
+      "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
+    },
+    "keybind-cheatsheet": {
+      "enabled": true,
+      "sourceUrl": "https://github.com/noctalia-dev/noctalia-plugins"
+    },
+    "ezequiel/mango_layouts": {
+      "enabled": true,
+      "sourceUrl": "https://github.com/noctalia-dev/community-plugins"
+    }
+  },
+  "version": 2
 }
