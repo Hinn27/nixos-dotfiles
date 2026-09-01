@@ -532,7 +532,19 @@
 - **Mô tả**: Chỉnh sửa kịch bản tự động khởi chạy trong `.zprofile`: Đổi TTY1 sang khởi chạy MangoWM và TTY2 sang khởi chạy Sway.
 - **Lý do**: Sếp yêu cầu đưa MangoWM làm môi trường chính trên TTY1.
 
+### [2026-09-01 19:40] - SỬA LỖI ĐỒNG BỘ MÀU VÀ CHỈNH TỐC ĐỘ BÀN PHÍM
+- **File changed**: `nixos/configuration.nix`, `home-manager/mango/config.conf`
+- **Mô tả**:
+  - `configuration.nix`: Bật lại `programs.dconf.enable = true` và bổ sung `xdg-desktop-portal-gtk` vào danh sách portal.
+  - `config.conf`: Thay đổi `repeat_delay=250` và `repeat_rate=50`.
+- **Lý do**: Fix lỗi các ứng dụng không nhận diện được cờ giao diện (Dark/Light) do thiếu dconf. Đồng thời khôi phục lại tốc độ con trỏ (xóa chữ) nhanh như bên Sway theo yêu cầu của user.
+
 ### [2026-09-01 14:12] - SỬA LỖI HIỂN THỊ CHEATSHEET MANGOWM
 - **File changed**: `home-manager/mango/config.conf`
 - **Mô tả**: Thêm các dòng comment mô tả chức năng phía trên các phím tắt chụp màn hình để plugin Cheatsheet của Noctalia có thể đọc và hiển thị đúng tên chức năng (thay vì hiện 'Launch Noctalia' mặc định).
-- **Lý do**: User báo cáo phần SCREENSHOTS trong bảng phím tắt bị hiển thị sai tên.
+- **Lý do**: Fix lỗi plugin Cheatsheet không nhận diện được chức năng phím tắt.
+
+### [2026-09-01 19:48] - TỰ ĐỘNG THẢ NỔI VÀ GHIM CỬA SỔ PICTURE-IN-PICTURE
+- **File changed**: `home-manager/mango/config.conf`
+- **Mô tả**: Thêm 3 rule cho các cửa sổ có tiêu đề là "Picture-in-Picture": `isfloating:1`, `isglobal:1`, `isoverlay:1`.
+- **Lý do**: Sếp yêu cầu tự động thả nổi video PiP (không bị xếp gạch chung với các cửa sổ khác) và ghim luôn trên cùng để tiện vừa xem vừa làm việc trên mọi workspace.
