@@ -19,8 +19,8 @@
     ./git.nix
     ./scripts.nix
     ./tools.nix
-    ./niri.nix
     ./noctalia.nix
+    ./mango.nix
     ./fcitx5.nix
     ./fastfetch.nix
     ./sway.nix
@@ -111,7 +111,6 @@
     bibata-cursors
     linux-wallpaperengine
     matugen
-    niri
     xwayland-satellite
 
     # ---------------------------------------------------

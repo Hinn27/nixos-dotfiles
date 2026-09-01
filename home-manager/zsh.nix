@@ -53,11 +53,13 @@
       # Autostart Niri/Sway on TTY login
       if [[ -o interactive ]] && [ -z "$WAYLAND_DISPLAY" ] && [ -z "$DISPLAY" ]; then
         if [ "$(tty)" = "/dev/tty1" ]; then
+          export XDG_CURRENT_DESKTOP=mango
+          export XDG_SESSION_TYPE=wayland
+          exec mango > ~/.mango.log 2>&1
+        elif [ "$(tty)" = "/dev/tty2" ]; then
           export XDG_CURRENT_DESKTOP=sway
           export XDG_SESSION_TYPE=wayland
           exec sway --unsupported-gpu > ~/.sway.log 2>&1
-        elif [ "$(tty)" = "/dev/tty2" ]; then
-          exec niri-session > ~/.niri.log 2>&1
         fi
       fi
     '';
