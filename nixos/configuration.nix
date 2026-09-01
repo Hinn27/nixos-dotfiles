@@ -87,7 +87,10 @@
         };
       };
     };
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = "*";
   };
+  programs.dconf.enable = true;
 
   hardware.graphics = {
     enable = true;
