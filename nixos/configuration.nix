@@ -20,6 +20,7 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./damx.nix
+    inputs.mango.nixosModules.mango
   ];
 
   nixpkgs = {
@@ -71,8 +72,8 @@
 
   # Network hostname
   networking.hostName = "nixos";
-  programs.niri.enable = true;
   programs.sway.enable = true;
+  programs.mango.enable = true;
   programs.gpu-screen-recorder.enable = true;
 
   xdg.portal = {
@@ -210,7 +211,6 @@
     slurp
     grim
     zsh
-    niri
     pkgs-unstable.noctalia
     yazi
     file-roller
