@@ -91,6 +91,7 @@
     config.common.default = "*";
   };
   programs.dconf.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   hardware.graphics = {
     enable = true;

@@ -548,3 +548,23 @@
 - **File changed**: `home-manager/mango/config.conf`
 - **Mô tả**: Thêm 3 rule cho các cửa sổ có tiêu đề là "Picture-in-Picture": `isfloating:1`, `isglobal:1`, `isoverlay:1`.
 - **Lý do**: Sếp yêu cầu tự động thả nổi video PiP (không bị xếp gạch chung với các cửa sổ khác) và ghim luôn trên cùng để tiện vừa xem vừa làm việc trên mọi workspace.
+
+### [2026-09-01 20:20] - FIX LỖI NOCTALIA KHÔNG AUTOSTART VÀ CÀI CLIPHIST
+- **File changed**: `home-manager/mango/config.conf`, `home-manager/home.nix`
+- **Mô tả**:
+  - `config.conf`: Sửa lệnh `exec-once=sh -c 'sleep 1.5 && noctalia'` thành `exec-once=noctalia` trực tiếp.
+  - `home.nix`: Bổ sung gói `cliphist` vào danh sách `home.packages`.
+### [2026-09-01 20:45] - FIX HỆ THỐNG SYSTEMD VÀ CLIPBOARD
+- **File changed**: `home-manager/home.nix`, `home-manager/mango/config.conf`
+- **Mô tả**: 
+  - Thêm `services.cliphist.enable = true` thay vì cài gói chay.
+  - Tạo `mango-session.target` liên kết với `graphical-session.target`.
+  - Bổ sung lệnh `systemctl --user start mango-session.target` vào MangoWM.
+- **Lý do**: Khắc phục lỗi MangoWM không khai báo "phiên đồ họa" khiến systemd không chịu chạy các dịch vụ ngầm (như xdg-desktop-portal và cliphist daemon). Việc này giúp Zen Browser nhận được Dark Mode và Clipboard được ghi cứng vào ổ đĩa.
+### [2026-09-01 21:11] - FIX CLIPBOARD GHIM BỊ MẤT KHI REBOOT
+- **File changed**: `home-manager/home.nix`, `nixos/configuration.nix`, `home-manager/mango/config.conf`
+- **Mô tả**: 
+  - Gỡ bỏ `cliphist` vì Noctalia đã có sẵn trình quản lý clipboard xịn hơn.
+  - Bật `services.gnome.gnome-keyring.enable = true` trong NixOS để cung cấp Secret Service cho Noctalia mã hóa file `index.enc`.
+  - Thay đổi phím tắt `SUPER+M` của MangoWM từ lệnh `quit` (tắt đột ngột) sang `spawn,noctalia msg session logout` (thoát an toàn qua Noctalia).
+- **Lý do**: Khi tắt máy bằng `SUPER+M`, MangoWM sập quá nhanh khiến Noctalia không kịp lưu dữ liệu Ghim. Ngoài ra, việc thiếu `gnome-keyring` khiến Noctalia không có chìa khóa mã hóa để khôi phục dữ liệu ở lần khởi động sau.

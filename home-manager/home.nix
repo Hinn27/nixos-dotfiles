@@ -207,6 +207,15 @@
   # Automount USB drives
   services.udiskie.enable = true;
 
+  systemd.user.targets.mango-session = {
+    Unit = {
+      Description = "MangoWM session";
+      BindsTo = ["graphical-session.target"];
+      Wants = ["graphical-session-pre.target"];
+      After = ["graphical-session-pre.target"];
+    };
+  };
+
   xdg.configFile = {
     "nvim" = {
       source = ./nvim;
