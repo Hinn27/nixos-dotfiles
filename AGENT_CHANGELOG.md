@@ -486,3 +486,53 @@
 - **File changed**: `home-manager/home.nix`
 - **Mô tả**: Thay thế toàn bộ các biến `pkgs.system` (cũ) thành `pkgs.stdenv.hostPlatform.system` (mới) khi trỏ lấy package của Thorium, Zen Browser và Antigravity CLI.
 - **Lý do**: Lệnh gọi cũ đã bị Nixpkgs deprecate gây ra cảnh báo `evaluation warning` khi build hệ thống.
+
+### [2026-09-01 12:47] - CÀI ĐẶT MANGOWM VÀ GỠ NIRI
+- **File changed**: `flake.nix`, `nixos/configuration.nix`, `home-manager/home.nix`, `home-manager/zsh.nix`, xoá thư mục `home-manager/niri`
+- **Mô tả**: Thêm flake `mangowm` và cấu hình tự động khởi động MangoWM vào TTY2 thay thế `niri-session`. Gỡ bỏ hoàn toàn Niri và các module liên quan.
+- **Lý do**: User yêu cầu cài MangoWM lên tty2 và không dùng niri nữa.
+
+### [2026-09-01 13:04] - CẤU HÌNH MẶC ĐỊNH MANGOWM VÀ PHÍM TẮT PLUGIN
+- **File changed**: `home-manager/mango.nix`, `home-manager/mango/config.conf`, `home-manager/home.nix`
+- **Mô tả**: Trích xuất cấu hình mặc định của MangoWM thành module riêng trong Home Manager, đồng thời thêm phím tắt `Super + L` để gọi lệnh toggle bảng layout của Noctalia.
+- **Lý do**: User cần cấu hình cơ bản cho MangoWM và muốn thử tích hợp plugin Noctalia Mango Layouts.
+
+### [2026-09-01 13:12] - CẤU HÌNH TỰ ĐỘNG KHỞI CHẠY VÀ PHÍM TẮT MANGOWM
+- **File changed**: `home-manager/mango/config.conf`
+- **Mô tả**: Bổ sung tự động khởi chạy (`exec-once`) cho Noctalia, DBus Portal và Fcitx5. Ánh xạ các phím tắt hệ thống (độ sáng, âm thanh, media, khóa màn hình, screenshot) và phím tắt gọi app (Zen, Yazi) cho đồng bộ với cấu hình Sway cũ. Sửa phím tắt gọi menu từ Rofi sang Noctalia Launcher, đổi terminal mặc định sang Kitty.
+- **Lý do**: Đảm bảo môi trường MangoWM có đủ các tính năng cơ bản như thanh trạng thái, bộ gõ và phím tắt điều khiển như hệ thống cũ.
+
+### [2026-09-01 13:29] - ĐỔI PHÍM TẮT HOÁN ĐỔI CỬA SỔ
+- **File changed**: `home-manager/mango/config.conf`
+- **Mô tả**: Đổi phím tắt hoán đổi cửa sổ (swap/exchange_client) từ `Super + Shift + Mũi tên` sang `Alt + Shift + Mũi tên`. Đồng thời đổi phím tắt chuyển màn hình (monitor) từ `Alt + Shift + Mũi tên` sang `Super + Shift + Mũi tên` để tránh xung đột.
+- **Lý do**: Sếp yêu cầu đổi phím tắt hoán đổi cửa sổ.
+
+### [2026-09-01 13:31] - CẤU HÌNH CỬA SỔ MỚI TRONG TILE LAYOUT
+- **File changed**: `home-manager/mango/config.conf`
+- **Mô tả**: Chuyển biến `new_is_master` từ `1` thành `0`.
+- **Lý do**: Sếp yêu cầu cửa sổ mới mở ra sẽ được đẩy vào khu vực xếp chồng (stack) thay vì chiếm quyền cửa sổ chính (master) khi ở Tile Layout.
+
+### [2026-09-01 13:34] - FIX LỖI NOCTALIA KHÔNG THỂ LƯU PLUGIN VÀ SETTING
+- **File changed**: `home-manager/noctalia.nix`
+- **Mô tả**: Thay đổi cách liên kết thư mục cấu hình Noctalia từ `recursive = true` (chỉ đọc trong Nix Store) thành `mkOutOfStoreSymlink` (liên kết trực tiếp thư mục bên ngoài).
+- **Lý do**: Giải quyết lỗi khi sếp tải plugin từ giao diện Noctalia GUI nhưng nó không lưu lại được do các file cấu hình bị khóa quyền ghi (Read-only) bởi Home Manager. Giờ đây Noctalia sẽ lưu cài đặt thẳng vào thư mục `~/nix-config/home-manager/noctalia/`.
+
+### [2026-09-01 13:35] - GIẢM SỐ LƯỢNG WORKSPACE XUỐNG 3
+- **File changed**: `home-manager/mango/config.conf`
+- **Mô tả**: Chỉnh sửa biến `tag_num` từ `9` xuống `3`. Đồng thời dọn dẹp các phím tắt (keybinds) và luật áp dụng (tagrules) từ workspace 4 đến 9 để cấu hình gọn gàng hơn, tránh lỗi ngoài ý muốn.
+- **Lý do**: Sếp yêu cầu giảm số lượng workspace hiển thị trên thanh bar xuống còn 3 cho đỡ chiếm diện tích.
+
+### [2026-09-01 13:57] - CẬP NHẬT LAYOUT RIÊNG BIỆT CHO TỪNG TAG
+- **File changed**: `home-manager/mango/config.conf`
+- **Mô tả**: Sửa `tagrule` để ép cứng layout cho 3 workspace: Tag 1 dùng `scroller`, Tag 2 dùng `tile`, Tag 3 dùng `vertical_grid`.
+- **Lý do**: Sếp muốn mỗi workspace có một mục đích hiển thị khác nhau.
+
+### [2026-09-01 14:05] - HOÁN ĐỔI TTY CỦA MANGO VÀ SWAY
+- **File changed**: `home-manager/zsh.nix`
+- **Mô tả**: Chỉnh sửa kịch bản tự động khởi chạy trong `.zprofile`: Đổi TTY1 sang khởi chạy MangoWM và TTY2 sang khởi chạy Sway.
+- **Lý do**: Sếp yêu cầu đưa MangoWM làm môi trường chính trên TTY1.
+
+### [2026-09-01 14:12] - SỬA LỖI HIỂN THỊ CHEATSHEET MANGOWM
+- **File changed**: `home-manager/mango/config.conf`
+- **Mô tả**: Thêm các dòng comment mô tả chức năng phía trên các phím tắt chụp màn hình để plugin Cheatsheet của Noctalia có thể đọc và hiển thị đúng tên chức năng (thay vì hiện 'Launch Noctalia' mặc định).
+- **Lý do**: User báo cáo phần SCREENSHOTS trong bảng phím tắt bị hiển thị sai tên.
